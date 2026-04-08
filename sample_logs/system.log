@@ -1,0 +1,1185 @@
+Tue Apr  7 15:42:29 2026 kern.err kernel: [ 5251.875319]
+Tue Apr  7 15:42:29 2026 kern.err kernel: [ 5251.883721] wlan: [4116:I:ANY] osif_pltfrm_create_ppe_vp_802_3_redir_vap:
+Tue Apr  7 15:42:29 2026 kern.err kernel: [ 5251.883721] dev:00000000d2fa9d2f, dev->name:sta1 osnetdev:000000001efd9bc2, allocated VP # 68
+Tue Apr  7 15:42:29 2026 kern.err kernel: [ 5251.897913] wlan: [4116:I:RPTR] RPTR vdev flags:0 pdev flags:0 vdev_id:2 pdev_id:0
+Tue Apr  7 15:42:29 2026 kern.info kernel: [ 5251.917783] 8021q: adding VLAN 0 to HW filter on device sta1
+Tue Apr  7 15:42:29 2026 kern.err kernel: [ 5251.922468] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan1) 3a:46:a2:d2:23:23 is down
+Tue Apr  7 15:42:29 2026 kern.err kernel: [ 5251.927061] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan13) 7e:5d:90:65:f5:b5 is down
+Tue Apr  7 15:42:29 2026 kern.err kernel: [ 5251.934750] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan12) 0a:e6:82:ae:8e:f1 is down
+Tue Apr  7 15:42:30 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface sta1.IPv6 with address fe80::9683:c4ff:fec7:e449.
+Tue Apr  7 15:42:30 2026 daemon.info avahi-daemon[13033]: New relevant interface sta1.IPv6 for mDNS.
+Tue Apr  7 15:42:30 2026 daemon.info avahi-daemon[13033]: Registering new address record for fe80::9683:c4ff:fec7:e449 on sta1.*.
+Tue Apr  7 15:42:30 2026 daemon.info dnsmasq-dhcp[1]: DHCPDISCOVER(br-lan) 4e:89:f3:22:bd:d4
+Tue Apr  7 15:42:30 2026 daemon.info dnsmasq-dhcp[1]: DHCPOFFER(br-lan) 192.168.10.159 4e:89:f3:22:bd:d4
+Tue Apr  7 15:42:31 2026 daemon.info gl-repeater[4116]: (repeater.lua:276) sta0: found 6 networks
+Tue Apr  7 15:42:31 2026 daemon.info dnsmasq-dhcp[1]: DHCPREQUEST(br-lan) 192.168.10.159 4e:89:f3:22:bd:d4
+Tue Apr  7 15:42:31 2026 daemon.info dnsmasq-dhcp[1]: DHCPACK(br-lan) 192.168.10.159 4e:89:f3:22:bd:d4
+Tue Apr  7 15:42:32 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a IEEE 802.11: associated (aid 1)
+Tue Apr  7 15:42:32 2026 kern.err kernel: [ 5255.333735] wlan: [7166:I:ANY] wlan_cfg80211_change_station: Ignore set station for ap vlan wlan02
+Tue Apr  7 15:42:32 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: sending 1/4 msg of 4-Way Handshake
+Tue Apr  7 15:42:33 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: sending 1/4 msg of 4-Way Handshake
+Tue Apr  7 15:42:33 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a IEEE 802.11: associated (aid 1)
+Tue Apr  7 15:42:33 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: sending 1/4 msg of 4-Way Handshake
+Tue Apr  7 15:42:33 2026 kern.err kernel: [ 5256.661102] wlan: [7166:I:ANY] wlan_cfg80211_change_station: Ignore set station for ap vlan wlan02
+Tue Apr  7 15:42:33 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: received EAPOL-Key frame (2/4 Pairwise)
+Tue Apr  7 15:42:33 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: sending 3/4 msg of 4-Way Handshake
+Tue Apr  7 15:42:33 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: received EAPOL-Key frame (4/4 Pairwise)
+Tue Apr  7 15:42:33 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a RADIUS: starting accounting session 47DDCB51F5358972
+Tue Apr  7 15:42:33 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: pairwise key handshake completed (RSN)
+Tue Apr  7 15:42:34 2026 daemon.info dnsmasq-dhcp[1]: DHCPREQUEST(br-lan) 192.168.10.148 d4:ab:61:f8:d8:6a
+Tue Apr  7 15:42:34 2026 daemon.info dnsmasq-dhcp[1]: DHCPACK(br-lan) 192.168.10.148 d4:ab:61:f8:d8:6a XPLM2MQ5340KXS
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.014318] wlan: [18564:I:ANY] osif_vap_pre_stop_sta: Stopping STA vap
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.014377] wlan: [0:I:CMN_MLME] cm_handle_discon_req_in_non_connected_state: vdev 2 cm_id 0x0: dropping disconnect req from source 5 in INIT state
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.019773] wlan: [18564:E:CMN_MLME] cm_disconnect_start_req_sync: vdev 2: Disconnect failed with status 4
+Tue Apr  7 15:42:35 2026 daemon.info avahi-daemon[13033]: Interface sta1.IPv6 no longer relevant for mDNS.
+Tue Apr  7 15:42:35 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface sta1.IPv6 with address fe80::9683:c4ff:fec7:e449.
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.145739] wlan: [18564:I:ANY] osif_pltfrm_delete_vap:
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.145739] osifdev:000000001efd9bc2, VP 68 deleted
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.145830] wlan: [0:I:CMN_MLME] cm_handle_discon_req_in_non_connected_state: vdev 2 cm_id 0x0: dropping disconnect req from source 5 in INIT state
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.154987] wlan: [18564:E:CMN_MLME] cm_disconnect_start_req_sync: vdev 2: Disconnect failed with status 4
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.173946] wlan: [18564:I:ANY] [UNSPECIFIED] vap-2(sta1):mlme_sta_swbmiss_timer_detach:disable bitmap is 0x2
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.173946]
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.177814] wlan: [18564:I:ANY] [UNSPECIFIED] vap-2(sta1):mlme_sta_swbmiss_timer_detach:id 0 name (SCANNER) is still allocated
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.177814]
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.189245] wlan: [18564:I:ANY] [UNSPECIFIED] vap-2(sta1):mlme_sta_swbmiss_timer_detach:id 1 name (tmp) is still allocated
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.189245]
+Tue Apr  7 15:42:35 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fe80::9683:c4ff:fec7:e449 on sta1.
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.297758] wlan: [7166:I:ANY] Skip bcast de-auth reason code 3, handled in VDEV down
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.298238] wlan: [7166:I:ANY] wlan_cfg80211_stop_ap: Stop wlan1 psoc:1 vdev:0
+Tue Apr  7 15:42:35 2026 daemon.notice netifd: Network device 'wlan1' link is down
+Tue Apr  7 15:42:35 2026 daemon.info avahi-daemon[13033]: Interface wlan1.IPv6 no longer relevant for mDNS.
+Tue Apr  7 15:42:35 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface wlan1.IPv6 with address fe80::3846:a2ff:fed2:2323.
+Tue Apr  7 15:42:35 2026 kern.info kernel: [ 5258.309936] br-lan: port 3(wlan1) entered disabled state
+Tue Apr  7 15:42:35 2026 kern.info kernel: [ 5258.315121] device wlan1 left promiscuous mode
+Tue Apr  7 15:42:35 2026 kern.info kernel: [ 5258.317282] br-lan: port 3(wlan1) entered disabled state
+Tue Apr  7 15:42:35 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fe80::3846:a2ff:fed2:2323 on wlan1.
+Tue Apr  7 15:42:35 2026 kern.info kernel: [ 5258.401564] 8021q: adding VLAN 0 to HW filter on device wlan1
+Tue Apr  7 15:42:35 2026 kern.info kernel: [ 5258.403322] br-lan: port 3(wlan1) entered blocking state
+Tue Apr  7 15:42:35 2026 kern.info kernel: [ 5258.406412] br-lan: port 3(wlan1) entered disabled state
+Tue Apr  7 15:42:35 2026 kern.info kernel: [ 5258.412128] device wlan1 entered promiscuous mode
+Tue Apr  7 15:42:35 2026 kern.info kernel: [ 5258.417129] br-lan: port 3(wlan1) entered blocking state
+Tue Apr  7 15:42:35 2026 kern.info kernel: [ 5258.421566] br-lan: port 3(wlan1) entered forwarding state
+Tue Apr  7 15:42:35 2026 daemon.notice netifd: Network device 'wlan1' link is up
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.462795] wlan: [7166:I:ANY] wlan_cfg80211_start_ap: Start wlan1 psoc:1 vdev:0
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.462851] wlan: [7166:I:ANY] DES SSID SET=GL-BE3600-446-5G
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.469576] wlan: [7166:I:ANY] desired hw mode: 42
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.475064] wlan: [7166:I:ANY] wlan_cfg80211_chan_to_phymode: band:1 width: 5 channel_cfreq: 5240 center_freq1: 5250 chandef.center_freq2: 0 flags: 0
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.479738] wlan: [7166:I:ANY] HT Support:00000000b334b6f3 VHT Support:00000000eb7cc4d0 HE Support:000000009f2b56b4
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.493106] wlan: [7166:I:ANY] Max supported wireless mode: 4
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.503562] wlan: [7166:I:ANY] Phymode: 42
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.503562]
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.509220] wlan: [7166:I:ANY] ieee80211_ucfg_set_freq_internal:
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.509220]  Channel is configured already!!
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.514997] wlan: [7166:I:MBSSIE] wlan_cfg80211_start_ap: Set tx-vap wlan1: vdev_id:0
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.525159] wlan: [7166:W:MLO_MGR] wlan_mlme_start_ap_vdev: Allowing 11be non-MLO operation as per INI configuration
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.548604] wlan: [7166:I:ANY] Skip bcast de-auth reason code 3, handled in VDEV down
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.550019] wlan: [7166:I:ANY] wlan_cfg80211_stop_ap: Stop wlan02 psoc:0 vdev:2
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.555501] wlan: [0:I:CMN_MLME] Sending ucast disassoc to PMF associated stas
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.567100] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan02) aa:5d:f4:11:0e:25 is down
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.567488] wlan: [7166:I:ANY] wlan_cfg80211_stop_ap: Stop wlan12 psoc:1 vdev:3
+Tue Apr  7 15:42:35 2026 daemon.info hostapd: wlan1: IEEE 802.11 driver had channel switch: iface->freq=5240, freq=5240, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=-1, width=5 (160 MHz), cf1=5250, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:42:35 2026 kern.info kernel: [ 5258.595431] 8021q: adding VLAN 0 to HW filter on device wlan02
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.634262] wlan: [7166:I:ANY] wlan_cfg80211_start_ap: Start wlan02 psoc:0 vdev:2
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.634295] wlan: [7166:I:MLO_MGR] wlan_cfg80211_start_ap: Num links from user space: 2  Max: 4
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.640773] wlan: [7166:I:ANY] DES SSID SET=GL-BE3600-446-MLO
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.649445] wlan: [7166:I:ANY] desired hw mode: 40
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.655273] wlan: [7166:I:ANY] wlan_cfg80211_chan_to_phymode: band:0 width: 2 channel_cfreq: 2462 center_freq1: 2452 chandef.center_freq2: 0 flags: 400
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.659861] wlan: [7166:I:ANY] HT Support:00000000261b1d33 VHT Support:000000008f01f7d9 HE Support:00000000b5160188
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.673397] wlan: [7166:I:ANY] Max supported wireless mode: 4
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.683733] wlan: [7166:I:ANY] Phymode: 38
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.683733]
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.689890] wlan: [7166:I:ANY] ieee80211_ucfg_set_freq_internal:
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.689890]  Channel is configured already!!
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.695542] wlan: [7166:I:MBSSIE] wlan_cfg80211_start_ap: Set tx-vap wlan02: vdev_id:2
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.705700] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: Num MLO Links: 2
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.713381] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 1 LinkMAC: 0a:e6:82:ae:8e:f1
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.720970] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 0 LinkMAC: aa:5d:f4:11:0e:25
+Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.730233] wlan: [7166:I:MLO_MGR] wlan_mlme_mlo_update_partner_info: mlo_ap_vdev_attach with LinkID: 0 num_links: 2
+Tue Apr  7 15:42:35 2026 daemon.info hostapd: wlan02: IEEE 802.11 driver had channel switch: iface->freq=2462, freq=2462, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=0, width=1 (20 MHz), cf1=2462, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.756550] wlan: [7166:I:ANY] Skip bcast de-auth reason code 3, handled in VDEV down
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.757590] wlan: [7166:I:ANY] wlan_cfg80211_stop_ap: Stop wlan03 psoc:0 vdev:1
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.764129] wlan: [7166:E:MLO_MGR] osif_vap_bringdown_mlo: Number of VDEVs under AP-MLD is reported as 0
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.764396] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan03) 76:e6:86:54:fd:8f is down
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.784770] wlan: [7166:I:ANY] wlan_cfg80211_stop_ap: Stop wlan13 psoc:1 vdev:1
+Tue Apr  7 15:42:36 2026 kern.info kernel: [ 5258.808562] 8021q: adding VLAN 0 to HW filter on device wlan03
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.847752] wlan: [7166:I:ANY] wlan_cfg80211_start_ap: Start wlan03 psoc:0 vdev:1
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.847785] wlan: [7166:I:MLO_MGR] wlan_cfg80211_start_ap: Num links from user space: 2  Max: 4
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.854235] wlan: [7166:I:ANY] DES SSID SET=GL-BE3600-446-MLO-Guest
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.862763] wlan: [7166:I:ANY] desired hw mode: 40
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.869117] wlan: [7166:I:ANY] wlan_cfg80211_chan_to_phymode: band:0 width: 2 channel_cfreq: 2462 center_freq1: 2452 chandef.center_freq2: 0 flags: 400
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.875046] wlan: [7166:I:ANY] HT Support:000000006450f079 VHT Support:00000000e73dbd7c HE Support:000000005b14705f
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.889224] wlan: [7166:I:ANY] Max supported wireless mode: 4
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.897962] wlan: [7166:I:ANY] Phymode: 38
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.897962]
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.903817] wlan: [7166:I:ANY] ieee80211_ucfg_set_freq_internal:
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.903817]  Channel is configured already!!
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.909586] wlan: [7166:I:MBSSIE] wlan_cfg80211_start_ap: Set tx-vap wlan03: vdev_id:1
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.919952] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: Num MLO Links: 2
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.927521] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 1 LinkMAC: 7e:5d:90:65:f5:b5
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.934973] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 0 LinkMAC: 76:e6:86:54:fd:8f
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5258.946364] wlan: [7166:I:MLO_MGR] wlan_mlme_mlo_update_partner_info: mlo_ap_vdev_attach with LinkID: 0 num_links: 2
+Tue Apr  7 15:42:36 2026 daemon.info hostapd: wlan03: IEEE 802.11 driver had channel switch: iface->freq=2462, freq=2462, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=0, width=1 (20 MHz), cf1=2462, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:42:36 2026 kern.info kernel: [ 5258.995515] 8021q: adding VLAN 0 to HW filter on device wlan12
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.037279] wlan: [7166:I:ANY] wlan_cfg80211_start_ap: Start wlan12 psoc:1 vdev:3
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.037314] wlan: [7166:I:MLO_MGR] wlan_cfg80211_start_ap: Num links from user space: 2  Max: 4
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.043766] wlan: [7166:I:ANY] DES SSID SET=GL-BE3600-446-MLO
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.052279] wlan: [7166:I:ANY] desired hw mode: 42
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.058354] wlan: [7166:I:ANY] wlan_cfg80211_chan_to_phymode: band:1 width: 5 channel_cfreq: 5240 center_freq1: 5250 chandef.center_freq2: 0 flags: 0
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.062847] wlan: [7166:I:ANY] HT Support:00000000d88be358 VHT Support:000000001a557689 HE Support:000000008a05ddd0
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.076309] wlan: [7166:I:ANY] Max supported wireless mode: 4
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.086543] wlan: [7166:I:ANY] Phymode: 42
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.086543]
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.092493] wlan: [7166:I:ANY] ieee80211_ucfg_set_freq_internal:
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.092493]  Channel is configured already!!
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.098324] wlan: [7166:I:MBSSIE] wlan_cfg80211_start_ap: Set tx-vap wlan12: vdev_id:3
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.108663] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: Num MLO Links: 2
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.116258] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 1 LinkMAC: 0a:e6:82:ae:8e:f1
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.123795] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 0 LinkMAC: aa:5d:f4:11:0e:25
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.133089] wlan: [7166:I:MLO_MGR] wlan_mlme_mlo_update_partner_info: mlo_ap_vdev_attach with LinkID: 1 num_links: 2
+Tue Apr  7 15:42:36 2026 daemon.info hostapd: wlan12: IEEE 802.11 driver had channel switch: iface->freq=5240, freq=5240, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=-1, width=5 (160 MHz), cf1=5250, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.151265] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan02) aa:5d:f4:11:0e:25 is up, vdev_id:2 pdev_id:0 psoc_id:0
+Tue Apr  7 15:42:36 2026 kern.info kernel: [ 5259.170551] 8021q: adding VLAN 0 to HW filter on device wlan13
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.210548] wlan: [7166:I:ANY] wlan_cfg80211_start_ap: Start wlan13 psoc:1 vdev:1
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.210581] wlan: [7166:I:MLO_MGR] wlan_cfg80211_start_ap: Num links from user space: 2  Max: 4
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.217412] wlan: [7166:I:ANY] DES SSID SET=GL-BE3600-446-MLO-Guest
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.225512] wlan: [7166:I:ANY] desired hw mode: 42
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.231960] wlan: [7166:I:ANY] wlan_cfg80211_chan_to_phymode: band:1 width: 5 channel_cfreq: 5240 center_freq1: 5250 chandef.center_freq2: 0 flags: 0
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.236670] wlan: [7166:I:ANY] HT Support:0000000039168b8e VHT Support:00000000c45fa9e9 HE Support:000000002576a554
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.251519] wlan: [7166:I:ANY] Max supported wireless mode: 4
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.260367] wlan: [7166:I:ANY] Phymode: 42
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.260367]
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.266291] wlan: [7166:I:ANY] ieee80211_ucfg_set_freq_internal:
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.266291]  Channel is configured already!!
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.272129] wlan: [7166:I:MBSSIE] wlan_cfg80211_start_ap: Set tx-vap wlan13: vdev_id:1
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.282252] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: Num MLO Links: 2
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.290026] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 1 LinkMAC: 7e:5d:90:65:f5:b5
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.297609] wlan: [7166:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 0 LinkMAC: 76:e6:86:54:fd:8f
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.307059] wlan: [7166:I:MLO_MGR] wlan_mlme_mlo_update_partner_info: mlo_ap_vdev_attach with LinkID: 1 num_links: 2
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua:276) sta1: found 24 networks
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua:1178) switch to any...
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua: 54) skip disabled bss b6:f4:57:76:19:30
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua: 54) skip disabled bss e2:a0:db:65:b7:79
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua: 54) skip disabled bss b6:f4:57:76:19:30
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua: 54) skip disabled bss e2:a0:db:65:b7:79
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua: 54) skip disabled bss b6:f4:57:76:19:30
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua: 54) skip disabled bss e2:a0:db:65:b7:79
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua: 54) skip disabled bss b6:f4:57:76:19:30
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua: 54) skip disabled bss e2:a0:db:65:b7:79
+Tue Apr  7 15:42:36 2026 daemon.info hostapd: wlan13: IEEE 802.11 driver had channel switch: iface->freq=5240, freq=5240, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=-1, width=5 (160 MHz), cf1=5250, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:42:36 2026 kern.err kernel: [ 5259.331581] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan03) 76:e6:86:54:fd:8f is up, vdev_id:1 pdev_id:0 psoc_id:0
+Tue Apr  7 15:42:36 2026 daemon.info gl-repeater[4116]: (repeater.lua:1048) connecting to bss: GL-BE6500-d4f-MLO 8e:25:06:4a:ef:f3 40 sae
+Tue Apr  7 15:42:36 2026 daemon.notice netifd: wifi1 (18668): WARNING: Variable 'mld' does not exist or is not an array/object
+Tue Apr  7 15:42:37 2026 user.warn kernel: [ 5259.856406] CALLER: /usr/bin/lua/usr/sbin/qca-wifi-configurator, PID: 4012 arg: disable multi_up
+Tue Apr  7 15:42:37 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface wlan1.IPv6 with address fe80::3846:a2ff:fed2:2323.
+Tue Apr  7 15:42:37 2026 daemon.info avahi-daemon[13033]: New relevant interface wlan1.IPv6 for mDNS.
+Tue Apr  7 15:42:37 2026 daemon.info avahi-daemon[13033]: Registering new address record for fe80::3846:a2ff:fed2:2323 on wlan1.*.
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.040561] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:1 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.061705] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:2 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.081815] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:3 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.103351] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:4 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.123974] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:5 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.145994] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:6 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.165886] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:7 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.185233] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:8 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.290723] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:9 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.313726] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:10 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.335514] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:11 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.356491] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:12 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.376295] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:13 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.396008] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:14 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.416277] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:15 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.438364] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:16 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.459755] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:17 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.480405] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:18 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.501398] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:19 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.521790] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:20 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.543192] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:121 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.564655] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:122 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.591571] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:123 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.613332] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:124 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.640857] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:125 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.662313] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:126 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.684286] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:127 is disabled
+Tue Apr  7 15:42:37 2026 kern.err kernel: [ 5260.707036] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:128 is disabled
+Tue Apr  7 15:42:38 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a IEEE 802.11: authenticated
+Tue Apr  7 15:42:38 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a IEEE 802.11: disassociated
+Tue Apr  7 15:42:38 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a IEEE 802.11: associated (aid 1)
+Tue Apr  7 15:42:38 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: sending 1/4 msg of 4-Way Handshake
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5260.900523] wlan: [7166:I:ANY] wlan_cfg80211_change_station: Ignore set station for ap vlan wlan02
+Tue Apr  7 15:42:38 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: received EAPOL-Key frame (2/4 Pairwise)
+Tue Apr  7 15:42:38 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: sending 3/4 msg of 4-Way Handshake
+Tue Apr  7 15:42:38 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: received EAPOL-Key frame (4/4 Pairwise)
+Tue Apr  7 15:42:38 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a RADIUS: starting accounting session EF9D589F642EBAD9
+Tue Apr  7 15:42:38 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: pairwise key handshake completed (RSN)
+Tue Apr  7 15:42:38 2026 daemon.info dnsmasq-dhcp[1]: DHCPREQUEST(br-lan) 192.168.10.148 d4:ab:61:f8:d8:6a
+Tue Apr  7 15:42:38 2026 daemon.info dnsmasq-dhcp[1]: DHCPACK(br-lan) 192.168.10.148 d4:ab:61:f8:d8:6a XPLM2MQ5340KXS
+Tue Apr  7 15:42:38 2026 user.warn kernel: [ 5261.093677] CALLER: /usr/bin/lua/usr/sbin/qca-wifi-configurator, PID: 4012 arg: enable
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.371615] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan1) 3a:46:a2:d2:23:23 is up, vdev_id:0 pdev_id:0 psoc_id:1
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.413963] wlan: [19319:I:MBSSIE] osif_mbssid_sanity_check: mbssid_sanity_ok: YES
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.413997] wlan: [19319:I:ANY] osifp_create_wlan_vap: No cloning
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.420675] wlan: [19319:I:ANY] osifp_create_wlan_vap: VDEV Create 6e:1a:26:6e:66:62
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.426801] wlan: [19319:I:ANY] osifp_create_wlan_vap: mlo_mbssid disabled in lower band radios
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.426801]
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.434482] wlan: [19319:I:ANY] wlan_vap_create: devhandle=0x0000000085140fad, opmode=IEEE80211_M_STA, flags=0x2
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.434482]
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.444845] wlan: [19319:E:ANY] ol_ath_set_mec_timer: vdev is NULL
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.456732] wlan: [19319:I:ANY] ol_ath_vap_set_param: VDEV params:EHT su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_ofdma:1|ul_ofdma:1|ulmumimo:1|dl_muofdma_bfer:1|dl_muofdma_mumimo:0|ul_muofdma_mumimo:0
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.462218] wlan: [19319:I:ANY] ol_ath_vap_set_param: eht_mu_bf_mode=0xf3
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.480805] wlan: [19319:E:ANY] wlan_create_attach_vdev_rawsim_ctxt: simulation module not registerd
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.487257] wlan: [19319:I:ANY] osif_pltfrm_create_ppe_vp: vp user type: ds vpai.core_mask: 7 target type: 39 vpnum: 68 icp_flags: 400002
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.487257]
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.496397] wlan: [19319:I:ANY] osif_pltfrm_create_ppe_vp_802_3_redir_vap:
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.496397] dev:00000000ac1f3217, dev->name:sta1 osnetdev:000000004f2750d7, allocated VP # 68
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.510144] wlan: [19319:I:RPTR] RPTR vdev flags:0 pdev flags:0 vdev_id:2 pdev_id:0
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.529682] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan12) 0a:e6:82:ae:8e:f1 is up, vdev_id:3 pdev_id:0 psoc_id:1
+Tue Apr  7 15:42:38 2026 kern.err kernel: [ 5261.582294] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan13) 7e:5d:90:65:f5:b5 is up, vdev_id:1 pdev_id:0 psoc_id:1
+Tue Apr  7 15:42:38 2026 daemon.info gl-repeater[4116]: (repeater-nl80211.lua:108) ATTACH /var/run/wpa_supplicantglobal
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.050609] wlan: [19465:I:ANY] DES SSID SET=GL-BE6500-d4f-MLO
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.354843] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5260MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.354878] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5280MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.363625] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5300MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.373012] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5320MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.382602] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5500MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.391845] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5520MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.401263] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5540MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.410785] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5560MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.420182] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5580MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.429734] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5600MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.439098] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5620MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.448833] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5640MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.458037] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5660MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.467531] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5680MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.477058] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5700MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.486423] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5720MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.495868] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5745MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.505313] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5765MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.514787] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5785MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.524253] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5805MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.err kernel: [ 5262.533745] wlan: [19671:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5825MHz) is already in the list
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.593705] ecm_wifi_plugin: Unknown symbol ecm_front_end_fse_callbacks_unregister (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.594065] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_msduq_callback_unregister (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.601271] ecm_wifi_plugin: Unknown symbol ecm_front_end_fse_callbacks_register (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.610929] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sdwf_deprio_response_callback_unregister (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.619030] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_conn_sync_callback_unregister (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.629282] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_conn_sync_callback_register (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.639193] ecm_wifi_plugin: Unknown symbol ecm_classifier_mscs_callback_unregister (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.648619] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sdwf_deprio_response_callback_register (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.657202] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_latency_config_callback_register (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.667367] ecm_wifi_plugin: Unknown symbol ecm_classifier_mscs_callback_register (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.677005] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_update_fse_flow_callback_register (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.685220] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_msduq_callback_register (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.695569] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_mcast_conn_sync_callback_unregister (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.704715] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_mcast_conn_sync_callback_register (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.714659] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_update_fse_flow_callback_unregister (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.724085] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_latency_config_callback_unregister (err -2)
+Tue Apr  7 15:42:39 2026 kern.warn kernel: [ 5262.734501] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sdwf_deprio (err -2)
+Tue Apr  7 15:42:40 2026 daemon.err insmod: failed to insert /lib/modules/5.4.213/ecm-wifi-plugin.ko
+Tue Apr  7 15:42:40 2026 kern.info kernel: [ 5263.544685] 8021q: adding VLAN 0 to HW filter on device sta1
+Tue Apr  7 15:42:41 2026 kern.err kernel: [ 5264.650048] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan1) 3a:46:a2:d2:23:23 is down
+Tue Apr  7 15:42:41 2026 kern.err kernel: [ 5264.663367] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan13) 7e:5d:90:65:f5:b5 is down
+Tue Apr  7 15:42:41 2026 kern.err kernel: [ 5264.664530] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan12) 0a:e6:82:ae:8e:f1 is down
+Tue Apr  7 15:42:41 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface sta1.IPv6 with address fe80::6c1a:26ff:fe6e:6662.
+Tue Apr  7 15:42:41 2026 daemon.info avahi-daemon[13033]: New relevant interface sta1.IPv6 for mDNS.
+Tue Apr  7 15:42:41 2026 daemon.info avahi-daemon[13033]: Registering new address record for fe80::6c1a:26ff:fe6e:6662 on sta1.*.
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5264.990347] device mld1 left promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5264.990370] device wlan03 left promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5264.993924] device wlan13 left promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5264.998476] br-guest: port 1(mld1) entered disabled state
+Tue Apr  7 15:42:42 2026 daemon.notice netifd: bridge 'br-guest' link is down
+Tue Apr  7 15:42:42 2026 daemon.notice netifd: Interface 'guest' has link connectivity loss
+Tue Apr  7 15:42:42 2026 daemon.warn odhcpd[3508]: A default route is present but there is no public prefix on guest thus we don't announce a default route by overriding ra_lifetime!
+Tue Apr  7 15:42:42 2026 daemon.err odhcpd[3508]: Failed to send to ff02::1%guest@br-guest (Network unreachable)
+Tue Apr  7 15:42:42 2026 daemon.notice netifd: Network device 'mld1' link is up
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.098082] br-guest: port 1(mld1) entered blocking state
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.098109] br-guest: port 1(mld1) entered disabled state
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.106761] device mld1 entered promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.107833] device wlan03 entered promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.112703] device wlan13 entered promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.117776] br-guest: port 1(mld1) entered blocking state
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.121910] br-guest: port 1(mld1) entered forwarding state
+Tue Apr  7 15:42:42 2026 daemon.notice netifd: bridge 'br-guest' link is up
+Tue Apr  7 15:42:42 2026 daemon.notice netifd: Interface 'guest' has link connectivity
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.405509] device mld0 left promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.405533] device wlan02 left promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.409088] device wlan12 left promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.413476] br-lan: port 4(mld0) entered disabled state
+Tue Apr  7 15:42:42 2026 daemon.notice netifd: Network device 'mld0' link is up
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.496235] br-lan: port 4(mld0) entered blocking state
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.496277] br-lan: port 4(mld0) entered disabled state
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.504522] device mld0 entered promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.505463] device wlan02 entered promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.510644] device wlan12 entered promiscuous mode
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.515216] br-lan: port 4(mld0) entered blocking state
+Tue Apr  7 15:42:42 2026 kern.info kernel: [ 5265.519727] br-lan: port 4(mld0) entered forwarding state
+Tue Apr  7 15:42:43 2026 kern.debug kernel: [ 5266.611484] SAWF Telemetry: sawf_ctx->mov_avg.packet 1000
+Tue Apr  7 15:42:43 2026 kern.debug kernel: [ 5266.611488] SAWF Telemetry: sawf_ctx->mov_avg.window 10
+Tue Apr  7 15:42:43 2026 kern.debug kernel: [ 5266.611495] SAWF Telemetry: sawf_ctx->sla_param.num_packets10000
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.611498] SAWF Telemetry: sawf_ctx->sla_param.time_secs10
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.768004] SAWF Telemetry: Service ID: 126
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.768012] SAWF Telemetry: cfg->min_thruput_rate 95
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.768015] SAWF Telemetry: cfg->max_thruput_rate 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.768018] SAWF Telemetry: cfg->burst_size 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.768020] SAWF Telemetry: cfg->service_interval 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.768022] SAWF Telemetry: cfg->delay_bound 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.768025] SAWF Telemetry: cfg->msdu_ttl 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.768027] SAWF Telemetry: cfg->msdu_rate_loss 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.785761] SAWF Telemetry: Service ID: 127
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.785768] SAWF Telemetry: cfg->min_thruput_rate 95
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.785771] SAWF Telemetry: cfg->max_thruput_rate 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.785774] SAWF Telemetry: cfg->burst_size 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.785776] SAWF Telemetry: cfg->service_interval 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.785778] SAWF Telemetry: cfg->delay_bound 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.785781] SAWF Telemetry: cfg->msdu_ttl 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.785783] SAWF Telemetry: cfg->msdu_rate_loss 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.804431] SAWF Telemetry: Service ID: 128
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.804439] SAWF Telemetry: cfg->min_thruput_rate 95
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.804442] SAWF Telemetry: cfg->max_thruput_rate 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.804445] SAWF Telemetry: cfg->burst_size 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.804447] SAWF Telemetry: cfg->service_interval 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.804449] SAWF Telemetry: cfg->delay_bound 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.804452] SAWF Telemetry: cfg->msdu_ttl 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.804454] SAWF Telemetry: cfg->msdu_rate_loss 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.831569] SAWF Telemetry: type 0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.831577] SAWF Telemetry: detect->min_thruput_rate:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.831579] SAWF Telemetry: detect->max_thruput_rate:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.831582] SAWF Telemetry: detect->burst_size:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.831585] SAWF Telemetry: detect->service_interval:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.831587] SAWF Telemetry: detect->delay_bound:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.831589] SAWF Telemetry: detect->msdu_ttl:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.831592] SAWF Telemetry: detect->msdu_rate_loss:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.836000] SAWF Telemetry: type 1
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.836007] SAWF Telemetry: detect->min_thruput_rate:1
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.836009] SAWF Telemetry: detect->max_thruput_rate:1
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.836012] SAWF Telemetry: detect->burst_size:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.836015] SAWF Telemetry: detect->service_interval:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.836017] SAWF Telemetry: detect->delay_bound:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.836019] SAWF Telemetry: detect->msdu_ttl:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.836022] SAWF Telemetry: detect->msdu_rate_loss:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.840332] SAWF Telemetry: type 2
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.840341] SAWF Telemetry: detect->min_thruput_rate:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.840343] SAWF Telemetry: detect->max_thruput_rate:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.840346] SAWF Telemetry: detect->burst_size:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.840348] SAWF Telemetry: detect->service_interval:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.840351] SAWF Telemetry: detect->delay_bound:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.840353] SAWF Telemetry: detect->msdu_ttl:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.840356] SAWF Telemetry: detect->msdu_rate_loss:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.844659] SAWF Telemetry: type 3
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.844665] SAWF Telemetry: detect->min_thruput_rate:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.844668] SAWF Telemetry: detect->max_thruput_rate:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.844670] SAWF Telemetry: detect->burst_size:1
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.844673] SAWF Telemetry: detect->service_interval:1
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.844675] SAWF Telemetry: detect->delay_bound:0
+Tue Apr  7 15:42:44 2026 kern.debug kernel: [ 5266.844678] SAWF Telemetry: detect->msdu_ttl:1
+Tue Apr  7 15:42:44 2026 daemon.notice netifd: Wireless device 'wifi1' is now up
+Tue Apr  7 15:42:47 2026 kern.debug kernel: [ 5266.844680] SAWF Telemetry: detect->msdu_rate_loss:1
+Tue Apr  7 15:42:47 2026 kern.err kernel: [ 5270.736020] wlan: [7181:I:ANY] wlan_cfg80211_get_wideband_support: Sending wideband support: 0
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5270.755212] wlan: [7181:I:ANY] wlan_cfg80211_connect: DES SSID SET=GL-BE6500-d4f-MLO
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5270.755247] wlan: [7181:I:ANY] wlan_cfg80211_connect: DES BSSID SET=8e:25:06:4a:ef:f3
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5270.765971] wlan: [0:I:ANY] [NODE] vap-2(sta1):ieee80211_setup_node forcing sta to associate in 42 mode
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5270.765971]
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5270.769795] wlan: [0:W:ANY] ieee80211_update_phymode: ieee80211_update_phymode: Warning: Unexpected negotiated ni_chwidth=3 for cur_mode=0. Investigate! The system may no longer function correctly.
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5270.795587] wlan: [0:I:CMN_MLME] vdev 2 cm_id 0xc020001: Connecting to GL-BE6500-d4f-MLO 8e:25:06:4a:ef:f3 rssi: -20 freq: 5200 akm 0x400 cipher: uc 0x8 mc 0x8, wps 0 osen 0 force RSN 0 CC:
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5270.800437] wlan: [0:I:ANY] wlan_scan_update_channel_list: num_chan: 25
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.191966] wlan: [7181:I:ANY] wlan_cfg80211_external_auth: external auth status 0
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.224299] wlan: [0:E:ANY] ieee80211_parse_srpie:  ie length 2 is not sufficient for ieee80211_ie_spatial_reuse
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.225772] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (sta1) 6e:1a:26:6e:66:62 is up, vdev_id:2 pdev_id:0 psoc_id:1
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.233636] wlan: [0:I:RPTR] Number of STA VAPs connected:1
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.243410] wlan: [0:E:mlme] mlme_cm_connect_rsp: Connect Resp: psoc: 1, vdev: 2, Status: 0, Reason: 0
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.249176] wlan: [0:I:ANY] ssid: GL-BE6500-d4f-MLO len: 17 bssid:8e:25:06:4a:ef:f3
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.272255] wlan: [5343:W:MLO_MGR] wlan_mlme_start_ap_vdev: Allowing 11be non-MLO operation as per INI configuration
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.272714] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: Num MLO Links: 2
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.282643] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 1 LinkMAC: 7e:5d:90:65:f5:b5
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.284638] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan1) 3a:46:a2:d2:23:23 is up, vdev_id:0 pdev_id:0 psoc_id:1
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.289849] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 0 LinkMAC: 76:e6:86:54:fd:8f
+Tue Apr  7 15:42:48 2026 daemon.info gl-repeater[4116]: (repeater-nl80211.lua:185) add device sta1 to network.interface.wwan
+Tue Apr  7 15:42:48 2026 daemon.notice netifd: Network device 'sta1' link is up
+Tue Apr  7 15:42:48 2026 daemon.notice netifd: Interface 'wwan' is enabled
+Tue Apr  7 15:42:48 2026 daemon.notice netifd: Interface 'wwan' has link connectivity
+Tue Apr  7 15:42:48 2026 daemon.notice netifd: Interface 'wwan' is setting up now
+Tue Apr  7 15:42:48 2026 daemon.info gl-repeater[4116]: (repeater.lua:599) connected to GL-BE6500-d4f-MLO 8e:25:06:4a:ef:f3
+Tue Apr  7 15:42:48 2026 daemon.info hostapd: wlan1: IEEE 802.11 driver had channel switch: iface->freq=5240, freq=5200, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=-1, width=5 (160 MHz), cf1=5250, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.310449] wlan: [5343:I:MLO_MGR] wlan_mlme_mlo_update_partner_info: mlo_ap_vdev_attach with LinkID: 1 num_links: 2
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.325274] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan13) 7e:5d:90:65:f5:b5 is up, vdev_id:1 pdev_id:0 psoc_id:1
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.326987] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: Num MLO Links: 2
+Tue Apr  7 15:42:48 2026 daemon.info hostapd: wlan13: IEEE 802.11 driver had channel switch: iface->freq=5240, freq=5200, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=-1, width=5 (160 MHz), cf1=5250, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.339177] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 1 LinkMAC: 0a:e6:82:ae:8e:f1
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.346386] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 0 LinkMAC: aa:5d:f4:11:0e:25
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.355787] wlan: [5343:I:MLO_MGR] wlan_mlme_mlo_update_partner_info: mlo_ap_vdev_attach with LinkID: 1 num_links: 2
+Tue Apr  7 15:42:48 2026 daemon.notice netifd: wwan (20971): udhcpc: started, v1.36.1
+Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5271.372800] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan12) 0a:e6:82:ae:8e:f1 is up, vdev_id:3 pdev_id:0 psoc_id:1
+Tue Apr  7 15:42:48 2026 daemon.info hostapd: wlan12: IEEE 802.11 driver had channel switch: iface->freq=5240, freq=5200, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=-1, width=5 (160 MHz), cf1=5250, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:42:48 2026 user.notice kmwan: config json str={ "op": 6, "data": { } }
+Tue Apr  7 15:42:48 2026 daemon.notice netifd: wwan (20971): udhcpc: broadcasting discover
+Tue Apr  7 15:42:48 2026 daemon.notice netifd: wwan (20971): udhcpc: broadcasting select for 192.168.8.174, server 192.168.8.1
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: wwan (20971): udhcpc: lease of 192.168.8.174 obtained from 192.168.8.1, lease time 43200
+Tue Apr  7 15:42:49 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface sta1.IPv4 with address 192.168.8.174.
+Tue Apr  7 15:42:49 2026 daemon.info avahi-daemon[13033]: New relevant interface sta1.IPv4 for mDNS.
+Tue Apr  7 15:42:49 2026 daemon.info avahi-daemon[13033]: Registering new address record for 192.168.8.174 on sta1.IPv4.
+Tue Apr  7 15:42:49 2026 daemon.info gl-cloud[20752]: (gl-cloud:1013) reconnect mqtt now due to network wwan up
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: Interface 'wwan6' is enabled
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: Network alias 'sta1' link is up
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: Interface 'wwan6' has link connectivity
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: Interface 'wwan6' is setting up now
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: Interface 'wwan' is now up
+Tue Apr  7 15:42:49 2026 daemon.info gl-repeater[4116]: (repeater.lua:1897) interface "wwan" up
+Tue Apr  7 15:42:49 2026 daemon.err eco[7946]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: wwan (20971): PING 192.168.8.1 (192.168.8.1): 56 data bytes
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: wwan (20971): 64 bytes from 192.168.8.1: seq=0 ttl=64 time=16.987 ms
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: wwan (20971):
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: wwan (20971): --- 192.168.8.1 ping statistics ---
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: wwan (20971): 1 packets transmitted, 1 packets received, 0% packet loss
+Tue Apr  7 15:42:49 2026 daemon.notice netifd: wwan (20971): round-trip min/avg/max = 16.987/16.987/16.987 ms
+Tue Apr  7 15:42:49 2026 user.notice kmwan: config json str={ "op": 6, "data": { } }
+Tue Apr  7 15:42:49 2026 user.notice kmwan: config json str={ "op": 2, "data": { "cells": [ { "interface": "wwan", "netdev": "sta1", "track_mode": "force", "addr_type": 4, "force_ip": "192.168.8.174", "tracks": [ { "type": "ping", "ip": "1.1.1.1" }, { "type": "ping", "ip": "8.8.8.8" }, { "type": "ping", "ip": "208.67.222.222" }, { "type": "ping", "ip": "208.67.220.220" } ] } ] } }
+Tue Apr  7 15:42:49 2026 kern.warn kernel: [ 5272.122578] [add_dev_config 319]add node success. iface:wwan, dev:sta1, ifindex:41
+Tue Apr  7 15:42:49 2026 user.notice firewall: Reloading firewall due to ifup of wwan (sta1)
+Tue Apr  7 15:42:50 2026 daemon.info gl-cloud[20752]: (gl-cloud:1034) fetch ca from: https://gslb-eu.goodcloud.xyz/getCaCert/ca.crt
+Tue Apr  7 15:42:51 2026 daemon.info gl-repeater[4116]: (repeater-portal.lua:660) portal detecting...
+Tue Apr  7 15:42:51 2026 daemon.info gl-cloud[20752]: (gl-cloud:1099) fetch server from: https://gslb-eu.goodcloud.xyz/v2/device/auth
+Tue Apr  7 15:42:52 2026 daemon.info gl-cloud[20752]: (gl-cloud:1198) connect mqtt broker: 18.209.114.161 28883
+Tue Apr  7 15:42:52 2026 daemon.info gl-repeater[4116]: (repeater-portal.lua:683) not found portal
+Tue Apr  7 15:42:53 2026 daemon.info gl-cloud[20752]: (gl-cloud:1388) conack: 0 connection accepted
+Tue Apr  7 15:43:05 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 IEEE 802.11: authenticated
+Tue Apr  7 15:43:05 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 IEEE 802.11: associated (aid 2)
+Tue Apr  7 15:43:05 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 WPA: sending 1/4 msg of 4-Way Handshake
+Tue Apr  7 15:43:05 2026 kern.err kernel: [ 5287.899059] wlan: [7166:I:ANY] wlan_cfg80211_change_station: Ignore set station for ap vlan wlan0
+Tue Apr  7 15:43:05 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 WPA: received EAPOL-Key frame (2/4 Pairwise)
+Tue Apr  7 15:43:05 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 WPA: sending 3/4 msg of 4-Way Handshake
+Tue Apr  7 15:43:05 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 WPA: received EAPOL-Key frame (4/4 Pairwise)
+Tue Apr  7 15:43:05 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 RADIUS: starting accounting session F9A4A03127C88EEB
+Tue Apr  7 15:43:05 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 WPA: pairwise key handshake completed (RSN)
+Tue Apr  7 15:43:05 2026 daemon.info dnsmasq-dhcp[1]: DHCPREQUEST(br-lan) 192.168.8.126 ea:cc:a2:90:56:80
+Tue Apr  7 15:43:05 2026 daemon.info dnsmasq-dhcp[1]: DHCPNAK(br-lan) 192.168.8.126 ea:cc:a2:90:56:80 wrong network
+Tue Apr  7 15:43:09 2026 daemon.info dnsmasq-dhcp[1]: DHCPDISCOVER(br-lan) ea:cc:a2:90:56:80
+Tue Apr  7 15:43:09 2026 daemon.info dnsmasq-dhcp[1]: DHCPOFFER(br-lan) 192.168.10.126 ea:cc:a2:90:56:80
+Tue Apr  7 15:43:09 2026 daemon.info dnsmasq-dhcp[1]: DHCPDISCOVER(br-lan) ea:cc:a2:90:56:80
+Tue Apr  7 15:43:09 2026 daemon.info dnsmasq-dhcp[1]: DHCPOFFER(br-lan) 192.168.10.126 ea:cc:a2:90:56:80
+Tue Apr  7 15:43:09 2026 daemon.info dnsmasq-dhcp[1]: DHCPDISCOVER(br-lan) ea:cc:a2:90:56:80
+Tue Apr  7 15:43:09 2026 daemon.info dnsmasq-dhcp[1]: DHCPOFFER(br-lan) 192.168.10.126 ea:cc:a2:90:56:80
+Tue Apr  7 15:43:10 2026 daemon.info gl-repeater[4116]: (repeater.lua:418) scanning... Fergus
+Tue Apr  7 15:43:10 2026 daemon.info dnsmasq-dhcp[1]: DHCPREQUEST(br-lan) 192.168.10.126 ea:cc:a2:90:56:80
+Tue Apr  7 15:43:10 2026 daemon.info dnsmasq-dhcp[1]: DHCPACK(br-lan) 192.168.10.126 ea:cc:a2:90:56:80 MacBookPro
+Tue Apr  7 15:43:14 2026 daemon.info gl-repeater[4116]: (repeater.lua:276) sta0: found 17 networks
+Tue Apr  7 15:43:20 2026 daemon.info gl-repeater[4116]: (repeater.lua:276) sta1: found 23 networks
+Tue Apr  7 15:43:33 2026 daemon.info dnsmasq[1]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts removed
+Tue Apr  7 15:43:33 2026 daemon.info dnsmasq[1]: inotify: flushed 12 names read from /tmp/dnsmasq.d/mpaccess/mphosts
+Tue Apr  7 15:43:33 2026 daemon.info dnsmasq[1]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts new or modified
+Tue Apr  7 15:43:33 2026 daemon.info dnsmasq[7846]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts removed
+Tue Apr  7 15:43:33 2026 daemon.info dnsmasq[7846]: inotify: flushed 2 names read from /tmp/dnsmasq.d/mpaccess/mphosts
+Tue Apr  7 15:43:33 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:43:33 2026 daemon.info dnsmasq[7846]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts new or modified
+Tue Apr  7 15:43:33 2026 daemon.info dnsmasq[7846]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: read /etc/hosts - 12 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: read /tmp/hosts/odhcpd - 2 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq-dhcp[1]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts removed
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[7846]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts removed
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: inotify: flushed 12 names read from /tmp/dnsmasq.d/mpaccess/mphosts
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[7846]: inotify: flushed 2 names read from /tmp/dnsmasq.d/mpaccess/mphosts
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[7846]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts new or modified
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts new or modified
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[7846]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: read /etc/hosts - 12 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: read /tmp/hosts/odhcpd - 2 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:43:34 2026 daemon.info dnsmasq-dhcp[1]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:43:54 2026 daemon.info gl-repeater[4116]: (repeater.lua:418) scanning... Fergus
+Tue Apr  7 15:43:58 2026 daemon.info gl-repeater[4116]: (repeater.lua:276) sta0: found 14 networks
+Tue Apr  7 15:44:05 2026 daemon.info gl-repeater[4116]: (repeater.lua:276) sta1: found 26 networks
+Tue Apr  7 15:44:13 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 IEEE 802.11: disassociated
+Tue Apr  7 15:45:28 2026 daemon.info gl-repeater[4116]: (repeater-nl80211.lua:502) listen event exited
+Tue Apr  7 15:45:28 2026 daemon.info gl-repeater[4116]: (repeater.lua:636) check status exited
+Tue Apr  7 15:45:28 2026 daemon.info gl-repeater[4116]: (repeater.lua:1456) using random macaddr: 46:1E:FE:68:70:36
+Tue Apr  7 15:45:28 2026 daemon.info gl-repeater[4116]: (repeater.lua:1633) switch in 1 seconds...
+Tue Apr  7 15:45:29 2026 daemon.info gl-repeater[4116]: (repeater.lua:1157) switch to Fergus
+Tue Apr  7 15:45:29 2026 daemon.info gl-repeater[4116]: (repeater.lua:1048) connecting to bss: Fergus f8:3e:b0:18:e9:a9 36 sae
+Tue Apr  7 15:45:29 2026 daemon.notice netifd: wifi1 (24647): WARNING: Variable 'mld' does not exist or is not an array/object
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5432.782948] wlan: [24693:I:ANY] osif_vap_pre_stop_sta: Stopping STA vap
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5432.784515] wlan: [0:I:ANY] ieee80211_assoc_state_run_event: ieee80211_assoc_state_run_event: vap: 2(0x0000000008a5ef95) event: 2
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.404605] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (sta1) 6e:1a:26:6e:66:62 is down
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.414518] wlan: [0:E:mlme] mlme_cm_disconnect_rsp: Disconnect Resp: Psoc: 1, Vdev: 2, Source: 5, Reason: 36
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.425134] wlan: [24693:I:ANY] osif_vap_pre_stop_sta: Stopping STA vap
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.425214] wlan: [0:I:CMN_MLME] cm_handle_discon_req_in_non_connected_state: vdev 2 cm_id 0x0: dropping disconnect req from source 5 in INIT state
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.430606] wlan: [24693:E:CMN_MLME] cm_disconnect_start_req_sync: vdev 2: Disconnect failed with status 4
+Tue Apr  7 15:45:30 2026 daemon.info avahi-daemon[13033]: Interface sta1.IPv6 no longer relevant for mDNS.
+Tue Apr  7 15:45:30 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface sta1.IPv6 with address fe80::6c1a:26ff:fe6e:6662.
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: Interface 'wwan6' is disabled
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: Network alias '' link is down
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: Interface 'wwan6' has link connectivity loss
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: Network device 'sta1' link is down
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: Interface 'wwan' has link connectivity loss
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.446359] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan13) 7e:5d:90:65:f5:b5 is down
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.453822] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan1) 3a:46:a2:d2:23:23 is down
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.462087] wlan: [0:I:CMN_MLME] mlme_ext_vap_down: VAP (wlan12) 0a:e6:82:ae:8e:f1 is down
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: Interface 'wwan' is disabled
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.604664] wlan: [24693:I:ANY] osif_pltfrm_delete_vap:
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.604664] osifdev:000000004f2750d7, VP 68 deleted
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.604831] wlan: [0:I:CMN_MLME] cm_handle_discon_req_in_non_connected_state: vdev 2 cm_id 0x0: dropping disconnect req from source 5 in INIT state
+Tue Apr  7 15:45:30 2026 daemon.err odhcp6c[21022]: Failed to send SOLICIT message to ff02::1:2 (Network unreachable)
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: Interface 'wwan6' is now down
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.615582] wlan: [24693:E:CMN_MLME] cm_disconnect_start_req_sync: vdev 2: Disconnect failed with status 4
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.642436] wlan: [24693:I:ANY] [UNSPECIFIED] vap-2(sta1):mlme_sta_swbmiss_timer_detach:disable bitmap is 0x2
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.642436]
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.642838] wlan: [24693:I:ANY] [UNSPECIFIED] vap-2(sta1):mlme_sta_swbmiss_timer_detach:id 0 name (SCANNER) is still allocated
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.642838]
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.656520] wlan: [24693:I:ANY] [UNSPECIFIED] vap-2(sta1):mlme_sta_swbmiss_timer_detach:id 1 name (tmp) is still allocated
+Tue Apr  7 15:45:30 2026 kern.err kernel: [ 5433.656520]
+Tue Apr  7 15:45:30 2026 daemon.info avahi-daemon[13033]: Interface sta1.IPv4 no longer relevant for mDNS.
+Tue Apr  7 15:45:30 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface sta1.IPv4 with address 192.168.8.174.
+Tue Apr  7 15:45:30 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fe80::6c1a:26ff:fe6e:6662 on sta1.
+Tue Apr  7 15:45:30 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for 192.168.8.174 on sta1.
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: wwan (20971): udhcpc: SIOCGIFINDEX: No such device
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: wwan (20971): udhcpc: received SIGTERM
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: wwan (20971): udhcpc: unicasting a release of 192.168.8.174 to 192.168.8.1
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: wwan (20971): udhcpc: sending release
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: wwan (20971): udhcpc: can't bind to interface sta1: No such device
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: wwan (20971): udhcpc: bindtodevice: No such device
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: wwan (20971): udhcpc: entering released state
+Tue Apr  7 15:45:30 2026 daemon.notice netifd: wwan (20971): Command failed: ubus call network.interface notify_proto { "action": 0, "link-up": false, "keep": false, "interface": "wwan" } (Permission denied)
+Tue Apr  7 15:45:31 2026 user.notice kmwan: config json str={ "op": 6, "data": { } }
+Tue Apr  7 15:45:31 2026 daemon.notice netifd: Interface 'wwan' is now down
+Tue Apr  7 15:45:31 2026 user.notice kmwan: config json str={ "op": 3, "data": { "cells": [ "wwan" ] } }
+Tue Apr  7 15:45:31 2026 kern.warn kernel: [ 5434.157134] kmwan: Delete node:wwan
+Tue Apr  7 15:45:32 2026 daemon.info gl-repeater[4116]: (repeater-nl80211.lua:108) ATTACH /var/run/wpa_supplicantglobal
+Tue Apr  7 15:45:32 2026 user.warn kernel: [ 5434.839590] CALLER: /usr/bin/lua/usr/sbin/qca-wifi-configurator, PID: 4012 arg: disable multi_up
+Tue Apr  7 15:45:32 2026 user.notice firewall: Reloading firewall due to ifdown of wwan ()
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5434.987572] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:1 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.012796] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:2 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.037291] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:3 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.059026] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:4 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.079216] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:5 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.105898] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:6 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.130212] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:7 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.150938] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:8 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.251186] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:9 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.271547] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:10 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.291183] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:11 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.311087] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:12 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.331189] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:13 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.352522] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:14 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.372527] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:15 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.392147] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:16 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.412371] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:17 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.433287] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:18 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.465389] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:19 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.489453] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:20 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.510870] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:121 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.533248] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:122 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.559245] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:123 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.580270] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:124 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.603968] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:125 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.624914] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:126 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.646520] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:127 is disabled
+Tue Apr  7 15:45:32 2026 kern.err kernel: [ 5435.666198] wlan: [0:I:ANY] ieee80211_ucfg_sawf_disable: Service class ID:128 is disabled
+Tue Apr  7 15:45:33 2026 user.warn kernel: [ 5436.021385] CALLER: /usr/bin/lua/usr/sbin/qca-wifi-configurator, PID: 4012 arg: enable
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.363433] wlan: [25946:I:MBSSIE] osif_mbssid_sanity_check: mbssid_sanity_ok: YES
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.363466] wlan: [25946:I:ANY] osifp_create_wlan_vap: No cloning
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.370185] wlan: [25946:I:ANY] osifp_create_wlan_vap: VDEV Create 46:1e:fe:68:70:36
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.376486] wlan: [25946:I:ANY] osifp_create_wlan_vap: mlo_mbssid disabled in lower band radios
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.376486]
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.383967] wlan: [25946:I:ANY] wlan_vap_create: devhandle=0x0000000085140fad, opmode=IEEE80211_M_STA, flags=0x2
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.383967]
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.394312] wlan: [25946:E:ANY] ol_ath_set_mec_timer: vdev is NULL
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.406212] wlan: [25946:I:ANY] ol_ath_vap_set_param: VDEV params:EHT su_bfee:1|su_bfer:1|mu_bfee:0|mu_bfer:0|dl_ofdma:1|ul_ofdma:1|ulmumimo:1|dl_muofdma_bfer:1|dl_muofdma_mumimo:0|ul_muofdma_mumimo:0
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.411663] wlan: [25946:I:ANY] ol_ath_vap_set_param: eht_mu_bf_mode=0xf3
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.430039] wlan: [25946:E:ANY] wlan_create_attach_vdev_rawsim_ctxt: simulation module not registerd
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.436725] wlan: [25946:I:ANY] osif_pltfrm_create_ppe_vp: vp user type: ds vpai.core_mask: 7 target type: 39 vpnum: 68 icp_flags: 400002
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.436725]
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.445630] wlan: [25946:I:ANY] osif_pltfrm_create_ppe_vp_802_3_redir_vap:
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.445630] dev:0000000050b8c9f5, dev->name:sta1 osnetdev:00000000d1b0f29f, allocated VP # 68
+Tue Apr  7 15:45:33 2026 kern.err kernel: [ 5436.459508] wlan: [25946:I:RPTR] RPTR vdev flags:0 pdev flags:0 vdev_id:2 pdev_id:0
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.072625] wlan: [26313:I:ANY] DES SSID SET=Fergus
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.435213] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5260MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.435271] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5280MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.443866] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5300MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.453532] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5320MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.462822] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5500MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.472309] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5520MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.482043] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5540MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.491219] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5560MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.500824] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5580MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.510145] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5600MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.519586] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5620MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.529022] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5640MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.538494] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5660MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.547948] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5680MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.557352] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5700MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.566835] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5720MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.576313] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5745MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.585726] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5765MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.595161] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5785MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.604619] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5805MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.err kernel: [ 5437.614154] wlan: [26572:I:ANY] wlan_acs_block_channel_list: [EXT] Freq (5825MHz) is already in the list
+Tue Apr  7 15:45:34 2026 kern.warn kernel: [ 5437.678222] ecm_wifi_plugin: Unknown symbol ecm_front_end_fse_callbacks_unregister (err -2)
+Tue Apr  7 15:45:34 2026 kern.warn kernel: [ 5437.678669] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_msduq_callback_unregister (err -2)
+Tue Apr  7 15:45:34 2026 kern.warn kernel: [ 5437.685943] ecm_wifi_plugin: Unknown symbol ecm_front_end_fse_callbacks_register (err -2)
+Tue Apr  7 15:45:34 2026 kern.warn kernel: [ 5437.695831] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sdwf_deprio_response_callback_unregister (err -2)
+Tue Apr  7 15:45:34 2026 kern.warn kernel: [ 5437.703858] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_conn_sync_callback_unregister (err -2)
+Tue Apr  7 15:45:34 2026 kern.warn kernel: [ 5437.713965] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_conn_sync_callback_register (err -2)
+Tue Apr  7 15:45:34 2026 kern.warn kernel: [ 5437.724102] ecm_wifi_plugin: Unknown symbol ecm_classifier_mscs_callback_unregister (err -2)
+Tue Apr  7 15:45:34 2026 kern.warn kernel: [ 5437.733362] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sdwf_deprio_response_callback_register (err -2)
+Tue Apr  7 15:45:34 2026 kern.warn kernel: [ 5437.741922] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_latency_config_callback_register (err -2)
+Tue Apr  7 15:45:35 2026 kern.warn kernel: [ 5437.752295] ecm_wifi_plugin: Unknown symbol ecm_classifier_mscs_callback_register (err -2)
+Tue Apr  7 15:45:35 2026 kern.warn kernel: [ 5437.761675] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_update_fse_flow_callback_register (err -2)
+Tue Apr  7 15:45:35 2026 kern.warn kernel: [ 5437.770020] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_msduq_callback_register (err -2)
+Tue Apr  7 15:45:35 2026 kern.warn kernel: [ 5437.780341] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_mcast_conn_sync_callback_unregister (err -2)
+Tue Apr  7 15:45:35 2026 kern.warn kernel: [ 5437.789273] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_mcast_conn_sync_callback_register (err -2)
+Tue Apr  7 15:45:35 2026 kern.warn kernel: [ 5437.799312] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sawf_update_fse_flow_callback_unregister (err -2)
+Tue Apr  7 15:45:35 2026 kern.warn kernel: [ 5437.808854] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_latency_config_callback_unregister (err -2)
+Tue Apr  7 15:45:35 2026 kern.warn kernel: [ 5437.819387] ecm_wifi_plugin: Unknown symbol ecm_classifier_emesh_sdwf_deprio (err -2)
+Tue Apr  7 15:45:35 2026 daemon.err insmod: failed to insert /lib/modules/5.4.213/ecm-wifi-plugin.ko
+Tue Apr  7 15:45:35 2026 kern.info kernel: [ 5438.727891] 8021q: adding VLAN 0 to HW filter on device sta1
+Tue Apr  7 15:45:36 2026 daemon.notice netifd: Network device 'eth0' link is up
+Tue Apr  7 15:45:36 2026 daemon.notice netifd: Interface 'wan' has link connectivity
+Tue Apr  7 15:45:36 2026 daemon.notice netifd: Interface 'wan' is setting up now
+Tue Apr  7 15:45:36 2026 kern.info kernel: [ 5439.244833] nss-dp 3a504000.dp1 eth0: PHY Link up speed: 1000
+Tue Apr  7 15:45:36 2026 daemon.notice netifd: wan (27222): udhcpc: started, v1.36.1
+Tue Apr  7 15:45:36 2026 user.notice kmwan: config json str={ "op": 6, "data": { } }
+Tue Apr  7 15:45:36 2026 daemon.notice netifd: wan (27222): udhcpc: broadcasting discover
+Tue Apr  7 15:45:37 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface sta1.IPv6 with address fe80::441e:feff:fe68:7036.
+Tue Apr  7 15:45:37 2026 daemon.info avahi-daemon[13033]: New relevant interface sta1.IPv6 for mDNS.
+Tue Apr  7 15:45:37 2026 daemon.info avahi-daemon[13033]: Registering new address record for fe80::441e:feff:fe68:7036 on sta1.*.
+Tue Apr  7 15:45:37 2026 user.notice kmwan: config json str={ "op": 3, "data": { "cells": [ "wwan6" ] } }
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.415110] device mld1 left promiscuous mode
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.415156] device wlan03 left promiscuous mode
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.418998] device wlan13 left promiscuous mode
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.424085] br-guest: port 1(mld1) entered disabled state
+Tue Apr  7 15:45:37 2026 daemon.notice netifd: bridge 'br-guest' link is down
+Tue Apr  7 15:45:37 2026 daemon.notice netifd: Interface 'guest' has link connectivity loss
+Tue Apr  7 15:45:37 2026 daemon.warn odhcpd[3508]: A default route is present but there is no public prefix on guest thus we don't announce a default route by overriding ra_lifetime!
+Tue Apr  7 15:45:37 2026 daemon.err odhcpd[3508]: Failed to send to ff02::1%guest@br-guest (Network unreachable)
+Tue Apr  7 15:45:37 2026 daemon.notice netifd: Network device 'mld1' link is up
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.519638] br-guest: port 1(mld1) entered blocking state
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.519665] br-guest: port 1(mld1) entered disabled state
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.529109] device mld1 entered promiscuous mode
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.529389] device wlan03 entered promiscuous mode
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.534364] device wlan13 entered promiscuous mode
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.539774] br-guest: port 1(mld1) entered blocking state
+Tue Apr  7 15:45:37 2026 kern.info kernel: [ 5440.543457] br-guest: port 1(mld1) entered forwarding state
+Tue Apr  7 15:45:37 2026 daemon.notice netifd: bridge 'br-guest' link is up
+Tue Apr  7 15:45:37 2026 daemon.notice netifd: Interface 'guest' has link connectivity
+Tue Apr  7 15:45:37 2026 user.notice firewall: Reloading firewall due to ifdown of wwan6 ()
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5440.879717] device mld0 left promiscuous mode
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5440.879739] device wlan02 left promiscuous mode
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5440.883347] device wlan12 left promiscuous mode
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5440.888153] br-lan: port 4(mld0) entered disabled state
+Tue Apr  7 15:45:38 2026 daemon.notice netifd: Network device 'mld0' link is up
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5441.015190] br-lan: port 4(mld0) entered blocking state
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5441.015233] br-lan: port 4(mld0) entered disabled state
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5441.023653] device mld0 entered promiscuous mode
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5441.024591] device wlan02 entered promiscuous mode
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5441.031999] device wlan12 entered promiscuous mode
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5441.034670] br-lan: port 4(mld0) entered blocking state
+Tue Apr  7 15:45:38 2026 kern.info kernel: [ 5441.038664] br-lan: port 4(mld0) entered forwarding state
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.258687] SAWF Telemetry: sawf_ctx->mov_avg.packet 1000
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.258691] SAWF Telemetry: sawf_ctx->mov_avg.window 10
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.258699] SAWF Telemetry: sawf_ctx->sla_param.num_packets10000
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.258702] SAWF Telemetry: sawf_ctx->sla_param.time_secs10
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.437912] SAWF Telemetry: Service ID: 126
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.437920] SAWF Telemetry: cfg->min_thruput_rate 95
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.437923] SAWF Telemetry: cfg->max_thruput_rate 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.437925] SAWF Telemetry: cfg->burst_size 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.437927] SAWF Telemetry: cfg->service_interval 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.437930] SAWF Telemetry: cfg->delay_bound 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.437932] SAWF Telemetry: cfg->msdu_ttl 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.437934] SAWF Telemetry: cfg->msdu_rate_loss 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.460431] SAWF Telemetry: Service ID: 127
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.460447] SAWF Telemetry: cfg->min_thruput_rate 95
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.460450] SAWF Telemetry: cfg->max_thruput_rate 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.460453] SAWF Telemetry: cfg->burst_size 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.460455] SAWF Telemetry: cfg->service_interval 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.460457] SAWF Telemetry: cfg->delay_bound 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.460460] SAWF Telemetry: cfg->msdu_ttl 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.460462] SAWF Telemetry: cfg->msdu_rate_loss 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.480491] SAWF Telemetry: Service ID: 128
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.480500] SAWF Telemetry: cfg->min_thruput_rate 95
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.480503] SAWF Telemetry: cfg->max_thruput_rate 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.480506] SAWF Telemetry: cfg->burst_size 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.480508] SAWF Telemetry: cfg->service_interval 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.480510] SAWF Telemetry: cfg->delay_bound 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.480512] SAWF Telemetry: cfg->msdu_ttl 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.480515] SAWF Telemetry: cfg->msdu_rate_loss 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.511784] SAWF Telemetry: type 0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.511792] SAWF Telemetry: detect->min_thruput_rate:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.511794] SAWF Telemetry: detect->max_thruput_rate:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.511797] SAWF Telemetry: detect->burst_size:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.511800] SAWF Telemetry: detect->service_interval:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.511802] SAWF Telemetry: detect->delay_bound:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.511804] SAWF Telemetry: detect->msdu_ttl:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.511807] SAWF Telemetry: detect->msdu_rate_loss:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.517104] SAWF Telemetry: type 1
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.517111] SAWF Telemetry: detect->min_thruput_rate:1
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.517114] SAWF Telemetry: detect->max_thruput_rate:1
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.517117] SAWF Telemetry: detect->burst_size:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.517119] SAWF Telemetry: detect->service_interval:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.517122] SAWF Telemetry: detect->delay_bound:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.517124] SAWF Telemetry: detect->msdu_ttl:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.517127] SAWF Telemetry: detect->msdu_rate_loss:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.521544] SAWF Telemetry: type 2
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.521552] SAWF Telemetry: detect->min_thruput_rate:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.521555] SAWF Telemetry: detect->max_thruput_rate:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.521557] SAWF Telemetry: detect->burst_size:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.521560] SAWF Telemetry: detect->service_interval:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.521562] SAWF Telemetry: detect->delay_bound:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.521564] SAWF Telemetry: detect->msdu_ttl:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.521567] SAWF Telemetry: detect->msdu_rate_loss:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.526183] SAWF Telemetry: type 3
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.526190] SAWF Telemetry: detect->min_thruput_rate:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.526193] SAWF Telemetry: detect->max_thruput_rate:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.526196] SAWF Telemetry: detect->burst_size:1
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.526198] SAWF Telemetry: detect->service_interval:1
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.526200] SAWF Telemetry: detect->delay_bound:0
+Tue Apr  7 15:45:39 2026 kern.debug kernel: [ 5442.526203] SAWF Telemetry: detect->msdu_ttl:1
+Tue Apr  7 15:45:39 2026 daemon.notice netifd: wan (27222): udhcpc: broadcasting discover
+Tue Apr  7 15:45:40 2026 daemon.notice netifd: Wireless device 'wifi1' is now up
+Tue Apr  7 15:45:43 2026 daemon.notice netifd: wan (27222): udhcpc: broadcasting discover
+Tue Apr  7 15:45:43 2026 daemon.notice netifd: wan (27222): udhcpc: broadcasting select for 192.168.12.220, server 192.168.12.1
+Tue Apr  7 15:45:43 2026 daemon.notice netifd: wan (27222): udhcpc: lease of 192.168.12.220 obtained from 192.168.12.1, lease time 604800
+Tue Apr  7 15:45:43 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface eth0.IPv4 with address 192.168.12.220.
+Tue Apr  7 15:45:43 2026 daemon.info avahi-daemon[13033]: New relevant interface eth0.IPv4 for mDNS.
+Tue Apr  7 15:45:43 2026 daemon.info avahi-daemon[13033]: Registering new address record for 192.168.12.220 on eth0.IPv4.
+Tue Apr  7 15:45:43 2026 daemon.notice netifd: Interface 'wan6' is enabled
+Tue Apr  7 15:45:43 2026 daemon.notice netifd: Network alias 'eth0' link is up
+Tue Apr  7 15:45:43 2026 daemon.notice netifd: Interface 'wan6' has link connectivity
+Tue Apr  7 15:45:43 2026 daemon.notice netifd: Interface 'wan6' is setting up now
+Tue Apr  7 15:45:43 2026 daemon.notice netifd: Interface 'wan' is now up
+Tue Apr  7 15:45:43 2026 daemon.err eco[7946]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:45:43 2026 user.notice kmwan: config json str={ "op": 6, "data": { } }
+Tue Apr  7 15:45:43 2026 user.notice kmwan: config json str={ "op": 2, "data": { "cells": [ { "interface": "wan", "netdev": "eth0", "track_mode": "force", "addr_type": 4, "force_ip": "192.168.12.220", "tracks": [ { "type": "ping", "ip": "1.1.1.1" }, { "type": "ping", "ip": "8.8.8.8" }, { "type": "ping", "ip": "208.67.222.222" }, { "type": "ping", "ip": "208.67.220.220" } ] } ] } }
+Tue Apr  7 15:45:43 2026 kern.debug kernel: [ 5442.526205] SAWF Telemetry: detect->msdu_rate_loss:1
+Tue Apr  7 15:45:43 2026 kern.warn kernel: [ 5446.357269] [add_dev_config 319]add node success. iface:wan, dev:eth0, ifindex:4
+Tue Apr  7 15:45:43 2026 daemon.info gl-repeater[4116]: (repeater.lua:1947) interface wan offline
+Tue Apr  7 15:45:43 2026 daemon.info gl-repeater[4116]: (repeater.lua:1633) switch in 3 seconds...
+Tue Apr  7 15:45:44 2026 user.notice firewall: Reloading firewall due to ifup of wan (eth0)
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5446.920790] wlan: [7181:I:ANY] wlan_cfg80211_get_wideband_support: Sending wideband support: 0
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5446.948892] wlan: [7181:I:ANY] wlan_cfg80211_connect: DES SSID SET=Fergus
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5446.948932] wlan: [7181:I:ANY] wlan_cfg80211_connect: DES BSSID SET=f8:3e:b0:18:e9:a9
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5446.974816] wlan: [0:I:ANY] [NODE] vap-2(sta1):ieee80211_setup_node forcing sta to associate in 30 mode
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5446.974816]
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5446.994428] wlan: [0:I:CMN_MLME] vdev 2 cm_id 0xc020001: Connecting to Fergus f8:3e:b0:18:e9:a9 rssi: -31 freq: 5180 akm 0x400 cipher: uc 0x8 mc 0x8, wps 0 osen 0 force RSN 0 CC:
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5446.996796] wlan: [0:I:ANY] wlan_scan_update_channel_list: num_chan: 25
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.313041] wlan: [7181:I:ANY] wlan_cfg80211_external_auth: external auth status 0
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.319858] wlan: [0:E:ANY] ieee80211_parse_srpie:  ie length 2 is not sufficient for ieee80211_ie_spatial_reuse
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.324643] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (sta1) 46:1e:fe:68:70:36 is up, vdev_id:2 pdev_id:0 psoc_id:1
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.329944] wlan: [0:I:RPTR] Number of STA VAPs connected:1
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.339693] wlan: [0:E:mlme] mlme_cm_connect_rsp: Connect Resp: psoc: 1, vdev: 2, Status: 0, Reason: 0
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.345352] wlan: [0:I:ANY] ssid: Fergus len: 6 bssid:f8:3e:b0:18:e9:a9
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.358814] wlan: [5343:W:MLO_MGR] wlan_mlme_start_ap_vdev: Allowing 11be non-MLO operation as per INI configuration
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.361784] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: Num MLO Links: 2
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.372976] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 1 LinkMAC: 7e:5d:90:65:f5:b5
+Tue Apr  7 15:45:44 2026 daemon.info gl-repeater[4116]: (repeater-nl80211.lua:185) add device sta1 to network.interface.wwan
+Tue Apr  7 15:45:44 2026 daemon.notice netifd: Network device 'sta1' link is up
+Tue Apr  7 15:45:44 2026 daemon.notice netifd: Interface 'wwan' is enabled
+Tue Apr  7 15:45:44 2026 daemon.notice netifd: Interface 'wwan' has link connectivity
+Tue Apr  7 15:45:44 2026 daemon.notice netifd: Interface 'wwan' is setting up now
+Tue Apr  7 15:45:44 2026 daemon.info gl-repeater[4116]: (repeater.lua:599) connected to Fergus f8:3e:b0:18:e9:a9
+Tue Apr  7 15:45:44 2026 daemon.info hostapd: wlan1: IEEE 802.11 driver had channel switch: iface->freq=5200, freq=5180, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=1, width=5 (160 MHz), cf1=5250, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.384477] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 0 LinkMAC: 76:e6:86:54:fd:8f
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.393826] wlan: [5343:I:MLO_MGR] wlan_mlme_mlo_update_partner_info: mlo_ap_vdev_attach with LinkID: 1 num_links: 2
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.399609] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: Num MLO Links: 2
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.408755] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 1 LinkMAC: 0a:e6:82:ae:8e:f1
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.416302] wlan: [5343:I:MLO_MGR] mlme_mlo_validate_partnerinfo: LinkID: 0 LinkMAC: aa:5d:f4:11:0e:25
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.422276] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan13) 7e:5d:90:65:f5:b5 is up, vdev_id:1 pdev_id:0 psoc_id:1
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.425185] wlan: [5343:I:MLO_MGR] wlan_mlme_mlo_update_partner_info: mlo_ap_vdev_attach with LinkID: 1 num_links: 2
+Tue Apr  7 15:45:44 2026 daemon.info hostapd: wlan13: IEEE 802.11 driver had channel switch: iface->freq=5200, freq=5180, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=1, width=5 (160 MHz), cf1=5250, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:45:44 2026 daemon.notice netifd: wwan (29366): udhcpc: started, v1.36.1
+Tue Apr  7 15:45:44 2026 daemon.info hostapd: wlan12: IEEE 802.11 driver had channel switch: iface->freq=5200, freq=5180, ht=1, vht_ch=0x0, he_ch=0x0, eht_ch=0x0, offset=1, width=5 (160 MHz), cf1=5250, cf2=0, puncturing_bitmap=0x0
+Tue Apr  7 15:45:44 2026 kern.err kernel: [ 5447.482341] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan12) 0a:e6:82:ae:8e:f1 is up, vdev_id:3 pdev_id:0 psoc_id:1
+Tue Apr  7 15:45:44 2026 user.notice kmwan: config json str={ "op": 6, "data": { } }
+Tue Apr  7 15:45:44 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface eth0.IPv6 with address fe80::9683:c4ff:fec7:e446.
+Tue Apr  7 15:45:44 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface eth0.IPv6 with address fdfe:5e6c:2e69:98de:1632:92dd:4125:df6c.
+Tue Apr  7 15:45:44 2026 daemon.info avahi-daemon[13033]: Registering new address record for fdfe:5e6c:2e69:98de:1632:92dd:4125:df6c on eth0.*.
+Tue Apr  7 15:45:44 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fe80::9683:c4ff:fec7:e446 on eth0.
+Tue Apr  7 15:45:44 2026 daemon.notice netifd: Interface 'wan6' is now up
+Tue Apr  7 15:45:44 2026 daemon.notice netifd: wwan (29366): udhcpc: broadcasting discover
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: wwan (29366): udhcpc: broadcasting select for 192.168.12.138, server 192.168.12.1
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Registering new address record for fdfe:5e6c:2e69:98de:9683:c4ff:fec7:e446 on eth0.*.
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: wwan (29366): udhcpc: lease of 192.168.12.138 obtained from 192.168.12.1, lease time 604800
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface sta1.IPv4 with address 192.168.12.138.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: New relevant interface sta1.IPv4 for mDNS.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Registering new address record for 192.168.12.138 on sta1.IPv4.
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: Interface 'wwan6' is enabled
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: Network alias 'sta1' link is up
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: Interface 'wwan6' has link connectivity
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: Interface 'wwan6' is setting up now
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: Interface 'wwan' is now up
+Tue Apr  7 15:45:45 2026 daemon.info gl-repeater[4116]: (repeater.lua:1897) interface "wwan" up
+Tue Apr  7 15:45:45 2026 daemon.err eco[7946]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:45:45 2026 daemon.err eco[7946]: Flush terminated
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: Interface 'wan6' has lost the connection
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fdfe:5e6c:2e69:98de:1632:92dd:4125:df6c on eth0.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface eth0.IPv6 with address fdfe:5e6c:2e69:98de:1632:92dd:4125:df6c.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface eth0.IPv6 with address fdfe:5e6c:2e69:98de:9683:c4ff:fec7:e446.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fdfe:5e6c:2e69:98de:9683:c4ff:fec7:e446 on eth0.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface eth0.IPv6 with address fdfe:5e6c:2e69:98de:9683:c4ff:fec7:e446.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface eth0.IPv6 with address fe80::9683:c4ff:fec7:e446.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Registering new address record for fe80::9683:c4ff:fec7:e446 on eth0.*.
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: wwan (29366): PING 192.168.12.1 (192.168.12.1): 56 data bytes
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface eth0.IPv6 with address fe80::9683:c4ff:fec7:e446.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface eth0.IPv6 with address fdfe:5e6c:2e69:98de:1632:92dd:4125:df6c.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Registering new address record for fdfe:5e6c:2e69:98de:1632:92dd:4125:df6c on eth0.*.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fe80::9683:c4ff:fec7:e446 on eth0.
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: Interface 'wan6' is now up
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Registering new address record for fdfe:5e6c:2e69:98de:9683:c4ff:fec7:e446 on eth0.*.
+Tue Apr  7 15:45:45 2026 daemon.info avahi-daemon[13033]: Registering new address record for 2607:fb92:3001:9bdd:9683:c4ff:fec7:e446 on eth0.*.
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: wwan (29366): 64 bytes from 192.168.12.1: seq=0 ttl=64 time=86.328 ms
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: wwan (29366):
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: wwan (29366): --- 192.168.12.1 ping statistics ---
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: wwan (29366): 1 packets transmitted, 1 packets received, 0% packet loss
+Tue Apr  7 15:45:45 2026 daemon.notice netifd: wwan (29366): round-trip min/avg/max = 86.328/86.328/86.328 ms
+Tue Apr  7 15:45:45 2026 user.notice kmwan: config json str={ "op": 6, "data": { } }
+Tue Apr  7 15:45:46 2026 kern.err kernel: [ 5449.424056] wlan: [0:E:ANY] mlme_ext_vap_up: VAP (wlan1) 3a:46:a2:d2:23:23 is up, vdev_id:0 pdev_id:0 psoc_id:1
+Tue Apr  7 15:45:50 2026 user.notice firewall: Reloading firewall due to ifup of wan6 (eth0)
+Tue Apr  7 15:45:50 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface sta1.IPv6 with address fe80::441e:feff:fe68:7036.
+Tue Apr  7 15:45:50 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface sta1.IPv6 with address fdfe:5e6c:2e69:98de:ccfc:36f7:f41e:5130.
+Tue Apr  7 15:45:50 2026 daemon.info avahi-daemon[13033]: Registering new address record for fdfe:5e6c:2e69:98de:ccfc:36f7:f41e:5130 on sta1.*.
+Tue Apr  7 15:45:50 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fe80::441e:feff:fe68:7036 on sta1.
+Tue Apr  7 15:45:50 2026 daemon.notice netifd: Interface 'wwan6' is now up
+Tue Apr  7 15:45:50 2026 daemon.info gl-repeater[4116]: (repeater.lua:1897) interface "wwan6" up
+Tue Apr  7 15:45:50 2026 daemon.info gl-repeater[4116]: (repeater-portal.lua:660) portal detecting...
+Tue Apr  7 15:45:51 2026 user.notice kmwan: config json str={ "op": 2, "data": { "cells": [ { "interface": "wwan", "netdev": "sta1", "track_mode": "force", "addr_type": 4, "force_ip": "192.168.12.138", "tracks": [ { "type": "ping", "ip": "1.1.1.1" }, { "type": "ping", "ip": "8.8.8.8" }, { "type": "ping", "ip": "208.67.222.222" }, { "type": "ping", "ip": "208.67.220.220" } ] } ] } }
+Tue Apr  7 15:45:51 2026 kern.warn kernel: [ 5453.871083] [add_dev_config 319]add node success. iface:wwan, dev:sta1, ifindex:42
+Tue Apr  7 15:45:51 2026 daemon.info avahi-daemon[13033]: Registering new address record for 2607:fb92:3001:9bdd:441e:feff:fe68:7036 on sta1.*.
+Tue Apr  7 15:45:51 2026 daemon.info avahi-daemon[13033]: Registering new address record for fdfe:5e6c:2e69:98de:441e:feff:fe68:7036 on sta1.*.
+Tue Apr  7 15:45:52 2026 daemon.info gl-repeater[4116]: (repeater-portal.lua:683) not found portal
+Tue Apr  7 15:45:52 2026 user.notice firewall: Reloading firewall due to ifup of wwan (sta1)
+Tue Apr  7 15:45:54 2026 daemon.err odhcp6c[29064]: Failed to send RS (Network unreachable)
+Tue Apr  7 15:45:54 2026 daemon.err odhcp6c[29064]: Failed to send RELEASE message to ff02::1:2 (Network unreachable)
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: Network device 'eth0' link is down
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: Network alias 'eth0' link is down
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: Interface 'wan6' has link connectivity loss
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: Interface 'wan' has link connectivity loss
+Tue Apr  7 15:45:54 2026 kern.info kernel: [ 5456.924577] nss-dp 3a504000.dp1 eth0: PHY Link is down
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: wan6 (29064): Command failed: ubus call network.interface notify_proto { "action": 0, "link-up": false, "keep": false, "interface": "wan6" } (Permission denied)
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: wan (27222): udhcpc: received SIGTERM
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: wan (27222): udhcpc: unicasting a release of 192.168.12.220 to 192.168.12.1
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: wan (27222): udhcpc: sending release
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: wan (27222): udhcpc: entering released state
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: wan (27222): Command failed: ubus call network.interface notify_proto { "action": 0, "link-up": false, "keep": false, "interface": "wan" } (Permission denied)
+Tue Apr  7 15:45:54 2026 user.notice kmwan: config json str={ "op": 6, "data": { } }
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: Interface 'wan' is now down
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: Interface 'wan6' is disabled
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for 192.168.12.220 on eth0.
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface eth0.IPv4 with address 192.168.12.220.
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Interface eth0.IPv4 no longer relevant for mDNS.
+Tue Apr  7 15:45:54 2026 daemon.err odhcp6c[29064]: Failed to send SOLICIT message to ff02::1:2 (Network unreachable)
+Tue Apr  7 15:45:54 2026 daemon.notice netifd: Interface 'wan6' is now down
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fdfe:5e6c:2e69:98de:1632:92dd:4125:df6c on eth0.
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface eth0.IPv6 with address fdfe:5e6c:2e69:98de:1632:92dd:4125:df6c.
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface eth0.IPv6 with address 2607:fb92:3001:9bdd:9683:c4ff:fec7:e446.
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fdfe:5e6c:2e69:98de:9683:c4ff:fec7:e446 on eth0.
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for 2607:fb92:3001:9bdd:9683:c4ff:fec7:e446 on eth0.
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface eth0.IPv6 with address 2607:fb92:3001:9bdd:9683:c4ff:fec7:e446.
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface eth0.IPv6 with address fe80::9683:c4ff:fec7:e446.
+Tue Apr  7 15:45:54 2026 daemon.info avahi-daemon[13033]: Registering new address record for fe80::9683:c4ff:fec7:e446 on eth0.*.
+Tue Apr  7 15:45:56 2026 daemon.err gl-cloud[20752]: (gl-cloud:1453) error: wait PINGRESP timeout
+Tue Apr  7 15:45:56 2026 daemon.err gl-cloud[20752]: (gl-cloud:1453) error: closed
+Tue Apr  7 15:45:56 2026 daemon.err gl-cloud[20752]: (gl-cloud:1512) reconnect mqtt in 5s...
+Tue Apr  7 15:45:58 2026 user.notice firewall: Reloading firewall due to ifup of wwan6 (sta1)
+Tue Apr  7 15:46:00 2026 daemon.notice netifd: Network device 'eth0' link is up
+Tue Apr  7 15:46:00 2026 daemon.notice netifd: Interface 'wan' has link connectivity
+Tue Apr  7 15:46:00 2026 daemon.notice netifd: Interface 'wan' is setting up now
+Tue Apr  7 15:46:00 2026 kern.info kernel: [ 5463.165068] nss-dp 3a504000.dp1 eth0: PHY Link up speed: 1000
+Tue Apr  7 15:46:00 2026 daemon.notice netifd: wan (1832): udhcpc: started, v1.36.1
+Tue Apr  7 15:46:00 2026 user.notice kmwan: config json str={ "op": 6, "data": { } }
+Tue Apr  7 15:46:00 2026 daemon.notice netifd: wan (1832): udhcpc: broadcasting discover
+Tue Apr  7 15:46:00 2026 daemon.notice netifd: wan (1832): udhcpc: broadcasting select for 192.168.12.220, server 192.168.12.1
+Tue Apr  7 15:46:01 2026 daemon.notice netifd: wan (1832): udhcpc: lease of 192.168.12.220 obtained from 192.168.12.1, lease time 604800
+Tue Apr  7 15:46:01 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface eth0.IPv4 with address 192.168.12.220.
+Tue Apr  7 15:46:01 2026 daemon.info avahi-daemon[13033]: New relevant interface eth0.IPv4 for mDNS.
+Tue Apr  7 15:46:01 2026 daemon.info avahi-daemon[13033]: Registering new address record for 192.168.12.220 on eth0.IPv4.
+Tue Apr  7 15:46:01 2026 daemon.info gl-cloud[20752]: (gl-cloud:1013) reconnect mqtt now due to network wan up
+Tue Apr  7 15:46:01 2026 daemon.notice netifd: Interface 'wan6' is enabled
+Tue Apr  7 15:46:01 2026 daemon.notice netifd: Network alias 'eth0' link is up
+Tue Apr  7 15:46:01 2026 daemon.notice netifd: Interface 'wan6' has link connectivity
+Tue Apr  7 15:46:01 2026 daemon.notice netifd: Interface 'wan6' is setting up now
+Tue Apr  7 15:46:01 2026 daemon.notice netifd: Interface 'wan' is now up
+Tue Apr  7 15:46:01 2026 user.notice kmwan: config json str={ "op": 3, "data": { "cells": [ "wan" ] } }
+Tue Apr  7 15:46:01 2026 kern.warn kernel: [ 5464.069895] kmwan: Delete node:wan
+Tue Apr  7 15:46:01 2026 user.notice kmwan: config json str={ "op": 6, "data": { } }
+Tue Apr  7 15:46:01 2026 user.notice firewall: Reloading firewall due to ifdown of wan ()
+Tue Apr  7 15:46:02 2026 daemon.info gl-cloud[20752]: (gl-cloud:1034) fetch ca from: https://gslb-eu.goodcloud.xyz/getCaCert/ca.crt
+Tue Apr  7 15:46:02 2026 daemon.info avahi-daemon[13033]: Leaving mDNS multicast group on interface eth0.IPv6 with address fe80::9683:c4ff:fec7:e446.
+Tue Apr  7 15:46:02 2026 daemon.info avahi-daemon[13033]: Joining mDNS multicast group on interface eth0.IPv6 with address 2607:fb92:3001:9bdd:9683:c4ff:fec7:e446.
+Tue Apr  7 15:46:02 2026 daemon.info avahi-daemon[13033]: Registering new address record for 2607:fb92:3001:9bdd:9683:c4ff:fec7:e446 on eth0.*.
+Tue Apr  7 15:46:02 2026 daemon.info avahi-daemon[13033]: Withdrawing address record for fe80::9683:c4ff:fec7:e446 on eth0.
+Tue Apr  7 15:46:03 2026 daemon.info avahi-daemon[13033]: Registering new address record for fdfe:5e6c:2e69:98de:1632:92dd:4125:df6c on eth0.*.
+Tue Apr  7 15:46:03 2026 daemon.notice netifd: Interface 'wan6' is now up
+Tue Apr  7 15:46:03 2026 daemon.info gl-cloud[20752]: (gl-cloud:1099) fetch server from: https://gslb-eu.goodcloud.xyz/v2/device/auth
+Tue Apr  7 15:46:03 2026 daemon.info avahi-daemon[13033]: Registering new address record for fdfe:5e6c:2e69:98de:9683:c4ff:fec7:e446 on eth0.*.
+Tue Apr  7 15:46:04 2026 daemon.info gl-cloud[20752]: (gl-cloud:1198) connect mqtt broker: 18.209.114.161 28883
+Tue Apr  7 15:46:05 2026 daemon.info gl-cloud[20752]: (gl-cloud:1388) conack: 0 connection accepted
+Tue Apr  7 15:46:07 2026 user.notice firewall: Reloading firewall due to ifup of wan6 (eth0)
+Tue Apr  7 15:46:08 2026 user.notice kmwan: config json str={ "op": 2, "data": { "cells": [ { "interface": "wan", "netdev": "eth0", "track_mode": "force", "addr_type": 4, "force_ip": "192.168.12.220", "tracks": [ { "type": "ping", "ip": "1.1.1.1" }, { "type": "ping", "ip": "8.8.8.8" }, { "type": "ping", "ip": "208.67.222.222" }, { "type": "ping", "ip": "208.67.220.220" } ] } ] } }
+Tue Apr  7 15:46:08 2026 daemon.info dnsmasq[7846]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts removed
+Tue Apr  7 15:46:08 2026 daemon.info dnsmasq[7846]: inotify: flushed 2 names read from /tmp/dnsmasq.d/mpaccess/mphosts
+Tue Apr  7 15:46:08 2026 daemon.info dnsmasq[1]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts removed
+Tue Apr  7 15:46:08 2026 daemon.info dnsmasq[7846]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts new or modified
+Tue Apr  7 15:46:08 2026 daemon.info dnsmasq[7846]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:46:08 2026 daemon.info dnsmasq[1]: inotify: flushed 12 names read from /tmp/dnsmasq.d/mpaccess/mphosts
+Tue Apr  7 15:46:08 2026 daemon.info dnsmasq[1]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts new or modified
+Tue Apr  7 15:46:08 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:46:08 2026 kern.warn kernel: [ 5471.432645] [add_dev_config 319]add node success. iface:wan, dev:eth0, ifindex:4
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: exiting on receipt of SIGTERM
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: started, version 2.90 cachesize 1000
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: DNS service limited to local subnets
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: compile time options: IPv6 GNU-getopt no-DBus UBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP conntrack ipset nftset auth cryptohash DNSSEC no-ID loop-detect inotify dumpfile
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: UBus support enabled: connected to system bus
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq-dhcp[1]: DHCP, IP range 192.168.9.100 -- 192.168.9.249, lease time 12h
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq-dhcp[1]: DHCP, IP range 192.168.10.100 -- 192.168.10.249, lease time 12h
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using nameserver 8.8.8.8#53
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using nameserver 8.8.4.4#53
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using nameserver 2001:4860:4860::8888#53
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using nameserver 2001:4860:4860::8844#53
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using only locally-known addresses for test
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using only locally-known addresses for onion
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using only locally-known addresses for localhost
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using only locally-known addresses for local
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using only locally-known addresses for invalid
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using only locally-known addresses for bind
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: using only locally-known addresses for lan
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: read /etc/hosts - 12 names
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: read /tmp/hosts/odhcpd - 2 names
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:46:09 2026 daemon.info dnsmasq-dhcp[1]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:46:10 2026 user.notice firewall: Reloading firewall due to ifup of wan (eth0)
+Tue Apr  7 15:46:32 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 IEEE 802.11: authenticated
+Tue Apr  7 15:46:32 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 IEEE 802.11: associated (aid 2)
+Tue Apr  7 15:46:32 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 WPA: sending 1/4 msg of 4-Way Handshake
+Tue Apr  7 15:46:32 2026 kern.err kernel: [ 5495.150260] wlan: [7166:I:ANY] wlan_cfg80211_change_station: Ignore set station for ap vlan wlan0
+Tue Apr  7 15:46:32 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 WPA: received EAPOL-Key frame (2/4 Pairwise)
+Tue Apr  7 15:46:32 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 WPA: sending 3/4 msg of 4-Way Handshake
+Tue Apr  7 15:46:32 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 WPA: received EAPOL-Key frame (4/4 Pairwise)
+Tue Apr  7 15:46:32 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 RADIUS: starting accounting session 0AEECEA9D70F1492
+Tue Apr  7 15:46:32 2026 daemon.info hostapd: wlan0: STA ea:cc:a2:90:56:80 WPA: pairwise key handshake completed (RSN)
+Tue Apr  7 15:46:32 2026 daemon.info dnsmasq-dhcp[1]: DHCPREQUEST(br-lan) 192.168.10.126 ea:cc:a2:90:56:80
+Tue Apr  7 15:46:32 2026 daemon.info dnsmasq-dhcp[1]: DHCPACK(br-lan) 192.168.10.126 ea:cc:a2:90:56:80 MacBookPro
+Tue Apr  7 15:48:07 2026 daemon.info dnsmasq[7846]: exiting on receipt of SIGTERM
+Tue Apr  7 15:48:07 2026 daemon.info gl-mpifd[7946]:  Got SIGTERM, now quit
+Tue Apr  7 15:48:07 2026 daemon.err gl-mpifd[7946]: recv fail: closed
+Tue Apr  7 15:48:09 2026 daemon.err eco[8809]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:48:09 2026 daemon.err eco[8809]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:49:58 2026 daemon.info gl-mpifd[8809]:  Got SIGTERM, now quit
+Tue Apr  7 15:49:58 2026 daemon.err gl-mpifd[8809]: recv fail: closed
+Tue Apr  7 15:50:01 2026 user.notice mptun: ignore 0.0.0.0/0 route
+Tue Apr  7 15:50:01 2026 user.notice mptun: ignore 0.0.0.0/0 route
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: started, version 2.90 cache disabled
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: DNS service limited to local subnets
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: compile time options: IPv6 GNU-getopt no-DBus UBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP conntrack ipset nftset auth cryptohash DNSSEC no-ID loop-detect inotify dumpfile
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq-dhcp[10602]: DHCP, IP range 192.168.8.100 -- 192.168.8.249, lease time 12h
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 10.1.3.2#53
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 127.0.0.1#53 for domain gl-inet.com
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 127.0.0.1#53 for domain gl-inet.cn
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 127.0.0.1#53 for domain goodcloud.xyz
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 127.0.0.1#53 for domain astrowarp.net
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 127.0.0.1#53 for domain freshchat.com
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 127.0.0.1#53 for domain freshworksapi.com
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 127.0.0.1#53 for domain amazonaws.com
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 127.0.0.1#53 for domain chandler.bet
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 127.0.0.1#53 for domain jianweidata.com
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using nameserver 127.0.0.1#53 for domain jsdelivr.net
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using only locally-known addresses for test
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using only locally-known addresses for onion
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using only locally-known addresses for localhost
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using only locally-known addresses for local
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using only locally-known addresses for invalid
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using only locally-known addresses for bind
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: using only locally-known addresses for lan
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: read /etc/hosts - 12 names
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: read /tmp/hosts/odhcpd - 2 names
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq[10602]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:50:01 2026 daemon.info dnsmasq-dhcp[10602]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:50:01 2026 daemon.err eco[10715]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:50:01 2026 daemon.err eco[10715]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:50:36 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a IEEE 802.11: disassociated
+Tue Apr  7 15:50:36 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a IEEE 802.11: authenticated
+Tue Apr  7 15:50:36 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a IEEE 802.11: associated (aid 1)
+Tue Apr  7 15:50:36 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: sending 1/4 msg of 4-Way Handshake
+Tue Apr  7 15:50:36 2026 kern.err kernel: [ 5739.334412] wlan: [7166:I:ANY] wlan_cfg80211_change_station: Ignore set station for ap vlan wlan02
+Tue Apr  7 15:50:36 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: received EAPOL-Key frame (2/4 Pairwise)
+Tue Apr  7 15:50:36 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: sending 3/4 msg of 4-Way Handshake
+Tue Apr  7 15:50:36 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: received EAPOL-Key frame (4/4 Pairwise)
+Tue Apr  7 15:50:36 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a RADIUS: starting accounting session D4E03C1EE7EF1BE6
+Tue Apr  7 15:50:36 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a WPA: pairwise key handshake completed (RSN)
+Tue Apr  7 15:50:36 2026 daemon.info dnsmasq-dhcp[1]: DHCPREQUEST(br-lan) 192.168.10.148 d4:ab:61:f8:d8:6a
+Tue Apr  7 15:50:36 2026 daemon.info dnsmasq-dhcp[1]: DHCPACK(br-lan) 192.168.10.148 d4:ab:61:f8:d8:6a XPLM2MQ5340KXS
+Tue Apr  7 15:50:52 2026 daemon.info hostapd: wlan02: STA d4:ab:61:f8:d8:6a IEEE 802.11: disassociated
+Tue Apr  7 15:50:57 2026 daemon.info hostapd: wlan12: STA d4:ab:61:f8:d8:6a IEEE 802.11: associated (aid 1)
+Tue Apr  7 15:50:57 2026 daemon.info hostapd: wlan12: STA d4:ab:61:f8:d8:6a WPA: sending 1/4 msg of 4-Way Handshake
+Tue Apr  7 15:50:57 2026 kern.err kernel: [ 5760.404930] wlan: [7166:I:ANY] wlan_cfg80211_change_station: Ignore set station for ap vlan wlan12
+Tue Apr  7 15:50:57 2026 daemon.info hostapd: wlan12: STA d4:ab:61:f8:d8:6a WPA: received EAPOL-Key frame (2/4 Pairwise)
+Tue Apr  7 15:50:57 2026 daemon.info hostapd: wlan12: STA d4:ab:61:f8:d8:6a WPA: sending 3/4 msg of 4-Way Handshake
+Tue Apr  7 15:50:57 2026 daemon.info hostapd: wlan12: STA d4:ab:61:f8:d8:6a WPA: received EAPOL-Key frame (4/4 Pairwise)
+Tue Apr  7 15:50:57 2026 daemon.info hostapd: wlan12: STA d4:ab:61:f8:d8:6a RADIUS: starting accounting session 3DB71787F8E70F69
+Tue Apr  7 15:50:57 2026 daemon.info hostapd: wlan12: STA d4:ab:61:f8:d8:6a WPA: pairwise key handshake completed (RSN)
+Tue Apr  7 15:50:58 2026 daemon.info dnsmasq[1]: read /etc/hosts - 12 names
+Tue Apr  7 15:50:58 2026 daemon.info dnsmasq[1]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:50:58 2026 daemon.info dnsmasq[1]: read /tmp/hosts/odhcpd - 0 names
+Tue Apr  7 15:50:58 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:50:58 2026 daemon.info dnsmasq-dhcp[1]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:50:58 2026 daemon.info dnsmasq-dhcp[1]: DHCPREQUEST(br-lan) 192.168.10.148 d4:ab:61:f8:d8:6a
+Tue Apr  7 15:50:58 2026 daemon.info dnsmasq-dhcp[1]: DHCPACK(br-lan) 192.168.10.148 d4:ab:61:f8:d8:6a XPLM2MQ5340KXS
+Tue Apr  7 15:50:59 2026 daemon.info dnsmasq[1]: read /etc/hosts - 12 names
+Tue Apr  7 15:50:59 2026 daemon.info dnsmasq[1]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:50:59 2026 daemon.info dnsmasq[1]: read /tmp/hosts/odhcpd - 2 names
+Tue Apr  7 15:50:59 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:50:59 2026 daemon.info dnsmasq-dhcp[1]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:51:28 2026 daemon.info dnsmasq[10602]: exiting on receipt of SIGTERM
+Tue Apr  7 15:51:28 2026 daemon.info gl-mpifd[10715]:  Got SIGTERM, now quit
+Tue Apr  7 15:51:28 2026 daemon.err gl-mpifd[10715]: recv fail: closed
+Tue Apr  7 15:51:31 2026 daemon.err eco[12884]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:51:31 2026 daemon.err eco[12884]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:52:53 2026 daemon.info dnsmasq[1]: exiting on receipt of SIGTERM
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: started, version 2.90 cachesize 1000
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: DNS service limited to local subnets
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: compile time options: IPv6 GNU-getopt no-DBus UBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP conntrack ipset nftset auth cryptohash DNSSEC no-ID loop-detect inotify dumpfile
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: UBus support enabled: connected to system bus
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq-dhcp[1]: DHCP, IP range 192.168.9.100 -- 192.168.9.249, lease time 12h
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq-dhcp[1]: DHCP, IP range 192.168.10.100 -- 192.168.10.249, lease time 12h
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using nameserver 1.1.1.1#53
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using nameserver 1.0.0.1#53
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using nameserver 2606:4700:4700::1111#53
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using nameserver 2606:4700:4700::1001#53
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using only locally-known addresses for test
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using only locally-known addresses for onion
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using only locally-known addresses for localhost
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using only locally-known addresses for local
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using only locally-known addresses for invalid
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using only locally-known addresses for bind
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: using only locally-known addresses for lan
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: read /etc/hosts - 12 names
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: read /tmp/hosts/odhcpd - 2 names
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:52:57 2026 daemon.info dnsmasq-dhcp[1]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:53:13 2026 daemon.info gl-mpifd[12884]:  Got SIGTERM, now quit
+Tue Apr  7 15:53:13 2026 daemon.err gl-mpifd[12884]: recv fail: closed
+Tue Apr  7 15:53:15 2026 user.notice mptun: ignore 0.0.0.0/0 route
+Tue Apr  7 15:53:15 2026 user.notice mptun: ignore 0.0.0.0/0 route
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: started, version 2.90 cache disabled
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: DNS service limited to local subnets
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: compile time options: IPv6 GNU-getopt no-DBus UBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP conntrack ipset nftset auth cryptohash DNSSEC no-ID loop-detect inotify dumpfile
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq-dhcp[15419]: DHCP, IP range 192.168.8.100 -- 192.168.8.249, lease time 12h
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 10.1.3.2#53
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 127.0.0.1#53 for domain gl-inet.com
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 127.0.0.1#53 for domain gl-inet.cn
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 127.0.0.1#53 for domain goodcloud.xyz
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 127.0.0.1#53 for domain astrowarp.net
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 127.0.0.1#53 for domain freshchat.com
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 127.0.0.1#53 for domain freshworksapi.com
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 127.0.0.1#53 for domain amazonaws.com
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 127.0.0.1#53 for domain chandler.bet
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 127.0.0.1#53 for domain jianweidata.com
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using nameserver 127.0.0.1#53 for domain jsdelivr.net
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using only locally-known addresses for test
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using only locally-known addresses for onion
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using only locally-known addresses for localhost
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using only locally-known addresses for local
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using only locally-known addresses for invalid
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using only locally-known addresses for bind
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: using only locally-known addresses for lan
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: read /etc/hosts - 12 names
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: read /tmp/hosts/odhcpd - 2 names
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq[15419]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:53:15 2026 daemon.info dnsmasq-dhcp[15419]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:53:16 2026 daemon.err eco[15541]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:53:16 2026 daemon.err eco[15541]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[15419]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts removed
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[15419]: inotify: flushed 12 names read from /tmp/dnsmasq.d/mpaccess/mphosts
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[15419]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts new or modified
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[1]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts removed
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[1]: inotify: flushed 12 names read from /tmp/dnsmasq.d/mpaccess/mphosts
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[15419]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[1]: inotify: /tmp/dnsmasq.d/mpaccess/mphosts new or modified
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[1]: read /etc/hosts - 12 names
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[1]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[1]: read /tmp/hosts/odhcpd - 2 names
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:54:21 2026 daemon.info dnsmasq-dhcp[1]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:54:24 2026 daemon.info dnsmasq[15419]: exiting on receipt of SIGTERM
+Tue Apr  7 15:54:24 2026 daemon.info gl-mpifd[15541]:  Got SIGTERM, now quit
+Tue Apr  7 15:54:24 2026 daemon.err gl-mpifd[15541]: recv fail: closed
+Tue Apr  7 15:54:27 2026 daemon.err dnsmasq[1]: Conntrack connection mark retrieval failed: No such file or directory
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: started, version 2.90 cache disabled
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: DNS service limited to local subnets
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: compile time options: IPv6 GNU-getopt no-DBus UBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP conntrack ipset nftset auth cryptohash DNSSEC no-ID loop-detect inotify dumpfile
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq-dhcp[18619]: DHCP, IP range 192.168.8.100 -- 192.168.8.249, lease time 12h
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 10.1.3.1#53
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 127.0.0.1#53 for domain gl-inet.com
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 127.0.0.1#53 for domain gl-inet.cn
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 127.0.0.1#53 for domain goodcloud.xyz
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 127.0.0.1#53 for domain astrowarp.net
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 127.0.0.1#53 for domain freshchat.com
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 127.0.0.1#53 for domain freshworksapi.com
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 127.0.0.1#53 for domain amazonaws.com
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 127.0.0.1#53 for domain chandler.bet
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 127.0.0.1#53 for domain jianweidata.com
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using nameserver 127.0.0.1#53 for domain jsdelivr.net
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using only locally-known addresses for test
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using only locally-known addresses for onion
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using only locally-known addresses for localhost
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using only locally-known addresses for local
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using only locally-known addresses for invalid
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using only locally-known addresses for bind
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: using only locally-known addresses for lan
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: read /etc/hosts - 12 names
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: read /tmp/hosts/odhcpd - 2 names
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq[18619]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:54:27 2026 daemon.info dnsmasq-dhcp[18619]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:54:27 2026 daemon.err eco[18748]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:54:27 2026 daemon.err eco[18748]: RTNETLINK answers: No such file or directory
+Tue Apr  7 15:54:30 2026 daemon.info mptun[18661]: V2Ray  (V2Fly, a community-driven edition of V2Ray.) OpenWrt (go1.25.5 linux/arm64)
+Tue Apr  7 15:54:30 2026 daemon.info mptun[18661]: A unified platform for anti-censorship.
+Tue Apr  7 15:57:32 2026 daemon.info dnsmasq[1]: exiting on receipt of SIGTERM
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: started, version 2.90 cachesize 1000
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: DNS service limited to local subnets
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: compile time options: IPv6 GNU-getopt no-DBus UBus no-i18n no-IDN DHCP DHCPv6 no-Lua TFTP conntrack ipset nftset auth cryptohash DNSSEC no-ID loop-detect inotify dumpfile
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: UBus support enabled: connected to system bus
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq-dhcp[1]: DHCP, IP range 192.168.9.100 -- 192.168.9.249, lease time 12h
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq-dhcp[1]: DHCP, IP range 192.168.10.100 -- 192.168.10.249, lease time 12h
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using nameserver 8.8.8.8#53
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using nameserver 8.8.4.4#53
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using nameserver 2001:4860:4860::8888#53
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using nameserver 2001:4860:4860::8844#53
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using only locally-known addresses for test
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using only locally-known addresses for onion
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using only locally-known addresses for localhost
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using only locally-known addresses for local
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using only locally-known addresses for invalid
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using only locally-known addresses for bind
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: using only locally-known addresses for lan
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: read /etc/hosts - 12 names
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: read /tmp/hosts/dhcp.cfg01411c - 10 names
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: read /tmp/hosts/odhcpd - 2 names
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq[1]: read /tmp/dnsmasq.d/mpaccess/mphosts - 2 names
+Tue Apr  7 15:57:36 2026 daemon.info dnsmasq-dhcp[1]: read /etc/ethers - 0 addresses
+Tue Apr  7 15:59:28 2026 daemon.info hostapd: wlan0: STA 4e:89:f3:22:bd:d4 IEEE 802.11: disassociated
+Tue Apr  7 15:59:32 2026 daemon.info hostapd: wlan0: STA 4e:89:f3:22:bd:d4 IEEE 802.11: authenticated
+Tue Apr  7 15:59:32 2026 daemon.info hostapd: wlan0: STA 4e:89:f3:22:bd:d4 IEEE 802.11: associated (aid 1)
+Tue Apr  7 15:59:32 2026 daemon.info hostapd: wlan0: STA 4e:89:f3:22:bd:d4 WPA: sending 1/4 msg of 4-Way Handshake
+Tue Apr  7 15:59:32 2026 kern.err kernel: [ 6274.995458] wlan: [7166:I:ANY] wlan_cfg80211_change_station: Ignore set station for ap vlan wlan0
+Tue Apr  7 15:59:32 2026 daemon.info hostapd: wlan0: STA 4e:89:f3:22:bd:d4 WPA: received EAPOL-Key frame (2/4 Pairwise)
+Tue Apr  7 15:59:32 2026 daemon.info hostapd: wlan0: STA 4e:89:f3:22:bd:d4 WPA: sending 3/4 msg of 4-Way Handshake
+Tue Apr  7 15:59:32 2026 daemon.info hostapd: wlan0: STA 4e:89:f3:22:bd:d4 WPA: received EAPOL-Key frame (4/4 Pairwise)
+Tue Apr  7 15:59:32 2026 daemon.info hostapd: wlan0: STA 4e:89:f3:22:bd:d4 RADIUS: starting accounting session 86EEFE86479A0B80
+Tue Apr  7 15:59:32 2026 daemon.info hostapd: wlan0: STA 4e:89:f3:22:bd:d4 WPA: pairwise key handshake completed (RSN)
+Tue Apr  7 15:59:32 2026 daemon.info dnsmasq-dhcp[1]: DHCPREQUEST(br-lan) 192.168.10.159 4e:89:f3:22:bd:d4
+Tue Apr  7 15:59:32 2026 daemon.info dnsmasq-dhcp[1]: DHCPACK(br-lan) 192.168.10.159 4e:89:f3:22:bd:d4
+Tue Apr  7 16:04:47 2026 kern.warn kernel: [ 6590.117575] SYN_FLOODIN=br-lan OUT= MAC=94:83:c4:c7:e4:47:ea:cc:a2:90:56:80:08:00 SRC=192.168.10.126 DST=45.130.203.238 LEN=64 TOS=0x00 PREC=0x00 TTL=64 ID=0 DF PROTO=TCP SPT=58890 DPT=81 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0 MARK=0x8001
+Tue Apr  7 16:04:47 2026 kern.warn kernel: [ 6590.117828] SYN_FLOODIN=br-lan OUT= MAC=94:83:c4:c7:e4:47:ea:cc:a2:90:56:80:08:00 SRC=192.168.10.126 DST=185.255.124.200 LEN=64 TOS=0x00 PREC=0x00 TTL=64 ID=0 DF PROTO=TCP SPT=58891 DPT=81 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0 MARK=0x8001
+Tue Apr  7 16:04:47 2026 kern.warn kernel: [ 6590.118244] SYN_FLOODIN=br-lan OUT= MAC=94:83:c4:c7:e4:47:ea:cc:a2:90:56:80:08:00 SRC=192.168.10.126 DST=45.133.6.169 LEN=64 TOS=0x00 PREC=0x00 TTL=64 ID=0 DF PROTO=TCP SPT=58892 DPT=81 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0 MARK=0x8001
+Tue Apr  7 16:04:47 2026 kern.warn kernel: [ 6590.118575] SYN_FLOODIN=br-lan OUT= MAC=94:83:c4:c7:e4:47:ea:cc:a2:90:56:80:08:00 SRC=192.168.10.126 DST=31.171.152.206 LEN=64 TOS=0x00 PREC=0x00 TTL=64 ID=0 DF PROTO=TCP SPT=58893 DPT=81 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0 MARK=0x8001
+Tue Apr  7 16:04:47 2026 kern.warn kernel: [ 6590.118764] SYN_FLOODIN=br-lan OUT= MAC=94:83:c4:c7:e4:47:ea:cc:a2:90:56:80:08:00 SRC=192.168.10.126 DST=85.203.22.29 LEN=64 TOS=0x00 PREC=0x00 TTL=64 ID=0 DF PROTO=TCP SPT=58894 DPT=81 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0 MARK=0x8001
+Tue Apr  7 16:04:48 2026 kern.warn kernel: [ 6591.133850] SYN_FLOODIN=br-lan OUT= MAC=94:83:c4:c7:e4:47:ea:cc:a2:90:56:80:08:00 SRC=192.168.10.126 DST=193.68.91.16 LEN=64 TOS=0x00 PREC=0x00 TTL=64 ID=0 DF PROTO=TCP SPT=58904 DPT=81 WINDOW=65535 RES=0x00 SYN URGP=0 MARK=0x8001
+Tue Apr  7 16:04:49 2026 kern.warn kernel: [ 6592.126469] SYN_FLOODIN=br-lan OUT= MAC=94:83:c4:c7:e4:47:ea:cc:a2:90:56:80:08:00 SRC=192.168.10.126 DST=203.188.189.208 LEN=64 TOS=0x00 PREC=0x00 TTL=64 ID=0 DF PROTO=TCP SPT=58969 DPT=81 WINDOW=65535 RES=0x00 SYN URGP=0 MARK=0x8001
+Tue Apr  7 16:04:50 2026 kern.warn kernel: [ 6593.137447] SYN_FLOODIN=br-lan OUT= MAC=94:83:c4:c7:e4:47:ea:cc:a2:90:56:80:08:00 SRC=192.168.10.126 DST=142.111.152.172 LEN=64 TOS=0x00 PREC=0x00 TTL=64 ID=0 DF PROTO=TCP SPT=59074 DPT=81 WINDOW=65535 RES=0x00 CWR ECE SYN URGP=0 MARK=0x8001
+Tue Apr  7 16:04:51 2026 kern.warn kernel: [ 6594.162931] SYN_FLOODIN=br-lan OUT= MAC=94:83:c4:c7:e4:47:ea:cc:a2:90:56:80:08:00 SRC=192.168.10.126 DST=193.36.223.192 LEN=64 TOS=0x00 PREC=0x00 TTL=64 ID=0 DF PROTO=TCP SPT=59096 DPT=81 WINDOW=65535 RES=0x00 SYN URGP=0 MARK=0x8001
