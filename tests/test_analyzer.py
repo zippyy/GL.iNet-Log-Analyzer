@@ -8,7 +8,7 @@ from pathlib import Path
 
 from glinet_log_analyzer.analyzer import analyze_documents, analyze_text
 from glinet_log_analyzer.ingest import load_documents_from_bytes
-from glinet_log_analyzer.reporting import entries_to_csv, filter_entries
+from glinet_log_analyzer.reporting import entries_to_csv, filter_entries, format_text_report
 from glinet_log_analyzer.storage import load_report, save_report
 
 
@@ -131,6 +131,44 @@ class AnalyzerTests(unittest.TestCase):
         assert loaded is not None
         self.assertEqual(loaded["filename"], "router.log")
         self.assertEqual(loaded["result"].signal_counts["sim_event"], 1)
+
+    def test_syslog_style_lines_do_not_trigger_false_positive_cellular_or_wifi_signals(self) -> None:
+        text = "\n".join(
+            [
+                "Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.462851] wlan: [7166:I:ANY] DES SSID SET=GL-BE3600-446-5G",
+                "Tue Apr  7 15:42:35 2026 kern.err kernel: [ 5258.555501] wlan: [0:I:CMN_MLME] Sending ucast disassoc to PMF associated stas",
+                "Tue Apr  7 15:42:48 2026 kern.err kernel: [ 5270.795587] wlan: [0:I:CMN_MLME] vdev 2 cm_id 0xc020001: Connecting to GL-BE6500-d4f-MLO 8e:25:06:4a:ef:f3 rssi: -20 freq: 5200",
+                "Tue Apr  7 15:42:48 2026 daemon.notice netifd: Interface 'wwan' is now up",
+            ]
+        )
+
+        result = analyze_text(text)
+
+        self.assertEqual(result.signal_counts["modem_event"], 0)
+        self.assertEqual(result.signal_counts["wifi_client_join"], 0)
+        self.assertEqual(result.signal_counts["cell_signal"], 0)
+        self.assertEqual(result.category_counts["cellular"], 0)
+        self.assertEqual(result.entries[0].timestamp, "Tue Apr  7 15:42:35 2026")
+        self.assertEqual(result.entries[0].component, "kernel")
+        self.assertEqual(result.entries[0].severity, "error")
+
+    def test_format_text_report_is_human_readable(self) -> None:
+        result = analyze_text(
+            "\n".join(
+                [
+                    "2026-04-03 10:14:03 netifd: Interface 'wan' has lost the connection",
+                    "2026-04-03 10:14:07 udhcpc: lease of 192.168.8.22 obtained from 192.168.8.1",
+                    "2026-04-03 10:14:40 hostapd: wlan0: AP-STA-CONNECTED 12:34:56:78:90:ab",
+                ]
+            )
+        )
+
+        report = format_text_report(result, result.entries, file_label="sample.log")
+
+        self.assertIn("GL.iNet log report for sample.log", report)
+        self.assertIn("What stands out", report)
+        self.assertIn("WAN connectivity dropped 1 time(s).", report)
+        self.assertIn("Wi-Fi client churn detected: 1 join(s), 0 leave(s).", report)
 
 
 if __name__ == "__main__":

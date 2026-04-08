@@ -9,7 +9,7 @@ import uvicorn
 
 from .analyzer import analyze_documents
 from .ingest import load_documents_from_path
-from .reporting import entries_to_csv, filter_entries
+from .reporting import entries_to_csv, filter_entries, format_text_report
 from .web import create_app
 
 app = typer.Typer(no_args_is_help=True, help="Analyze GL.iNet router logs from the CLI or web UI.")
@@ -54,33 +54,7 @@ def analyze(
     if output != "text":
         raise typer.BadParameter("Output must be either 'text' or 'json'.")
 
-    typer.echo(f"Analyzed {file}")
-    typer.echo(f"Sources loaded: {len(result.source_counts)}")
-    typer.echo(f"Total entries: {len(result.entries)}")
-    typer.echo(f"Filtered entries: {len(filtered_entries)}")
-    typer.echo("Severity counts:")
-    for severity, count in result.severity_counts.most_common():
-        typer.echo(f"  {severity}: {count}")
-    typer.echo("Top categories:")
-    for category, count in result.category_counts.most_common(5):
-        typer.echo(f"  {category}: {count}")
-    typer.echo("Top signals:")
-    for signal, count in result.signal_counts.most_common(8):
-        typer.echo(f"  {signal}: {count}")
-    typer.echo("Top sources:")
-    for source, count in result.source_counts.most_common(5):
-        typer.echo(f"  {source}: {count}")
-    typer.echo("Operational timeline:")
-    for entry in result.timeline[:12]:
-        signal_text = ", ".join(entry.signals) if entry.signals else "uncategorized"
-        prefix = f"{entry.timestamp} " if entry.timestamp else ""
-        source_label = f"[{entry.source}] " if entry.source else ""
-        typer.echo(f"  line {entry.line_number}: {source_label}{prefix}{signal_text} -> {entry.message}")
-    typer.echo("Filtered entries:")
-    for entry in filtered_entries[:15]:
-        prefix = f"{entry.timestamp} " if entry.timestamp else ""
-        source_label = f"[{entry.source}] " if entry.source else ""
-        typer.echo(f"  line {entry.line_number}: {source_label}{prefix}{entry.message}")
+    typer.echo(format_text_report(result, filtered_entries, file_label=str(file)))
 
 
 @app.command()
