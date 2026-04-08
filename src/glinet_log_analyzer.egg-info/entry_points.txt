@@ -1,0 +1,2 @@
+[console_scripts]
+glinet-log-analyzer = glinet_log_analyzer.cli:app

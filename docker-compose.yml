@@ -1,0 +1,16 @@
+services:
+  glinet-log-analyzer:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    environment:
+      GLINET_LOG_ANALYZER_HOST: 0.0.0.0
+      GLINET_LOG_ANALYZER_PORT: 8000
+      GLINET_LOG_ANALYZER_DATA_DIR: /data
+    volumes:
+      - glinet-log-analyzer-data:/data
+    restart: unless-stopped
+
+volumes:
+  glinet-log-analyzer-data:

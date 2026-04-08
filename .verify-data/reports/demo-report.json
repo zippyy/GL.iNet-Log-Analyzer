@@ -1,0 +1,81 @@
+{
+  "report_id": "demo-report",
+  "filename": "router.log",
+  "result": {
+    "summary": {
+      "total_lines": 1,
+      "severity_counts": {
+        "info": 1
+      },
+      "category_counts": {
+        "cellular": 1
+      },
+      "component_counts": {
+        "modemmanager": 1
+      },
+      "signal_counts": {
+        "modem_event": 1,
+        "sim_event": 1
+      },
+      "source_counts": {
+        "inline": 1
+      },
+      "notable_events": 1,
+      "timeline_events": 1
+    },
+    "notable_events": [
+      {
+        "line_number": 1,
+        "raw": "2026-04-03 10:16:53 modemmanager: SIM card ready",
+        "source": "inline",
+        "timestamp": "2026-04-03 10:16:53",
+        "severity": "info",
+        "component": "modemmanager",
+        "message": "SIM card ready",
+        "categories": [
+          "cellular"
+        ],
+        "signals": [
+          "modem_event",
+          "sim_event"
+        ]
+      }
+    ],
+    "timeline": [
+      {
+        "line_number": 1,
+        "raw": "2026-04-03 10:16:53 modemmanager: SIM card ready",
+        "source": "inline",
+        "timestamp": "2026-04-03 10:16:53",
+        "severity": "info",
+        "component": "modemmanager",
+        "message": "SIM card ready",
+        "categories": [
+          "cellular"
+        ],
+        "signals": [
+          "modem_event",
+          "sim_event"
+        ]
+      }
+    ],
+    "entries": [
+      {
+        "line_number": 1,
+        "raw": "2026-04-03 10:16:53 modemmanager: SIM card ready",
+        "source": "inline",
+        "timestamp": "2026-04-03 10:16:53",
+        "severity": "info",
+        "component": "modemmanager",
+        "message": "SIM card ready",
+        "categories": [
+          "cellular"
+        ],
+        "signals": [
+          "modem_event",
+          "sim_event"
+        ]
+      }
+    ]
+  }
+}

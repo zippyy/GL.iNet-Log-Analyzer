@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GL.iNet Log Analyzer</title>
+  <style>
+    :root {
+      --bg: #f4efe8;
+      --panel: rgba(255, 252, 248, 0.92);
+      --ink: #1f1d1a;
+      --muted: #70665d;
+      --accent: #0f766e;
+      --accent-2: #c2410c;
+      --line: #d8cfc6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.16), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(194, 65, 12, 0.14), transparent 32%),
+        linear-gradient(180deg, #f8f3ed 0%, var(--bg) 100%);
+      min-height: 100vh;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 4vw, 4.5rem);
+      line-height: 0.95;
+      margin: 0 0 12px;
+      max-width: 9ch;
+    }
+    p.lead {
+      font-family: "Segoe UI", sans-serif;
+      color: var(--muted);
+      max-width: 68ch;
+      margin: 0 0 28px;
+      line-height: 1.5;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 18px 60px rgba(31, 29, 26, 0.08);
+    }
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    form.filters {
+      align-items: end;
+      margin-bottom: 22px;
+    }
+    .field {
+      display: grid;
+      gap: 6px;
+      min-width: 170px;
+      font-family: "Segoe UI", sans-serif;
+    }
+    input[type="file"] {
+      font-family: "Segoe UI", sans-serif;
+      max-width: 100%;
+    }
+    input[type="text"], select {
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: white;
+      font: 500 0.95rem "Segoe UI", sans-serif;
+    }
+    button {
+      border: none;
+      border-radius: 999px;
+      background: var(--accent);
+      color: white;
+      padding: 12px 20px;
+      font: 600 0.95rem "Segoe UI", sans-serif;
+      cursor: pointer;
+    }
+    .utility {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .utility a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .result-grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      margin-bottom: 22px;
+    }
+    .split {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1.2fr 0.8fr;
+      margin-top: 16px;
+    }
+    .stack {
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.68);
+    }
+    .label {
+      font: 600 0.8rem "Segoe UI", sans-serif;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .value {
+      font-size: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: "Segoe UI", sans-serif;
+      margin-top: 12px;
+    }
+    th, td {
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      padding: 10px 8px;
+      vertical-align: top;
+    }
+    th {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+    .pill {
+      display: inline-block;
+      margin-right: 6px;
+      margin-top: 4px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.1);
+      color: var(--accent);
+      font-size: 0.78rem;
+    }
+    .pill.warn {
+      background: rgba(194, 65, 12, 0.1);
+      color: var(--accent-2);
+    }
+    .bar {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .bar-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 44px;
+      gap: 10px;
+      align-items: center;
+    }
+    .bar-track {
+      height: 10px;
+      background: rgba(31, 29, 26, 0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), #14b8a6);
+    }
+    .timeline {
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .event {
+      border-left: 4px solid var(--accent);
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.64);
+      border-radius: 0 14px 14px 0;
+      font-family: "Segoe UI", sans-serif;
+    }
+    .event time {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+    .event strong {
+      display: block;
+      margin: 4px 0 6px;
+    }
+    .error {
+      color: var(--accent-2);
+      font-family: "Segoe UI", sans-serif;
+    }
+    @media (max-width: 840px) {
+      .split {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>GL.iNet Router Log Analyzer</h1>
+    <p class="lead">
+      Upload a router log or support bundle, trace operational events, filter by signal and source, and export the subset you care about as JSON or CSV.
+    </p>
+
+    <section class="panel">
+      <form method="post" enctype="multipart/form-data">
+        <input type="file" name="log_file" accept=".log,.txt,.out,.json,.zip,.gz,.tar,.tgz,.tar.gz,text/plain" required>
+        <button type="submit">Analyze Log</button>
+      </form>
+
+      {% if error %}
+      <p class="error">{{ error }}</p>
+      {% endif %}
+
+      {% if result %}
+      <div class="utility">
+        <div>Report ID: <strong>{{ report_id }}</strong></div>
+        <a href="/reports/{{ report_id }}.json?severity={{ filters.severity }}&category={{ filters.category }}&signal={{ filters.signal }}&source={{ filters.source }}&q={{ filters.query }}">Download JSON</a>
+        <a href="/reports/{{ report_id }}.csv?severity={{ filters.severity }}&category={{ filters.category }}&signal={{ filters.signal }}&source={{ filters.source }}&q={{ filters.query }}">Download CSV</a>
+      </div>
+
+      <form class="filters" method="get" action="/reports/{{ report_id }}">
+        <div class="field">
+          <label for="severity">Severity</label>
+          <select id="severity" name="severity">
+            <option value="">All</option>
+            {% for option in filter_options.severities %}
+            <option value="{{ option }}" {% if filters.severity == option %}selected{% endif %}>{{ option }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="">All</option>
+            {% for option in filter_options.categories %}
+            <option value="{{ option }}" {% if filters.category == option %}selected{% endif %}>{{ option }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="signal">Signal</label>
+          <select id="signal" name="signal">
+            <option value="">All</option>
+            {% for option in filter_options.signals %}
+            <option value="{{ option }}" {% if filters.signal == option %}selected{% endif %}>{{ option }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field">
+          <label for="source">Source Contains</label>
+          <input id="source" type="text" name="source" value="{{ filters.source }}">
+        </div>
+        <div class="field">
+          <label for="q">Text Search</label>
+          <input id="q" type="text" name="q" value="{{ filters.query }}">
+        </div>
+        <button type="submit">Apply Filters</button>
+      </form>
+
+      <div class="result-grid">
+        <div class="card">
+          <div class="label">File</div>
+          <div>{{ filename }}</div>
+        </div>
+        <div class="card">
+          <div class="label">Entries</div>
+          <div class="value">{{ result.summary.total_lines }}</div>
+        </div>
+        <div class="card">
+          <div class="label">Sources</div>
+          <div class="value">{{ result.summary.source_counts|length }}</div>
+        </div>
+        <div class="card">
+          <div class="label">Timeline Events</div>
+          <div class="value">{{ result.summary.timeline_events }}</div>
+        </div>
+        <div class="card">
+          <div class="label">Filtered Rows</div>
+          <div class="value">{{ filtered_count }}</div>
+        </div>
+      </div>
+
+      <div class="split">
+        <div class="stack">
+          <div class="card">
+            <div class="label">Operational Timeline</div>
+            <div class="timeline">
+              {% for entry in result.timeline[:12] %}
+              <article class="event">
+                <time>{{ entry.timestamp or "No timestamp" }} • {{ entry.source or "inline" }} • line {{ entry.line_number }}</time>
+                <strong>{{ entry.message }}</strong>
+                <div>
+                  {% for signal in entry.signals %}
+                  <span class="pill warn">{{ signal }}</span>
+                  {% endfor %}
+                  {% for category in entry.categories %}
+                  <span class="pill">{{ category }}</span>
+                  {% endfor %}
+                </div>
+              </article>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="label">Recent Notable Events</div>
+            <table>
+              <thead>
+                <tr><th>Source</th><th>Line</th><th>Severity</th><th>Message</th></tr>
+              </thead>
+              <tbody>
+                {% for entry in result.notable_events[:15] %}
+                <tr>
+                  <td>{{ entry.source or "-" }}</td>
+                  <td>{{ entry.line_number }}</td>
+                  <td>{{ entry.severity }}</td>
+                  <td>
+                    <div>{{ entry.message }}</div>
+                    <div>
+                      {% for signal in entry.signals %}
+                      <span class="pill warn">{{ signal }}</span>
+                      {% endfor %}
+                      {% for category in entry.categories %}
+                      <span class="pill">{{ category }}</span>
+                      {% endfor %}
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <div class="label">Severity Mix</div>
+            <div class="bar">
+              {% for severity, count in result.summary.severity_counts.items() %}
+              <div class="bar-row">
+                <div>{{ severity }}</div>
+                <div class="bar-track"><div class="bar-fill" style="width: {{ (count / result.summary.total_lines * 100) if result.summary.total_lines else 0 }}%"></div></div>
+                <div>{{ count }}</div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="label">Top Router Signals</div>
+            <table>
+              <thead>
+                <tr><th>Signal</th><th>Count</th></tr>
+              </thead>
+              <tbody>
+                {% for signal, count in result.summary.signal_counts.items() %}
+                <tr><td>{{ signal }}</td><td>{{ count }}</td></tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <div class="label">Sources</div>
+            <table>
+              <thead>
+                <tr><th>Source</th><th>Docs</th></tr>
+              </thead>
+              <tbody>
+                {% for source, count in result.summary.source_counts.items() %}
+                <tr><td>{{ source }}</td><td>{{ count }}</td></tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <div class="card">
+            <div class="label">Filtered Entries</div>
+            <table>
+              <thead>
+                <tr><th>Source</th><th>Line</th><th>Message</th></tr>
+              </thead>
+              <tbody>
+                {% for entry in filtered_entries %}
+                <tr>
+                  <td>{{ entry.source or "-" }}</td>
+                  <td>{{ entry.line_number }}</td>
+                  <td>
+                    <div>{{ entry.message }}</div>
+                    <div>
+                      {% for signal in entry.signals %}
+                      <span class="pill warn">{{ signal }}</span>
+                      {% endfor %}
+                      {% for category in entry.categories %}
+                      <span class="pill">{{ category }}</span>
+                      {% endfor %}
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </section>
+  </main>
+</body>
+</html>

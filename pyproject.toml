@@ -1,0 +1,29 @@
+[project]
+name = "glinet-log-analyzer"
+version = "0.1.0"
+description = "CLI and web UI for analyzing GL.iNet router logs"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1.0",
+  "jinja2>=3.1,<4.0",
+  "python-multipart>=0.0.9,<1.0",
+  "typer>=0.16,<1.0",
+  "uvicorn>=0.35,<1.0",
+]
+
+[project.scripts]
+glinet-log-analyzer = "glinet_log_analyzer.cli:app"
+
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

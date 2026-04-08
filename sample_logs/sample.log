@@ -1,0 +1,14 @@
+2026-04-03 10:14:00 netifd: wan link is up
+2026-04-03 10:14:03 netifd: Interface 'wan' has lost the connection
+2026-04-03 10:14:07 udhcpc: lease of 192.168.8.22 obtained from 192.168.8.1
+2026-04-03 10:14:11 dnsmasq[1]: failed to resolve updates.gl-inet.com
+2026-04-03 10:14:40 hostapd: wlan0: AP-STA-CONNECTED 12:34:56:78:90:ab
+2026-04-03 10:14:58 firewall: dropped packet from 10.0.0.8 to 1.1.1.1
+2026-04-03 10:15:05 dropbear[422]: Bad password attempt for root
+2026-04-03 10:16:20 wg0: WireGuard peer handshake established
+2026-04-03 10:16:32 mwan3track: interface wan is offline
+2026-04-03 10:16:45 modemmanager: LTE modem registered on network
+2026-04-03 10:16:53 modemmanager: SIM card ready
+2026-04-03 10:16:58 modemmanager: RSRP -95 RSRQ -8 SINR 19
+2026-04-03 10:17:02 tetherd: usb0 tether interface is up
+2026-04-03 10:17:10 sysupgrade: firmware upgrade available

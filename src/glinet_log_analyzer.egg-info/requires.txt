@@ -1,0 +1,5 @@
+fastapi<1.0,>=0.115
+jinja2<4.0,>=3.1
+python-multipart<1.0,>=0.0.9
+typer<1.0,>=0.16
+uvicorn<1.0,>=0.35
