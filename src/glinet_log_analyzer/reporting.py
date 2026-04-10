@@ -94,6 +94,9 @@ def format_text_report(result: AnalysisResult, filtered_entries: list[LogEntry],
     lines.append("")
     lines.extend(_summary_lines(result, filtered_entries))
     lines.append("")
+    lines.append("Agent brief")
+    lines.extend(_agent_brief_lines(result, filtered_entries))
+    lines.append("")
     lines.append("What stands out")
     findings = _key_findings(result, filtered_entries)
     if findings:
@@ -103,11 +106,11 @@ def format_text_report(result: AnalysisResult, filtered_entries: list[LogEntry],
         lines.append("- No notable events matched the current detection rules.")
 
     lines.append("")
-    lines.append("Representative events")
-    sample_events = result.timeline[:8] if result.timeline else filtered_entries[:8]
+    lines.append("Timeline")
+    sample_events = _timeline_events(result, filtered_entries)
     if sample_events:
         for entry in sample_events:
-            signal_text = ", ".join(SIGNAL_LABELS.get(signal, signal.replace("_", " ")) for signal in entry.signals) or "General event"
+            signal_text = _describe_entry(entry)
             when = entry.timestamp or f"line {entry.line_number}"
             lines.append(f"- {when}: {signal_text}. {entry.message}")
     else:
@@ -115,20 +118,25 @@ def format_text_report(result: AnalysisResult, filtered_entries: list[LogEntry],
 
     if filtered_entries:
         lines.append("")
-        lines.append("Recent lines to inspect")
-        for entry in filtered_entries[:6]:
+        lines.append("Evidence")
+        for entry in _evidence_entries(result, filtered_entries):
             when = entry.timestamp or f"line {entry.line_number}"
-            lines.append(f"- {when}: {entry.message}")
+            context = []
+            if entry.component:
+                context.append(entry.component)
+            if entry.source and entry.source != "inline":
+                context.append(entry.source)
+            prefix = f"[{' | '.join(context)}] " if context else ""
+            lines.append(f"- {when}: {prefix}{entry.message}")
 
     return "\n".join(lines)
 
 
 def _summary_lines(result: AnalysisResult, filtered_entries: list[LogEntry]) -> list[str]:
-    lines = [
-        f"Entries parsed: {len(result.entries)} total, {len(filtered_entries)} shown by current filters.",
-        f"Severity mix: {_format_counter(result.severity_counts, limit=4)}.",
-        f"Main areas: {_format_counter(result.category_counts, limit=5)}.",
-    ]
+    lines = [_scope_line(result, filtered_entries), f"Overall assessment: {_overall_assessment(result, filtered_entries)}."]
+    if filtered_entries:
+        lines.append(f"Severity mix in view: {_format_counter(_entry_counter(filtered_entries, 'severity'), limit=4)}.")
+        lines.append(f"Main areas in view: {_format_counter(_count_values(filtered_entries, 'categories'), limit=5)}.")
     if result.timeline:
         first = result.timeline[0].timestamp or f"line {result.timeline[0].line_number}"
         last = result.timeline[-1].timestamp or f"line {result.timeline[-1].line_number}"
@@ -172,6 +180,95 @@ def _key_findings(result: AnalysisResult, filtered_entries: list[LogEntry]) -> l
         findings.append(f"The busiest component in the filtered view is {component} with {count} line(s).")
 
     return findings[:8]
+
+
+def _agent_brief_lines(result: AnalysisResult, filtered_entries: list[LogEntry]) -> list[str]:
+    if not filtered_entries:
+        return ["- No matching lines are visible in the current view."]
+
+    lines = [
+        f"- Filtered view contains {len(filtered_entries)} line(s) across {len({entry.source for entry in filtered_entries if entry.source}) or 1} source file(s).",
+        f"- {len(result.timeline)} timeline event(s) and {len(result.notable_events)} notable event(s) were detected in the full analysis.",
+    ]
+
+    busiest_components = _entry_counter(filtered_entries, "component")
+    if busiest_components:
+        component, count = busiest_components.most_common(1)[0]
+        lines.append(f"- The busiest component in this view is {component} with {count} line(s).")
+
+    top_signal = _count_values(filtered_entries, "signals")
+    if top_signal:
+        signal, count = top_signal.most_common(1)[0]
+        lines.append(f"- Most repeated signal in this view: {SIGNAL_LABELS.get(signal, signal.replace('_', ' '))} ({count}).")
+
+    return lines
+
+
+def _timeline_events(result: AnalysisResult, filtered_entries: list[LogEntry]) -> list[LogEntry]:
+    filtered_ids = {id(entry) for entry in filtered_entries}
+    filtered_timeline = [entry for entry in result.timeline if id(entry) in filtered_ids]
+    if filtered_timeline:
+        return filtered_timeline[:8]
+    return filtered_entries[:8]
+
+
+def _evidence_entries(result: AnalysisResult, filtered_entries: list[LogEntry]) -> list[LogEntry]:
+    priority_entries = [entry for entry in filtered_entries if entry.signals or entry.severity in {"critical", "error", "warning"}]
+    if priority_entries:
+        return priority_entries[:6]
+    if result.notable_events:
+        return result.notable_events[:6]
+    return filtered_entries[:6]
+
+
+def _scope_line(result: AnalysisResult, filtered_entries: list[LogEntry]) -> str:
+    total_entries = len(result.entries)
+    visible_entries = len(filtered_entries)
+    if visible_entries == total_entries:
+        return f"Scope: showing the full analysis set with {visible_entries} parsed line(s)."
+    hidden_entries = total_entries - visible_entries
+    return f"Scope: showing {visible_entries} of {total_entries} parsed line(s); {hidden_entries} line(s) are hidden by the current filters."
+
+
+def _overall_assessment(result: AnalysisResult, filtered_entries: list[LogEntry]) -> str:
+    signal_counts = _count_values(filtered_entries, "signals")
+    severity_counts = _entry_counter(filtered_entries, "severity")
+
+    if signal_counts["wan_down"] or signal_counts["multiwan_failover"]:
+        return "connectivity instability is the clearest issue in the visible log slice"
+    if signal_counts["dns_failure"] or signal_counts["auth_failure"] or signal_counts["firewall_drop"]:
+        return "user-facing failures are present and worth immediate inspection"
+    if signal_counts["modem_event"] or signal_counts["sim_event"] or signal_counts["cell_signal"]:
+        return "cellular activity dominates this log slice"
+    if signal_counts["wifi_client_join"] or signal_counts["wifi_client_leave"]:
+        return "the log is mostly showing Wi-Fi client activity rather than a clear fault"
+    if severity_counts["critical"] or severity_counts["error"]:
+        return "error-level events are present, but no stronger signal pattern dominates"
+    if filtered_entries:
+        return "the visible lines look mostly informational"
+    if result.entries:
+        return "the current filter set hides all parsed lines"
+    return "no parsable log lines were found"
+
+
+def _describe_entry(entry: LogEntry) -> str:
+    if entry.signals:
+        return ", ".join(SIGNAL_LABELS.get(signal, signal.replace("_", " ")) for signal in entry.signals)
+    if entry.categories:
+        return f"{', '.join(entry.categories)} activity"
+    return "General event"
+
+
+def _entry_counter(entries: list[LogEntry], attribute: str) -> Counter[str]:
+    values = [value for entry in entries if (value := getattr(entry, attribute))]
+    return Counter(values)
+
+
+def _count_values(entries: list[LogEntry], attribute: str) -> Counter[str]:
+    counter: Counter[str] = Counter()
+    for entry in entries:
+        counter.update(getattr(entry, attribute))
+    return counter
 
 
 def _format_counter(counter: Counter[str], *, limit: int) -> str:

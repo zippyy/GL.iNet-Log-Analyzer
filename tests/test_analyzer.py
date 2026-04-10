@@ -166,9 +166,30 @@ class AnalyzerTests(unittest.TestCase):
         report = format_text_report(result, result.entries, file_label="sample.log")
 
         self.assertIn("GL.iNet log report for sample.log", report)
+        self.assertIn("Agent brief", report)
+        self.assertIn("Overall assessment: connectivity instability is the clearest issue in the visible log slice.", report)
         self.assertIn("What stands out", report)
+        self.assertIn("Timeline", report)
+        self.assertIn("Evidence", report)
         self.assertIn("WAN connectivity dropped 1 time(s).", report)
         self.assertIn("Wi-Fi client churn detected: 1 join(s), 0 leave(s).", report)
+
+    def test_format_text_report_mentions_when_filters_hide_lines(self) -> None:
+        result = analyze_text(
+            "\n".join(
+                [
+                    "2026-04-03 10:14:03 netifd: Interface 'wan' has lost the connection",
+                    "2026-04-03 10:14:07 udhcpc: lease of 192.168.8.22 obtained from 192.168.8.1",
+                    "2026-04-03 10:14:40 hostapd: wlan0: AP-STA-CONNECTED 12:34:56:78:90:ab",
+                ]
+            )
+        )
+
+        filtered = filter_entries(result.entries, signal="dhcp_lease")
+        report = format_text_report(result, filtered, file_label="sample.log")
+
+        self.assertIn("Scope: showing 1 of 3 parsed line(s); 2 line(s) are hidden by the current filters.", report)
+        self.assertIn("Most repeated signal in this view: DHCP lease activity (1).", report)
 
 
 if __name__ == "__main__":
