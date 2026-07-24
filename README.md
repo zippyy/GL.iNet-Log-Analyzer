@@ -15,7 +15,8 @@ Local tooling for inspecting GL.iNet router logs from either a command line or a
 
 ```bash
 python -m venv .venv
-.venv\Scripts\activate
+source .venv/bin/activate   # Linux / macOS
+# .venv\Scripts\activate    # Windows
 pip install -e .
 ```
 
@@ -67,7 +68,7 @@ Relevant environment variables:
 - `GLINET_LOG_ANALYZER_PORT`
 - `GLINET_LOG_ANALYZER_DATA_DIR`
 
-Reverse proxy examples are included in [deploy/nginx.conf](C:/Users/nick/Documents/GitHub/GL.iNet-Log-Analyzer/deploy/nginx.conf) and [deploy/Caddyfile](C:/Users/nick/Documents/GitHub/GL.iNet-Log-Analyzer/deploy/Caddyfile).
+Reverse proxy examples are included in [deploy/nginx.conf](deploy/nginx.conf) and [deploy/Caddyfile](deploy/Caddyfile).
 
 ## Project layout
 

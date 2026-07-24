@@ -149,7 +149,7 @@ class AnalyzerTests(unittest.TestCase):
         self.assertEqual(result.signal_counts["cell_signal"], 0)
         self.assertEqual(result.category_counts["cellular"], 0)
         self.assertEqual(result.entries[0].timestamp, "Tue Apr  7 15:42:35 2026")
-        self.assertEqual(result.entries[0].component, "kernel")
+        self.assertEqual(result.entries[0].component, "wlan")
         self.assertEqual(result.entries[0].severity, "error")
 
     def test_format_text_report_is_human_readable(self) -> None:

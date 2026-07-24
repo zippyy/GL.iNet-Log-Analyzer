@@ -46,6 +46,15 @@ SYSLOG_PREFIX_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+# Matches kernel uptime timestamps like "[ 5251.883721]" at start of kernel messages
+KERNEL_UPTIME_PATTERN = re.compile(r"^\[\s*\d+\.\d+\]\s*")
+
+# Matches kernel sub-components like "wlan: [PID:L:SUBSYS]" or "8021q: " after uptime bracketing
+KERNEL_SUBCOMPONENT_PATTERN = re.compile(r"^(?P<subcomponent>[\w./-]+(?:\d+)?):\s*(?P<rest>.*)$")
+
+# Matches driver-level log markers like "[4116:I:ANY]" or "[0:E:CMN_MLME]" at start of sub-messages
+KERNEL_DRIVER_MARKER_PATTERN = re.compile(r"^\[\d+:[A-Z]+:[A-Z_]+\]\s*")
+
 SIGNAL_PATTERNS = {
     "wan_up": re.compile(
         r"\b(?:wan link is up|interface ['\"]?wan['\"]?.*is up|network device ['\"]?wan['\"]? link is up|udhcpc: lease of)\b",
@@ -78,6 +87,12 @@ SIGNAL_PATTERNS = {
     "sim_event": re.compile(r"\b(?:sim card|sim not inserted|sim ready|pin required)\b", re.IGNORECASE),
     "cell_signal": re.compile(r"\b(?:rsrp|rsrq|sinr|signal quality)\b", re.IGNORECASE),
     "reboot": re.compile(r"\b(?:reboot|restarting system|booting linux)\b", re.IGNORECASE),
+    "repeater_connect": re.compile(r"\b(?:gl-repeater.*connected to|repeater.*\d+\) connected to)\b", re.IGNORECASE),
+    "repeater_scan": re.compile(r"\b(?:gl-repeater.*\d+\) (?:sta\d+: )?found \d+ networks?)\b", re.IGNORECASE),
+    "repeater_switch": re.compile(r"\b(?:gl-repeater.*switch to)\b", re.IGNORECASE),
+    "cloud_mqtt": re.compile(r"\b(?:gl-cloud.*(?:connect mqtt|conack|reconnect mqtt))\b", re.IGNORECASE),
+    "wwan_up": re.compile(r"\b(?:Interface ['\"]?wwan['\"]? is now up|wwan.*link is up)\b", re.IGNORECASE),
+    "wwan_down": re.compile(r"\b(?:Interface ['\"]?wwan['\"]?.*link is down|wwan.*connectivity loss)\b", re.IGNORECASE),
 }
 
 TIMELINE_SIGNALS = {
@@ -97,6 +112,12 @@ TIMELINE_SIGNALS = {
     "sim_event",
     "cell_signal",
     "reboot",
+    "repeater_connect",
+    "repeater_scan",
+    "repeater_switch",
+    "cloud_mqtt",
+    "wwan_up",
+    "wwan_down",
 }
 
 
@@ -124,6 +145,11 @@ def analyze_documents(documents: list[LogDocument]) -> AnalysisResult:
             timestamp, remainder = _extract_timestamp(line)
             syslog_severity, remainder = _extract_syslog_severity(remainder)
             component, message = _extract_component(remainder)
+
+            # Skip empty messages (e.g., bare kernel uptime brackets with no content)
+            if not message.strip():
+                continue
+
             severity = syslog_severity or _detect_severity(message)
             categories = _categorize(message)
             signals = _detect_signals(message)
@@ -201,8 +227,38 @@ def _extract_syslog_severity(line: str) -> tuple[str | None, str]:
 def _extract_component(line: str) -> tuple[str | None, str]:
     match = COMPONENT_PATTERN.match(line)
     if not match:
-        return None, line
-    return match.group("component"), match.group("message")
+        # Try with kernel uptime bracket stripped from start (for lines without component prefix)
+        cleaned = KERNEL_UPTIME_PATTERN.sub("", line)
+        if cleaned != line:
+            match2 = COMPONENT_PATTERN.match(cleaned)
+            if match2:
+                component = match2.group("component")
+                message = match2.group("message")
+                return _clean_kernel_message(component, message)
+        return None, cleaned
+
+    component = match.group("component")
+    message = match.group("message")
+    return _clean_kernel_message(component, message)
+
+
+def _clean_kernel_message(component: str, message: str) -> tuple[str, str]:
+    """Strip kernel uptime brackets and extract real sub-components from kernel messages."""
+    if component != "kernel":
+        return component, message
+
+    # Strip kernel uptime timestamps like "[ 5251.883721]" from kernel messages
+    message = KERNEL_UPTIME_PATTERN.sub("", message)
+
+    # Try to extract the real sub-component (wlan, 8021q, br-lan, etc.)
+    sub_match = KERNEL_SUBCOMPONENT_PATTERN.match(message)
+    if sub_match:
+        component = sub_match.group("subcomponent")
+        message = sub_match.group("rest")
+        # Strip driver-level log markers like "[4116:I:ANY]" from start of sub-messages
+        message = KERNEL_DRIVER_MARKER_PATTERN.sub("", message)
+
+    return component, message
 
 
 def _categorize(message: str) -> list[str]:

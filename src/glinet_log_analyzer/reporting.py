@@ -85,6 +85,12 @@ SIGNAL_LABELS = {
     "sim_event": "SIM event",
     "cell_signal": "Cellular signal metric",
     "reboot": "Reboot event",
+    "repeater_connect": "Repeater connected to AP",
+    "repeater_scan": "Repeater Wi-Fi scan",
+    "repeater_switch": "Repeater switching AP",
+    "cloud_mqtt": "GoodCloud MQTT activity",
+    "wwan_up": "Wireless WAN came up",
+    "wwan_down": "Wireless WAN went down",
 }
 
 
