@@ -26,7 +26,7 @@ from .reporting import (
     generate_triage_notes,
     generate_verdict,
 )
-from .storage import list_reports, load_report, save_report
+from .storage import delete_report, list_reports, load_report, save_report
 
 BASE_DIR = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
@@ -170,6 +170,12 @@ def create_app() -> FastAPI:
         reports = list_reports()
         return HTMLResponse(content=_render_history_page(reports, request))
 
+    @app.post("/reports/{report_id}/delete")
+    async def delete_report_route(request: Request, report_id: str) -> HTMLResponse:
+        delete_report(report_id)
+        reports = list_reports()
+        return HTMLResponse(content=_render_history_page(reports, request))
+
     @app.post("/ingest/syslog")
     async def ingest_syslog(
         request: Request,
@@ -261,6 +267,7 @@ def _render_history_page(reports: list[dict[str, object]], request: Request) -> 
               <a href="/reports/{rid}.csv">CSV</a> ·
               <a href="/reports/{rid}.html">HTML</a>
             </td>
+            <td><form method="post" action="/reports/{rid}/delete" style="display:inline;"><button class="btn-icon" onclick="return confirm('Delete this report?')" style="font-size:0.75rem;">🗑</button></form></td>
         </tr>"""
 
     return f"""<!DOCTYPE html>
@@ -289,7 +296,7 @@ def _render_history_page(reports: list[dict[str, object]], request: Request) -> 
       <a href="/">← Back to analyzer</a>
     </div>
     <section class="panel">
-      {"<table><thead><tr><th>File</th><th>Entries</th><th>Analyzed</th><th>ID</th><th>Export</th></tr></thead><tbody>" + rows + "</tbody></table>" if rows else '<div class="empty">No reports yet. <a href="/">Upload a log file</a> to get started.</div>'}
+      {"<table><thead><tr><th>File</th><th>Entries</th><th>Analyzed</th><th>ID</th><th>Export</th><th></th></tr></thead><tbody>" + rows + "</tbody></table>" if rows else '<div class="empty">No reports yet. <a href="/">Upload a log file</a> to get started.</div>'}
     </section>
   </main>
 </body>

@@ -43,6 +43,15 @@ def load_report(report_id: str) -> dict[str, Any] | None:
     }
 
 
+def delete_report(report_id: str) -> bool:
+    """Delete a saved report. Returns True if deleted, False if not found."""
+    report_path = get_reports_dir() / f"{report_id}.json"
+    if not report_path.exists():
+        return False
+    report_path.unlink()
+    return True
+
+
 def list_reports() -> list[dict[str, Any]]:
     """List all saved reports sorted by modification time (newest first)."""
     reports_dir = get_reports_dir()

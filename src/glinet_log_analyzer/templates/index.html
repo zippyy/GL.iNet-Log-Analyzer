@@ -390,12 +390,15 @@
           </div>
 
           <div class="card">
-            <div class="label">Filtered Entries</div>
-            <table>
+            <div class="label">Filtered Entries ({{ filtered_count }})</div>
+            <div style="margin-bottom:8px;">
+              <input type="text" id="entrySearch" placeholder="🔍 Filter entries..." style="width:100%;padding:8px 12px;border-radius:10px;border:1px solid var(--line);background:var(--input-bg);color:var(--ink);font:500 0.9rem 'Segoe UI',sans-serif;" oninput="filterEntries()">
+            </div>
+            <table id="entriesTable">
               <thead><tr><th>Source</th><th>Line</th><th>Message</th></tr></thead>
               <tbody>
                 {% for entry in filtered_entries %}
-                <tr>
+                <tr class="entry-row">
                   <td>{{ entry.source or "-" }}</td>
                   <td>{{ entry.line_number }}</td>
                   <td>
@@ -413,6 +416,8 @@
                 {% endfor %}
               </tbody>
             </table>
+            <div id="entryPagination" style="display:flex;gap:8px;margin-top:10px;font-family:'Segoe UI',sans-serif;font-size:0.85rem;justify-content:center;align-items:center;color:var(--muted);">
+            </div>
           </div>
         </div>
       </div>
@@ -461,6 +466,45 @@
     function copyText(text) {
       navigator.clipboard.writeText(text).then(() => showToast('Copied to clipboard!'));
     }
+
+    // ── Live search & pagination ─────────────────────────────────
+    (function() {
+      const rows = Array.from(document.querySelectorAll('#entriesTable .entry-row'));
+      const perPage = 25;
+      let currentPage = 1;
+      let filtered = rows;
+
+      window.filterEntries = function() {
+        const q = (document.getElementById('entrySearch')||{}).value?.toLowerCase() || '';
+        filtered = rows.filter(r => r.textContent.toLowerCase().includes(q));
+        currentPage = 1;
+        renderPage();
+      };
+
+      function renderPage() {
+        const total = filtered.length;
+        const pages = Math.max(1, Math.ceil(total / perPage));
+        if (currentPage > pages) currentPage = pages;
+        const start = (currentPage - 1) * perPage;
+        rows.forEach(r => r.style.display = 'none');
+        filtered.forEach((r, i) => { r.style.display = (i >= start && i < start + perPage) ? '' : 'none'; });
+        const p = document.getElementById('entryPagination');
+        if (!p || pages <= 1) { if(p) p.innerHTML = ''; return; }
+        let html = `<span>Showing ${start+1}-${Math.min(start+perPage,total)} of ${total}</span>`;
+        html += `<button class="btn-icon" onclick="paginate(${currentPage-1})" ${currentPage===1?'disabled':''}>←</button>`;
+        html += `<span>Page ${currentPage} / ${pages}</span>`;
+        html += `<button class="btn-icon" onclick="paginate(${currentPage+1})" ${currentPage===pages?'disabled':''}>→</button>`;
+        p.innerHTML = html;
+      }
+
+      window.paginate = function(n) {
+        if (n < 1 || n > Math.ceil(filtered.length / perPage)) return;
+        currentPage = n;
+        renderPage();
+      };
+
+      renderPage();
+    })();
   </script>
 </body>
 </html>
