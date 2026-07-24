@@ -21,6 +21,8 @@ from .reporting import (
     detect_anomalies,
     entries_to_csv,
     filter_entries,
+    generate_customer_summary,
+    generate_root_cause,
     generate_triage_notes,
     generate_verdict,
 )
@@ -237,6 +239,8 @@ def _build_context(
         "wifi_clients": result.to_dict().get("wifi_clients", []),
         "cellular_readings": result.to_dict().get("cellular_readings", []),
         "anomalies": detect_anomalies(result),
+        "customer_summary": generate_customer_summary(result),
+        "root_cause": generate_root_cause(result),
     }
 
 

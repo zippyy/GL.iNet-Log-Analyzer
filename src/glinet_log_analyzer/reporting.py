@@ -395,18 +395,110 @@ def detect_anomalies(result: AnalysisResult) -> list[str]:
 
 
 def build_narrative_timeline(result: AnalysisResult) -> list[dict[str, str]]:
-    """Build a human-readable timeline for the web UI — plain English, not raw log lines."""
+    """Build a human-readable timeline with relative timestamps and severity colors."""
     timeline: list[dict[str, str]] = []
-    for entry in result.timeline[:20]:
+    prev_time: str | None = None
+
+    for entry in result.timeline[:30]:
         when = entry.timestamp or ""
         narratives = []
+        severity = "neutral"
         for signal in entry.signals:
             narratives.append(SIGNAL_NARRATIVES.get(signal, signal.replace("_", " ")))
+            if signal in ("wan_down", "wan_up", "wifi_client_leave", "multiwan_failover",
+                          "wwan_down", "wwan_up", "repeater_switch"):
+                severity = "warn"
+            if signal in ("dns_failure", "auth_failure", "reboot", "firewall_drop"):
+                severity = "error"
         if not narratives:
             narratives.append(entry.message[:100])
 
+        # Relative time
+        if when and prev_time:
+            delta = _time_diff(prev_time, when)
+            display_time = f"{when} ({delta})" if delta else when
+        else:
+            display_time = when or ""
+        prev_time = when
+
         timeline.append({
-            "time": when,
+            "time": display_time,
             "what": " | ".join(narratives),
+            "severity": severity,
         })
     return timeline
+
+
+def _time_diff(t1: str, t2: str) -> str:
+    """Return a human-readable difference between two timestamp strings."""
+    # Try common formats
+    for fmt in ("%Y-%m-%d %H:%M:%S", "%a %b %d %H:%M:%S %Y", "%b %d %H:%M:%S"):
+        try:
+            from datetime import datetime as dt
+            d1 = dt.strptime(t1.rsplit(".", 1)[0] if "." in t1 else t1, fmt)
+            d2 = dt.strptime(t2.rsplit(".", 1)[0] if "." in t2 else t2, fmt)
+            diff = (d2 - d1).total_seconds()
+            if diff < 0:
+                return ""
+            if diff < 1:
+                return "<1s later"
+            if diff < 60:
+                return f"{int(diff)}s later"
+            if diff < 3600:
+                m = int(diff // 60)
+                s = int(diff % 60)
+                return f"{m}m{s}s later" if s else f"{m}m later"
+            h = int(diff // 3600)
+            m = int((diff % 3600) // 60)
+            return f"{h}h{m}m later" if m else f"{h}h later"
+        except (ValueError, OverflowError):
+            continue
+    return ""
+
+
+def generate_customer_summary(result: AnalysisResult) -> str:
+    """Generate a non-technical summary suitable for sharing with the end customer."""
+    sc = result.signal_counts
+    lines: list[str] = []
+
+    if sc["wan_down"]:
+        lines.append(f"Your internet connection dropped briefly {sc['wan_down']} time(s).")
+        if sc["wan_up"]:
+            lines.append("It came back online automatically each time.")
+    else:
+        lines.append("Your internet connection appears stable.")
+
+    if sc["wifi_client_join"] or sc["wifi_client_leave"]:
+        lines.append(f"{sc['wifi_client_join']} device(s) connected to your Wi-Fi and {sc['wifi_client_leave']} disconnected.")
+
+    if sc["dns_failure"]:
+        lines.append("A few websites may have been temporarily unreachable due to a DNS hiccup — this is usually minor and self-resolving.")
+
+    if not lines:
+        lines.append("Everything looks normal — no issues were found in your router's logs.")
+
+    return " ".join(lines)
+
+
+def generate_root_cause(result: AnalysisResult) -> str:
+    """Suggest the most likely root cause based on observed patterns."""
+    sc = result.signal_counts
+
+    if sc["wan_down"] >= 1 and sc["dhcp_lease"] >= 1:
+        return "💡 The combination of WAN drops and DHCP lease renewals suggests the ISP modem or upstream connection was briefly interrupted (possibly a modem reboot or ISP flap)."
+    if sc["dns_failure"] > 3:
+        return "💡 Multiple DNS failures point to an issue with the ISP's DNS servers. This is a common cause of 'websites not loading' complaints. Try switching to Cloudflare (1.1.1.1) or Google (8.8.8.8) DNS."
+    if sc["auth_failure"] > 3:
+        return "💡 Multiple failed login attempts suggest someone (or a bot) is trying to guess the router's password. Ensure remote admin access is disabled or protected with a strong password."
+    if sc["repeater_switch"] > 2:
+        return "💡 The repeater is frequently switching between access points, which usually means the signal is weak at its current location. Try moving it closer to the main router."
+    if sc["multiwan_failover"] > 3:
+        return "💡 Frequent connection switching indicates the primary internet source is unreliable. If using a cellular backup, check the signal strength."
+    if sc["wifi_client_leave"] > sc.get("wifi_client_join", 0) * 2:
+        return "💡 Devices are dropping off Wi-Fi more than they're connecting. This often points to Wi-Fi interference, range issues, or channel congestion."
+    if sc["reboot"]:
+        return "💡 The router rebooted unexpectedly — this could be a power issue, overheating, or a firmware bug."
+    if sc["wwan_down"]:
+        return "💡 The wireless WAN link dropped, which means the upstream network (the network this router is connecting to via Wi-Fi) went down or its signal weakened."
+
+    return ""
