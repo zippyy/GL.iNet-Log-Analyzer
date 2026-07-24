@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
@@ -82,11 +83,11 @@ def _analysis_result_from_dict(payload: dict[str, Any]) -> AnalysisResult:
 
     return AnalysisResult(
         entries=entries,
-        severity_counts=summary["severity_counts"],
-        category_counts=summary["category_counts"],
-        component_counts=summary["component_counts"],
-        signal_counts=summary["signal_counts"],
-        source_counts=summary["source_counts"],
+        severity_counts=Counter(summary["severity_counts"]),
+        category_counts=Counter(summary["category_counts"]),
+        component_counts=Counter(summary["component_counts"]),
+        signal_counts=Counter(summary["signal_counts"]),
+        source_counts=Counter(summary["source_counts"]),
         notable_events=notable_events,
         timeline=timeline,
         wifi_clients=wifi_clients,
