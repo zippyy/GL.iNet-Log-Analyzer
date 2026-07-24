@@ -286,7 +286,7 @@
           <select id="severity" name="severity">
             <option value="">All</option>
             {% for option in filter_options.severities %}
-            <option value="{{ option }}" {% if filters.severity == option %}selected{% endif %}>{{ option }}</option>
+            <option value="{{ option }}" {% if filters.severity == option %}selected{% endif %}>{{ severity_labels.get(option, option) }}</option>
             {% endfor %}
           </select>
         </div>
@@ -295,7 +295,7 @@
           <select id="category" name="category">
             <option value="">All</option>
             {% for option in filter_options.categories %}
-            <option value="{{ option }}" {% if filters.category == option %}selected{% endif %}>{{ option }}</option>
+            <option value="{{ option }}" {% if filters.category == option %}selected{% endif %}>{{ category_labels.get(option, option) }}</option>
             {% endfor %}
           </select>
         </div>
@@ -356,7 +356,7 @@
                   <span class="pill warn">{{ signal_labels.get(signal, signal) }}</span>
                   {% endfor %}
                   {% for category in entry.categories %}
-                  <span class="pill">{{ category }}</span>
+                  <span class="pill">{{ category_labels.get(category, category) }}</span>
                   {% endfor %}
                 </div>
               </article>
@@ -375,7 +375,7 @@
                 <tr>
                   <td>{{ entry.source or "-" }}</td>
                   <td>{{ entry.line_number }}</td>
-                  <td>{{ entry.severity }}</td>
+                  <td>{{ severity_labels.get(entry.severity, entry.severity) }}</td>
                   <td>
                     <div>{{ entry.message }}</div>
                     <div>
@@ -383,7 +383,7 @@
                       <span class="pill warn">{{ signal_labels.get(signal, signal) }}</span>
                       {% endfor %}
                       {% for category in entry.categories %}
-                      <span class="pill">{{ category }}</span>
+                      <span class="pill">{{ category_labels.get(category, category) }}</span>
                       {% endfor %}
                     </div>
                   </td>
@@ -400,7 +400,7 @@
             <div class="bar">
               {% for severity, count in result.summary.severity_counts.items() %}
               <div class="bar-row">
-                <div>{{ severity }}</div>
+                <div>{{ severity_labels.get(severity, severity) }}</div>
                 <div class="bar-track"><div class="bar-fill" style="width: {{ (count / result.summary.total_lines * 100) if result.summary.total_lines else 0 }}%"></div></div>
                 <div>{{ count }}</div>
               </div>
@@ -454,7 +454,7 @@
                       <span class="pill warn">{{ signal_labels.get(signal, signal) }}</span>
                       {% endfor %}
                       {% for category in entry.categories %}
-                      <span class="pill">{{ category }}</span>
+                      <span class="pill">{{ category_labels.get(category, category) }}</span>
                       {% endfor %}
                     </div>
                   </td>

@@ -93,6 +93,29 @@ SIGNAL_LABELS = {
     "wwan_down": "Wireless WAN went down",
 }
 
+CATEGORY_LABELS = {
+    "wan": "WAN",
+    "wifi": "Wi-Fi",
+    "dns": "DNS",
+    "firewall": "Firewall",
+    "vpn": "VPN",
+    "system": "System",
+    "auth": "Authentication",
+    "lan": "LAN",
+    "cellular": "Cellular",
+    "multiwan": "Multi-WAN",
+    "usb_tethering": "USB Tethering",
+}
+
+SEVERITY_LABELS = {
+    "critical": "Critical",
+    "error": "Error",
+    "warning": "Warning",
+    "info": "Info",
+    "debug": "Debug",
+    "unknown": "Unknown",
+}
+
 
 def format_text_report(result: AnalysisResult, filtered_entries: list[LogEntry], *, file_label: str) -> str:
     lines: list[str] = []
