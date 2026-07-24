@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 from typing import Any
 
-from .models import AnalysisResult, LogEntry
+from .models import AnalysisResult, CellularReading, LogEntry, WifiClient
 
 
 def get_data_dir() -> Path:
@@ -65,6 +65,21 @@ def _analysis_result_from_dict(payload: dict[str, Any]) -> AnalysisResult:
     notable_events = [_log_entry_from_dict(entry) for entry in payload["notable_events"]]
     timeline = [_log_entry_from_dict(entry) for entry in payload["timeline"]]
     summary = payload["summary"]
+
+    wifi_clients = []
+    for c in payload.get("wifi_clients", []):
+        wifi_clients.append(WifiClient(
+            mac=c["mac"], first_seen=c["first_seen"], last_seen=c["last_seen"],
+            join_count=c.get("join_count", 0), leave_count=c.get("leave_count", 0),
+            last_event=c.get("last_event", ""),
+        ))
+
+    cellular_readings = []
+    for r in payload.get("cellular_readings", []):
+        cellular_readings.append(CellularReading(
+            timestamp=r["timestamp"], rsrp=r.get("rsrp"), rsrq=r.get("rsrq"), sinr=r.get("sinr"),
+        ))
+
     return AnalysisResult(
         entries=entries,
         severity_counts=summary["severity_counts"],
@@ -74,6 +89,8 @@ def _analysis_result_from_dict(payload: dict[str, Any]) -> AnalysisResult:
         source_counts=summary["source_counts"],
         notable_events=notable_events,
         timeline=timeline,
+        wifi_clients=wifi_clients,
+        cellular_readings=cellular_readings,
     )
 
 

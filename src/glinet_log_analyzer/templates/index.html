@@ -250,6 +250,46 @@
       </div>
       {% endif %}
 
+      {% if wifi_clients %}
+      <div class="card" style="margin-bottom:22px;font-family:'Segoe UI',sans-serif;">
+        <div class="label">Wi-Fi Clients ({{ wifi_clients|length }})</div>
+        <table>
+          <thead><tr><th>MAC Address</th><th>First Seen</th><th>Last Seen</th><th>Joins</th><th>Leaves</th><th>Status</th></tr></thead>
+          <tbody>
+            {% for c in wifi_clients[:20] %}
+            <tr>
+              <td><tt style="font-size:0.85rem;">{{ c.mac }}</tt></td>
+              <td>{{ c.first_seen }}</td>
+              <td>{{ c.last_seen }}</td>
+              <td>{{ c.join_count }}</td>
+              <td>{{ c.leave_count }}</td>
+              <td>{% if c.last_event == 'joined' %}✅ Connected{% else %}⚠ Disconnected{% endif %}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+
+      {% if cellular_readings %}
+      <div class="card" style="margin-bottom:22px;font-family:'Segoe UI',sans-serif;">
+        <div class="label">Cellular Signal Readings ({{ cellular_readings|length }})</div>
+        <table>
+          <thead><tr><th>Time</th><th>RSRP (dBm)</th><th>RSRQ (dB)</th><th>SINR (dB)</th></tr></thead>
+          <tbody>
+            {% for r in cellular_readings[:15] %}
+            <tr>
+              <td>{{ r.timestamp }}</td>
+              <td>{% if r.rsrp is not none %}{{ r.rsrp }}{% else %}-{% endif %}</td>
+              <td>{% if r.rsrq is not none %}{{ r.rsrq }}{% else %}-{% endif %}</td>
+              <td>{% if r.sinr is not none %}{{ r.sinr }}{% else %}-{% endif %}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% endif %}
+
       <div class="result-grid">
         <div class="card"><div class="label">File</div><div>{{ filename }}</div></div>
         <div class="card"><div class="label">Entries</div><div class="value">{{ result.summary.total_lines }}</div></div>

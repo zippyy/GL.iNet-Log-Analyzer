@@ -168,6 +168,8 @@ def _build_context(
         "verdict": generate_verdict(result),
         "triage_notes": generate_triage_notes(result),
         "narrative_timeline": build_narrative_timeline(result),
+        "wifi_clients": result.to_dict().get("wifi_clients", []),
+        "cellular_readings": result.to_dict().get("cellular_readings", []),
     }
 
 

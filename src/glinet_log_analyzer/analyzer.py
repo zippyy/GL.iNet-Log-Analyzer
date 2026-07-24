@@ -4,7 +4,7 @@ import re
 from collections import Counter
 
 from .ingest import LogDocument
-from .models import AnalysisResult, LogEntry
+from .models import AnalysisResult, CellularReading, LogEntry, WifiClient
 
 TIMESTAMP_PATTERNS = [
     re.compile(
@@ -54,6 +54,20 @@ KERNEL_SUBCOMPONENT_PATTERN = re.compile(r"^(?P<subcomponent>[\w./-]+(?:\d+)?):\
 
 # Matches driver-level log markers like "[4116:I:ANY]" or "[0:E:CMN_MLME]" at start of sub-messages
 KERNEL_DRIVER_MARKER_PATTERN = re.compile(r"^\[\d+:[A-Z]+:[A-Z_]+\]\s*")
+
+# Extract MAC addresses from Wi-Fi join/leave events
+MAC_PATTERN = re.compile(r"([0-9a-fA-F]{2}[:-]){5}[0-9a-fA-F]{2}")
+
+# Extract cellular signal metrics: RSRP -95 RSRQ -8 SINR 19
+CELL_SIGNAL_PATTERN = re.compile(
+    r"\bRSRP\s+(-?\d+)\b.*?\bRSRQ\s+(-?\d+)\b.*?\bSINR\s+(-?\d+)\b",
+    re.IGNORECASE,
+)
+
+# Individual metric fallbacks
+CELL_RSRP_PATTERN = re.compile(r"\bRSRP\s+(-?\d+)\b", re.IGNORECASE)
+CELL_RSRQ_PATTERN = re.compile(r"\bRSRQ\s+(-?\d+)\b", re.IGNORECASE)
+CELL_SINR_PATTERN = re.compile(r"\bSINR\s+(-?\d+)\b", re.IGNORECASE)
 
 SIGNAL_PATTERNS = {
     "wan_up": re.compile(
@@ -176,6 +190,13 @@ def analyze_documents(documents: list[LogDocument]) -> AnalysisResult:
 
     notable_events = [entry for entry in entries if _is_notable(entry)]
     timeline = [entry for entry in entries if _is_timeline_event(entry)]
+
+    # ── Wi-Fi client tracking ──────────────────────────────────────────────
+    wifi_clients = _track_wifi_clients(timeline)
+
+    # ── Cellular signal readings ───────────────────────────────────────────
+    cellular_readings = _extract_cellular_readings(entries)
+
     return AnalysisResult(
         entries=entries,
         severity_counts=severity_counts,
@@ -185,6 +206,8 @@ def analyze_documents(documents: list[LogDocument]) -> AnalysisResult:
         source_counts=source_counts,
         notable_events=notable_events,
         timeline=timeline,
+        wifi_clients=wifi_clients,
+        cellular_readings=cellular_readings,
     )
 
 
@@ -279,3 +302,63 @@ def _is_notable(entry: LogEntry) -> bool:
 
 def _is_timeline_event(entry: LogEntry) -> bool:
     return bool(TIMELINE_SIGNALS & set(entry.signals))
+
+
+def _track_wifi_clients(timeline: list[LogEntry]) -> list[WifiClient]:
+    """Track individual Wi-Fi clients by MAC address across join/leave events."""
+    clients: dict[str, WifiClient] = {}
+    for entry in timeline:
+        if "wifi_client_join" not in entry.signals and "wifi_client_leave" not in entry.signals:
+            continue
+        mac_match = MAC_PATTERN.search(entry.message)
+        if not mac_match:
+            continue
+        mac = mac_match.group(0).lower()
+        ts = entry.timestamp or ""
+
+        if mac not in clients:
+            clients[mac] = WifiClient(mac=mac, first_seen=ts, last_seen=ts)
+
+        client = clients[mac]
+        client.last_seen = ts
+
+        if "wifi_client_join" in entry.signals:
+            client.join_count += 1
+            client.last_event = "joined"
+        elif "wifi_client_leave" in entry.signals:
+            client.leave_count += 1
+            client.last_event = "left"
+
+    return sorted(clients.values(), key=lambda c: c.last_seen, reverse=True)
+
+
+def _extract_cellular_readings(entries: list[LogEntry]) -> list[CellularReading]:
+    """Extract cellular signal metrics from log entries."""
+    readings: list[CellularReading] = []
+    for entry in entries:
+        msg = entry.message
+        if not msg:
+            continue
+
+        combined = CELL_SIGNAL_PATTERN.search(msg)
+        if combined:
+            readings.append(CellularReading(
+                timestamp=entry.timestamp or "",
+                rsrp=int(combined.group(1)),
+                rsrq=int(combined.group(2)),
+                sinr=int(combined.group(3)),
+            ))
+            continue
+
+        rsrp_m = CELL_RSRP_PATTERN.search(msg)
+        rsrq_m = CELL_RSRQ_PATTERN.search(msg)
+        sinr_m = CELL_SINR_PATTERN.search(msg)
+        if rsrp_m or rsrq_m or sinr_m:
+            readings.append(CellularReading(
+                timestamp=entry.timestamp or "",
+                rsrp=int(rsrp_m.group(1)) if rsrp_m else None,
+                rsrq=int(rsrq_m.group(1)) if rsrq_m else None,
+                sinr=int(sinr_m.group(1)) if sinr_m else None,
+            ))
+
+    return readings

@@ -22,6 +22,24 @@ class LogEntry:
 
 
 @dataclass(slots=True)
+class WifiClient:
+    mac: str
+    first_seen: str
+    last_seen: str
+    join_count: int = 0
+    leave_count: int = 0
+    last_event: str = ""
+
+
+@dataclass(slots=True)
+class CellularReading:
+    timestamp: str
+    rsrp: int | None = None
+    rsrq: int | None = None
+    sinr: int | None = None
+
+
+@dataclass(slots=True)
 class AnalysisResult:
     entries: list[LogEntry]
     severity_counts: Counter[str]
@@ -31,6 +49,8 @@ class AnalysisResult:
     source_counts: Counter[str]
     notable_events: list[LogEntry]
     timeline: list[LogEntry]
+    wifi_clients: list[WifiClient] = field(default_factory=list)
+    cellular_readings: list[CellularReading] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -47,4 +67,6 @@ class AnalysisResult:
             "notable_events": [entry.to_dict() for entry in self.notable_events],
             "timeline": [entry.to_dict() for entry in self.timeline],
             "entries": [entry.to_dict() for entry in self.entries],
+            "wifi_clients": [{"mac": c.mac, "first_seen": c.first_seen, "last_seen": c.last_seen, "join_count": c.join_count, "leave_count": c.leave_count, "last_event": c.last_event} for c in self.wifi_clients],
+            "cellular_readings": [{"timestamp": r.timestamp, "rsrp": r.rsrp, "rsrq": r.rsrq, "sinr": r.sinr} for r in self.cellular_readings],
         }
