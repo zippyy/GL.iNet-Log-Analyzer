@@ -3,3 +3,6 @@ jinja2<4.0,>=3.1
 python-multipart<1.0,>=0.0.9
 typer<1.0,>=0.16
 uvicorn<1.0,>=0.35
+
+[dev]
+pytest<10.0,>=8.0

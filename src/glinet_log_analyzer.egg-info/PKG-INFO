@@ -9,6 +9,8 @@ Requires-Dist: jinja2<4.0,>=3.1
 Requires-Dist: python-multipart<1.0,>=0.0.9
 Requires-Dist: typer<1.0,>=0.16
 Requires-Dist: uvicorn<1.0,>=0.35
+Provides-Extra: dev
+Requires-Dist: pytest<10.0,>=8.0; extra == "dev"
 
 # GL.iNet Log Analyzer
 
@@ -27,7 +29,8 @@ Local tooling for inspecting GL.iNet router logs from either a command line or a
 
 ```bash
 python -m venv .venv
-.venv\Scripts\activate
+source .venv/bin/activate   # Linux / macOS
+# .venv\Scripts\activate    # Windows
 pip install -e .
 ```
 
@@ -79,7 +82,7 @@ Relevant environment variables:
 - `GLINET_LOG_ANALYZER_PORT`
 - `GLINET_LOG_ANALYZER_DATA_DIR`
 
-Reverse proxy examples are included in [deploy/nginx.conf](C:/Users/nick/Documents/GitHub/GL.iNet-Log-Analyzer/deploy/nginx.conf) and [deploy/Caddyfile](C:/Users/nick/Documents/GitHub/GL.iNet-Log-Analyzer/deploy/Caddyfile).
+Reverse proxy examples are included in [deploy/nginx.conf](deploy/nginx.conf) and [deploy/Caddyfile](deploy/Caddyfile).
 
 ## Project layout
 

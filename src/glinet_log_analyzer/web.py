@@ -10,7 +10,7 @@ from fastapi.templating import Jinja2Templates
 
 from .analyzer import AnalysisResult, analyze_documents
 from .ingest import load_documents_from_bytes
-from .reporting import build_filter_options, entries_to_csv, filter_entries
+from .reporting import build_filter_options, entries_to_csv, filter_entries, SIGNAL_LABELS
 from .storage import load_report, save_report
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -29,7 +29,7 @@ def create_app() -> FastAPI:
         return templates.TemplateResponse(
             request=request,
             name="index.html",
-            context={"result": None, "error": None, "filters": {}, "filter_options": {}, "filtered_entries": [], "report_id": None},
+            context={"result": None, "error": None, "filters": {}, "filter_options": {}, "filtered_entries": [], "report_id": None, "signal_labels": SIGNAL_LABELS},
         )
 
     @app.post("/", response_class=HTMLResponse)
@@ -140,4 +140,5 @@ def _build_context(
         "filter_options": build_filter_options(result),
         "filtered_entries": [entry.to_dict() for entry in filtered_entries[:100]],
         "filtered_count": len(filtered_entries),
+        "signal_labels": SIGNAL_LABELS,
     }

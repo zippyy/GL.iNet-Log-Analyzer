@@ -304,7 +304,7 @@
           <select id="signal" name="signal">
             <option value="">All</option>
             {% for option in filter_options.signals %}
-            <option value="{{ option }}" {% if filters.signal == option %}selected{% endif %}>{{ option }}</option>
+            <option value="{{ option }}" {% if filters.signal == option %}selected{% endif %}>{{ signal_labels.get(option, option) }}</option>
             {% endfor %}
           </select>
         </div>
@@ -353,7 +353,7 @@
                 <strong>{{ entry.message }}</strong>
                 <div>
                   {% for signal in entry.signals %}
-                  <span class="pill warn">{{ signal }}</span>
+                  <span class="pill warn">{{ signal_labels.get(signal, signal) }}</span>
                   {% endfor %}
                   {% for category in entry.categories %}
                   <span class="pill">{{ category }}</span>
@@ -380,7 +380,7 @@
                     <div>{{ entry.message }}</div>
                     <div>
                       {% for signal in entry.signals %}
-                      <span class="pill warn">{{ signal }}</span>
+                      <span class="pill warn">{{ signal_labels.get(signal, signal) }}</span>
                       {% endfor %}
                       {% for category in entry.categories %}
                       <span class="pill">{{ category }}</span>
@@ -416,7 +416,7 @@
               </thead>
               <tbody>
                 {% for signal, count in result.summary.signal_counts.items() %}
-                <tr><td>{{ signal }}</td><td>{{ count }}</td></tr>
+                <tr><td>{{ signal_labels.get(signal, signal) }}</td><td>{{ count }}</td></tr>
                 {% endfor %}
               </tbody>
             </table>
@@ -451,7 +451,7 @@
                     <div>{{ entry.message }}</div>
                     <div>
                       {% for signal in entry.signals %}
-                      <span class="pill warn">{{ signal }}</span>
+                      <span class="pill warn">{{ signal_labels.get(signal, signal) }}</span>
                       {% endfor %}
                       {% for category in entry.categories %}
                       <span class="pill">{{ category }}</span>
