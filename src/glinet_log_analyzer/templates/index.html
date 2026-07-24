@@ -250,7 +250,7 @@
         <div class="label">📋 For the Customer</div>
         <div style="line-height:1.6;display:flex;align-items:flex-start;gap:12px;">
           <div style="flex:1;">{{ customer_summary }}</div>
-          <button class="btn-icon" onclick="copyText('{{ customer_summary|replace(\"'\", \"\\'\")|replace(\"\\n\", \" \") }}')" title="Copy to clipboard" style="flex-shrink:0;">📋 Copy</button>
+          <button class="btn-icon" onclick="copyText(this.dataset.summary)" data-summary="{{ customer_summary | replace('\n', ' ') | e }}" title="Copy to clipboard" style="flex-shrink:0;">📋 Copy</button>
         </div>
       </div>
       {% endif %}
