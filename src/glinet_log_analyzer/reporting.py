@@ -206,3 +206,155 @@ def _key_findings(result: AnalysisResult, filtered_entries: list[LogEntry]) -> l
 def _format_counter(counter: Counter[str], *, limit: int) -> str:
     items = [f"{name} {count}" for name, count in counter.most_common(limit)]
     return ", ".join(items) if items else "none"
+
+
+# ── Support-agent narrative helpers ──────────────────────────────────────────
+
+SIGNAL_NARRATIVES = {
+    "wan_down": "WAN connection dropped — router lost internet",
+    "wan_up": "WAN connection restored — internet is back",
+    "dhcp_lease": "Device requested an IP address from the router",
+    "wifi_client_join": "Wi-Fi device connected to the router",
+    "wifi_client_leave": "Wi-Fi device disconnected from the router",
+    "dns_failure": "DNS lookup failed — a website or service couldn't be reached",
+    "auth_failure": "Someone tried to log in with the wrong password",
+    "vpn_handshake": "VPN tunnel established",
+    "firewall_drop": "Router blocked incoming traffic (normal firewall behavior)",
+    "firmware_update": "Firmware update activity detected",
+    "modem_event": "Cellular modem status changed",
+    "multiwan_failover": "Router switched between internet connections",
+    "tethering_event": "USB tethering device connected",
+    "sim_event": "SIM card status changed",
+    "cell_signal": "Cellular signal strength reading recorded",
+    "reboot": "Router rebooted",
+    "repeater_connect": "Repeater connected to a Wi-Fi network",
+    "repeater_scan": "Repeater scanned for nearby networks",
+    "repeater_switch": "Repeater switched to a different network",
+    "cloud_mqtt": "Router contacted GoodCloud management service",
+    "wwan_up": "Wireless WAN (repeater link) came online",
+    "wwan_down": "Wireless WAN (repeater link) went offline",
+}
+
+def generate_verdict(result: AnalysisResult) -> str:
+    """Plain-English summary of what happened in the log, for support agents."""
+    sc = result.signal_counts
+    parts: list[str] = []
+
+    # WAN health
+    if sc["wan_down"] and sc["wan_up"]:
+        parts.append(f"The router experienced {sc['wan_down']} WAN outage(s) and recovered {sc['wan_up']} time(s).")
+    elif sc["wan_down"]:
+        parts.append(f"⚠ The router had {sc['wan_down']} WAN outage(s) with no recovery seen in this log.")
+    elif sc["wan_up"]:
+        parts.append("The WAN connection appears stable — no outages detected.")
+    elif not sc["wan_down"] and not sc["wan_up"]:
+        parts.append("No WAN state changes detected in this log.")
+
+    # Wi-Fi clients
+    if sc["wifi_client_join"] or sc["wifi_client_leave"]:
+        parts.append(f"{sc['wifi_client_join']} device(s) connected to Wi-Fi, {sc['wifi_client_leave']} disconnected.")
+    else:
+        parts.append("No Wi-Fi client activity detected.")
+
+    # DNS
+    if sc["dns_failure"]:
+        parts.append(f"⚠ {sc['dns_failure']} DNS lookup failure(s) — customers may report websites not loading.")
+
+    # Auth
+    if sc["auth_failure"]:
+        parts.append(f"⚠ {sc['auth_failure']} failed login attempt(s) — possible unauthorized access attempts.")
+
+    # Firewall
+    if sc["firewall_drop"] > 5:
+        parts.append(f"Firewall blocked traffic {sc['firewall_drop']} times — higher than typical.")
+
+    # Cellular
+    if sc["modem_event"] or sc["sim_event"]:
+        parts.append(f"Cellular modem activity detected ({sc['modem_event']} event(s), {sc['sim_event']} SIM event(s)).")
+
+    # VPN
+    if sc["vpn_handshake"]:
+        parts.append(f"VPN tunnel active — {sc['vpn_handshake']} handshake(s) seen.")
+
+    # Repeater
+    if sc["repeater_connect"]:
+        parts.append(f"Repeater successfully connected to an upstream network {sc['repeater_connect']} time(s).")
+
+    # Multi-WAN / failover
+    if sc["multiwan_failover"]:
+        parts.append(f"The router switched between connections {sc['multiwan_failover']} time(s) — customer may have noticed brief interruption.")
+
+    # Reboot
+    if sc["reboot"]:
+        parts.append(f"⚠ Router rebooted {sc['reboot']} time(s).")
+
+    # Overall assessment
+    severity = _assess_health(sc)
+
+    return f"{severity}\n\n" + " ".join(parts)
+
+
+def _assess_health(sc: Counter[str]) -> str:
+    issues = 0
+    if sc["wan_down"] > sc.get("wan_up", 0):
+        issues += 1
+    if sc["dns_failure"] > 3:
+        issues += 1
+    if sc["auth_failure"] > 2:
+        issues += 1
+    if sc["reboot"]:
+        issues += 1
+    if sc["wwan_down"] > sc.get("wwan_up", 0):
+        issues += 1
+
+    if issues == 0:
+        return "✅ Overall: Router appears healthy — no significant issues found."
+    elif issues == 1:
+        return "⚠ Overall: One potential issue detected — review details below."
+    else:
+        return "🚨 Overall: Multiple issues detected — this router needs attention."
+
+
+def generate_triage_notes(result: AnalysisResult) -> list[str]:
+    """Actionable triage guidance for support agents based on detected signals."""
+    sc = result.signal_counts
+    notes: list[str] = []
+
+    if sc["wan_down"]:
+        notes.append("Ask the customer if they noticed internet dropping. Check if the ISP modem was rebooted or if the Ethernet cable is loose.")
+    if sc["dns_failure"]:
+        notes.append("DNS failures can be caused by the ISP's DNS server. Try switching the router to use 1.1.1.1 or 8.8.8.8 as DNS.")
+    if sc["auth_failure"]:
+        notes.append("Failed login attempts suggest someone is trying to access the router. Verify the admin password is strong and consider disabling remote admin access.")
+    if sc["multiwan_failover"]:
+        notes.append("Frequent failover events may indicate an unstable primary connection. Check if the customer is using multi-WAN or a backup cellular modem.")
+    if sc["wifi_client_leave"] > sc.get("wifi_client_join", 0):
+        notes.append("More devices disconnecting than connecting — possible Wi-Fi range or interference issue. Ask the customer about dead zones.")
+    if sc["repeater_switch"]:
+        notes.append("The repeater is jumping between networks. Check signal strength at the repeater's location and consider locking it to a specific AP.")
+    if sc["reboot"]:
+        notes.append("Unexpected reboots may indicate a power issue, overheating, or a firmware bug. Check the router's uptime and temperature if available.")
+    if sc["wwan_down"]:
+        notes.append("The wireless WAN (repeater) link dropped. The upstream network may have gone down or the signal is too weak.")
+    if sc["firmware_update"]:
+        notes.append("Firmware activity detected. Verify the router is running the latest stable firmware version.")
+
+    return notes[:5]
+
+
+def build_narrative_timeline(result: AnalysisResult) -> list[dict[str, str]]:
+    """Build a human-readable timeline for the web UI — plain English, not raw log lines."""
+    timeline: list[dict[str, str]] = []
+    for entry in result.timeline[:20]:
+        when = entry.timestamp or ""
+        narratives = []
+        for signal in entry.signals:
+            narratives.append(SIGNAL_NARRATIVES.get(signal, signal.replace("_", " ")))
+        if not narratives:
+            narratives.append(entry.message[:100])
+
+        timeline.append({
+            "time": when,
+            "what": " | ".join(narratives),
+        })
+    return timeline

@@ -10,7 +10,7 @@ from fastapi.templating import Jinja2Templates
 
 from .analyzer import AnalysisResult, analyze_documents
 from .ingest import load_documents_from_bytes
-from .reporting import build_filter_options, entries_to_csv, filter_entries, SIGNAL_LABELS, CATEGORY_LABELS, SEVERITY_LABELS
+from .reporting import build_filter_options, build_narrative_timeline, entries_to_csv, filter_entries, generate_triage_notes, generate_verdict, CATEGORY_LABELS, SEVERITY_LABELS, SIGNAL_LABELS
 from .storage import load_report, save_report
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -143,4 +143,7 @@ def _build_context(
         "signal_labels": SIGNAL_LABELS,
         "category_labels": CATEGORY_LABELS,
         "severity_labels": SEVERITY_LABELS,
+        "verdict": generate_verdict(result),
+        "triage_notes": generate_triage_notes(result),
+        "narrative_timeline": build_narrative_timeline(result),
     }

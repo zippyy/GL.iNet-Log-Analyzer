@@ -319,6 +319,19 @@
         <button type="submit">Apply Filters</button>
       </form>
 
+      <div class="card" style="margin-bottom:22px;background:rgba(15,118,110,0.06);border-color:var(--accent);font-family:'Segoe UI',sans-serif;line-height:1.6;white-space:pre-line;">{{ verdict }}</div>
+
+      {% if triage_notes %}
+      <div class="card" style="margin-bottom:22px;background:rgba(194,65,12,0.04);border-color:var(--accent-2);font-family:'Segoe UI',sans-serif;">
+        <div class="label">Triage Guidance</div>
+        <ul style="margin:8px 0 0;padding-left:20px;line-height:1.6;">
+          {% for note in triage_notes %}
+          <li>{{ note }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
       <div class="result-grid">
         <div class="card">
           <div class="label">File</div>
@@ -345,52 +358,15 @@
       <div class="split">
         <div class="stack">
           <div class="card">
-            <div class="label">Operational Timeline</div>
+            <div class="label">What Happened</div>
             <div class="timeline">
-              {% for entry in result.timeline[:12] %}
+              {% for item in narrative_timeline[:15] %}
               <article class="event">
-                <time>{{ entry.timestamp or "No timestamp" }} • {{ entry.source or "inline" }} • line {{ entry.line_number }}</time>
-                <strong>{{ entry.message }}</strong>
-                <div>
-                  {% for signal in entry.signals %}
-                  <span class="pill warn">{{ signal_labels.get(signal, signal) }}</span>
-                  {% endfor %}
-                  {% for category in entry.categories %}
-                  <span class="pill">{{ category_labels.get(category, category) }}</span>
-                  {% endfor %}
-                </div>
+                <time>{{ item.time or "Unknown time" }}</time>
+                <strong>{{ item.what }}</strong>
               </article>
               {% endfor %}
             </div>
-          </div>
-
-          <div class="card">
-            <div class="label">Recent Notable Events</div>
-            <table>
-              <thead>
-                <tr><th>Source</th><th>Line</th><th>Severity</th><th>Message</th></tr>
-              </thead>
-              <tbody>
-                {% for entry in result.notable_events[:15] %}
-                <tr>
-                  <td>{{ entry.source or "-" }}</td>
-                  <td>{{ entry.line_number }}</td>
-                  <td>{{ severity_labels.get(entry.severity, entry.severity) }}</td>
-                  <td>
-                    <div>{{ entry.message }}</div>
-                    <div>
-                      {% for signal in entry.signals %}
-                      <span class="pill warn">{{ signal_labels.get(signal, signal) }}</span>
-                      {% endfor %}
-                      {% for category in entry.categories %}
-                      <span class="pill">{{ category_labels.get(category, category) }}</span>
-                      {% endfor %}
-                    </div>
-                  </td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
           </div>
         </div>
 
