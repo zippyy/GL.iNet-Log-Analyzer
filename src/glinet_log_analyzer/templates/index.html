@@ -250,6 +250,17 @@
       </div>
       {% endif %}
 
+      {% if anomalies %}
+      <div class="card" style="margin-bottom:22px;background:rgba(194,65,12,0.06);border-color:var(--accent-2);font-family:'Segoe UI',sans-serif;">
+        <div class="label">🚨 Anomalies Detected ({{ anomalies|length }})</div>
+        <ul style="margin:8px 0 0;padding-left:20px;line-height:1.6;">
+          {% for a in anomalies %}
+          <li>{{ a }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
       {% if wifi_clients %}
       <div class="card" style="margin-bottom:22px;font-family:'Segoe UI',sans-serif;">
         <div class="label">Wi-Fi Clients ({{ wifi_clients|length }})</div>

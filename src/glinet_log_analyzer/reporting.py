@@ -342,6 +342,58 @@ def generate_triage_notes(result: AnalysisResult) -> list[str]:
     return notes[:5]
 
 
+def detect_anomalies(result: AnalysisResult) -> list[str]:
+    """Detect unusual patterns that warrant investigation."""
+    sc = result.signal_counts
+    anomalies: list[str] = []
+
+    total_entries = len(result.entries)
+    if total_entries == 0:
+        return anomalies
+
+    # High error rate (>30% of entries are errors/critical)
+    error_rate = (sc.get("critical", 0) + sc.get("error", 0)) / total_entries
+    if error_rate > 0.3:
+        anomalies.append(f"🚨 High error rate: {error_rate:.0%} of log entries are errors or critical — this is abnormal.")
+
+    # Rapid WAN flapping (more than 5 drops)
+    if sc["wan_down"] > 5:
+        anomalies.append(f"🚨 WAN connection flapping: {sc['wan_down']} drops detected — the internet connection is highly unstable.")
+
+    # Excessive DNS failures (>10)
+    if sc["dns_failure"] > 10:
+        anomalies.append(f"🚨 Severe DNS issues: {sc['dns_failure']} DNS failures — the ISP's DNS may be completely down.")
+
+    # Auth brute force (>5 failed logins)
+    if sc["auth_failure"] > 5:
+        anomalies.append(f"🚨 Possible brute force attack: {sc['auth_failure']} failed login attempts — check for unauthorized access.")
+
+    # Client churn (more leaves than joins, or >10 leave events)
+    if sc["wifi_client_leave"] > 10:
+        anomalies.append(f"⚠ High Wi-Fi client churn: {sc['wifi_client_leave']} devices disconnected — possible range or interference problem.")
+    if sc["wifi_client_leave"] > sc.get("wifi_client_join", 0) * 2:
+        anomalies.append("⚠ More devices leaving than joining — Wi-Fi network may be unstable.")
+
+    # Frequent failover (>5)
+    if sc["multiwan_failover"] > 5:
+        anomalies.append(f"⚠ Excessive failover events ({sc['multiwan_failover']}) — the primary connection is unreliable.")
+
+    # Cellular signal issues
+    if result.cellular_readings:
+        rsrp_vals = [r.rsrp for r in result.cellular_readings if r.rsrp is not None]
+        if rsrp_vals and min(rsrp_vals) < -110:
+            anomalies.append("⚠ Very poor cellular signal (RSRP < -110 dBm) — the modem may struggle to maintain a connection.")
+        sinr_vals = [r.sinr for r in result.cellular_readings if r.sinr is not None]
+        if sinr_vals and min(sinr_vals) < 0:
+            anomalies.append("⚠ Negative SINR detected — cellular signal quality is critically poor.")
+
+    # Repeater instability
+    if sc["repeater_switch"] > 3:
+        anomalies.append(f"⚠ Repeater instability: switched networks {sc['repeater_switch']} times — may indicate weak signal or competing APs.")
+
+    return anomalies
+
+
 def build_narrative_timeline(result: AnalysisResult) -> list[dict[str, str]]:
     """Build a human-readable timeline for the web UI — plain English, not raw log lines."""
     timeline: list[dict[str, str]] = []

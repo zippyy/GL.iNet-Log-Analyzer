@@ -1,21 +1,68 @@
 from __future__ import annotations
 
 import json
+import os
+from datetime import datetime
 from pathlib import Path
 from uuid import uuid4
 
-from fastapi import FastAPI, File, HTTPException, Request, UploadFile
+from fastapi import FastAPI, File, Header, HTTPException, Request, UploadFile
 from fastapi.responses import HTMLResponse, PlainTextResponse
 from fastapi.templating import Jinja2Templates
 
-from .analyzer import AnalysisResult, analyze_documents
+from .analyzer import AnalysisResult, analyze_documents, analyze_text
 from .ingest import load_documents_from_bytes
-from .reporting import build_filter_options, build_narrative_timeline, entries_to_csv, filter_entries, generate_triage_notes, generate_verdict, CATEGORY_LABELS, SEVERITY_LABELS, SIGNAL_LABELS
+from .reporting import (
+    CATEGORY_LABELS,
+    SEVERITY_LABELS,
+    SIGNAL_LABELS,
+    build_filter_options,
+    build_narrative_timeline,
+    detect_anomalies,
+    entries_to_csv,
+    filter_entries,
+    generate_triage_notes,
+    generate_verdict,
+)
 from .storage import list_reports, load_report, save_report
-from datetime import datetime
 
 BASE_DIR = Path(__file__).resolve().parent
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
+
+# ── Auth ─────────────────────────────────────────────────────────────────────
+_AUTH_TOKEN = os.getenv("GLINET_LOG_ANALYZER_AUTH_TOKEN", "")
+_WEBHOOK_URL = os.getenv("GLINET_LOG_ANALYZER_WEBHOOK_URL", "")
+
+def _check_auth(authorization: str | None) -> bool:
+    if not _AUTH_TOKEN:
+        return True
+    if not authorization:
+        return False
+    return authorization == f"Bearer {_AUTH_TOKEN}"
+
+
+def _auth_required(f):
+    """Decorator for routes that require authentication."""
+    async def wrapper(*args, **kwargs):
+        request = kwargs.get("request") or args[0] if args else None
+        if request and hasattr(request, "headers"):
+            auth = request.headers.get("authorization")
+            if not _check_auth(auth):
+                raise HTTPException(status_code=401, detail="Unauthorized")
+        return await f(*args, **kwargs)
+    return wrapper
+
+
+async def _fire_webhook(message: str) -> None:
+    """Fire a Slack/Discord webhook with a simple text payload."""
+    if not _WEBHOOK_URL:
+        return
+    try:
+        import httpx
+        async with httpx.AsyncClient() as client:
+            await client.post(_WEBHOOK_URL, json={"text": message}, timeout=10)
+    except Exception:
+        pass  # Webhooks are best-effort; don't break the request
 
 
 def create_app() -> FastAPI:
@@ -121,6 +168,25 @@ def create_app() -> FastAPI:
         reports = list_reports()
         return HTMLResponse(content=_render_history_page(reports, request))
 
+    @app.post("/ingest/syslog")
+    async def ingest_syslog(
+        request: Request,
+        authorization: str | None = Header(None),
+    ) -> dict[str, str]:
+        """Accept raw syslog lines from a GL.iNet router, analyze, and optionally fire webhook."""
+        if not _check_auth(authorization):
+            raise HTTPException(status_code=401, detail="Unauthorized")
+        body = (await request.body()).decode("utf-8", errors="replace")
+        result = analyze_text(body)
+        report_id = str(uuid4())
+        save_report(report_id, "syslog-stream.log", result)
+
+        verdict = generate_verdict(result)
+        if _WEBHOOK_URL:
+            await _fire_webhook(f"📡 GL.iNet Syslog Ingest\n{verdict}\nReport: {request.base_url}reports/{report_id}")
+
+        return {"report_id": report_id, "status": "ok"}
+
     return app
 
 
@@ -170,6 +236,7 @@ def _build_context(
         "narrative_timeline": build_narrative_timeline(result),
         "wifi_clients": result.to_dict().get("wifi_clients", []),
         "cellular_readings": result.to_dict().get("cellular_readings", []),
+        "anomalies": detect_anomalies(result),
     }
 
 
