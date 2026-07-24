@@ -241,7 +241,7 @@ def _build_context(
         "severity_labels": SEVERITY_LABELS,
         "verdict": generate_verdict(result),
         "triage_notes": generate_triage_notes(result),
-        "narrative_timeline": build_narrative_timeline(result),
+        "narrative_timeline": build_narrative_timeline(filtered_entries),
         "wifi_clients": result.to_dict().get("wifi_clients", []),
         "cellular_readings": result.to_dict().get("cellular_readings", []),
         "anomalies": detect_anomalies(result),

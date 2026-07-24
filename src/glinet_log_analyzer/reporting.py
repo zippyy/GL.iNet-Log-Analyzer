@@ -394,12 +394,15 @@ def detect_anomalies(result: AnalysisResult) -> list[str]:
     return anomalies
 
 
-def build_narrative_timeline(result: AnalysisResult) -> list[dict[str, str]]:
+def build_narrative_timeline(entries: list[LogEntry]) -> list[dict[str, str]]:
     """Build a human-readable timeline with relative timestamps and severity colors."""
     timeline: list[dict[str, str]] = []
     prev_time: str | None = None
 
-    for entry in result.timeline[:30]:
+    # Only timeline-significant entries
+    timeline_entries = [e for e in entries if e.signals]
+
+    for entry in timeline_entries[:30]:
         when = entry.timestamp or ""
         narratives = []
         severity = "neutral"
