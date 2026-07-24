@@ -42,6 +42,24 @@ def load_report(report_id: str) -> dict[str, Any] | None:
     }
 
 
+def list_reports() -> list[dict[str, Any]]:
+    """List all saved reports sorted by modification time (newest first)."""
+    reports_dir = get_reports_dir()
+    reports: list[dict[str, Any]] = []
+    for path in sorted(reports_dir.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True):
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            reports.append({
+                "report_id": payload["report_id"],
+                "filename": payload["filename"],
+                "total_lines": payload["result"]["summary"]["total_lines"],
+                "created": path.stat().st_mtime,
+            })
+        except (json.JSONDecodeError, KeyError):
+            continue
+    return reports[:50]
+
+
 def _analysis_result_from_dict(payload: dict[str, Any]) -> AnalysisResult:
     entries = [_log_entry_from_dict(entry) for entry in payload["entries"]]
     notable_events = [_log_entry_from_dict(entry) for entry in payload["notable_events"]]
